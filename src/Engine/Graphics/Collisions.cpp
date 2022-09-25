@@ -19,6 +19,82 @@ CollisionState collision_state;
  * Helper functions.
  */
 
+static bool CollideSphereWithPoint(const Vec3f &pos, const Vec3f &dir, float radius, const Vec3f &point,
+                                   float *outDistance) {
+    // Moving sphere equation: ||pos + alpha * dir - x|| = r, alpha >= 0.
+    // Substituting x for the point provided we can solve for alpha.
+
+    Vec3f pp = pos - point;
+    float a = Dot(dir, dir); // Equals 1.
+    float b = 2 * Dot(dir, pp);
+    float c = Dot(pp, pp) - radius * radius;
+    float d = b * b - 4 * a * c;
+
+    if (FuzzyIsNull(d)) {
+        return false; // Even if we collide with the point, we'll just brush it slightly => no collision.
+    } else if (d < 0) {
+        return false; // No intersection points.
+    } else {
+        d = sqrt(d);
+        float alpha1 = (-b - d) / (2 * a);
+        float alpha2 = (-b + d) / (2 * a);
+
+        if (alpha2 < 0 || FuzzyIsNull(alpha2)) {
+            return false; // Moving away from the point or touching it with the back side => no collision.
+        } else if (alpha1 > 0 || FuzzyIsNull(alpha1)) {
+            *outDistance = alpha1;
+            return true; // Moving towards the point or touching it with the front side => collision.
+        } else {
+            *outDistance = 0;
+            return true; // The point's already inside the sphere, we should've collided long ago.
+        }
+    }
+}
+
+static bool CollideSphereWithSegment(const Vec3f &pos, const Vec3f &dir, float radius, const Vec3f &p0, const Vec3f &p1,
+                                     float *outDistance) {
+
+    // OK this one requires some magic. Instead of colliding sphere with a segment we can collide a ray with a cylinder.
+    // We don't care about cylinder base as those should be handled separately by CollideSphereWithPoint.
+    // So we have a cylinder equation ||M * (x - a)|| = r, where M is a projection matrix onto the plane
+    // perpendicular to the segment. Substituting x for the point in a ray equation (x = pos + alpha * dir)
+    // we can solve for alpha.
+
+    Vec3f edge = p1 - p0;
+    float edgeLengthSqr = edge.LengthSqr();
+    Vec3f mdir = dir - edge * Dot(edge, dir) / edgeLengthSqr; // M * dir
+    Vec3f pp = pos - p0;
+    Vec3f mpp = pp - edge * Dot(edge, pp) / edgeLengthSqr; // M * pp
+
+    float a = Dot(mdir, mdir);
+    float b = 2 * Dot(mdir, mpp);
+    float c = Dot(mpp, mpp) - radius * radius;
+    float d = b * b - 4 * a * c;
+
+    if (FuzzyIsNull(d)) {
+        return false; // Even if we collide with the cylinder, we'll just brush it slightly => no collision.
+    } else if (d < 0) {
+        return false; // No intersection points.
+    } else {
+        d = sqrt(d);
+        float alpha1 = (-b - d) / (2 * a);
+        float alpha2 = (-b + d) / (2 * a);
+
+        // TODO: this code doesn't handle cylinder ends correctly
+
+        if (alpha2 < 0 || FuzzyIsNull(alpha2)) {
+            return false; // Moving away from the cylinder or touching it with the back side => no collision.
+        } else if (alpha1 > 0 || FuzzyIsNull(alpha1)) {
+            *outDistance = alpha1;
+            return true; // Moving towards the cylinder or touching it with the front side => collision.
+        } else {
+            *outDistance = 0;
+            return true; // We're already inside the cylinder, we should've collided long ago.
+        }
+    }
+
+}
+
 /**
  * @offset 0x0047531C, 0x004754BF.
  *
