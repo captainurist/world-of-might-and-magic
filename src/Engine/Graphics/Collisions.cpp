@@ -23,7 +23,6 @@ static bool CollideSphereWithPoint(const Vec3f &pos, const Vec3f &dir, float rad
                                    float *outDistance) {
     // Moving sphere equation: ||pos + alpha * dir - x|| = r, alpha >= 0.
     // Substituting x for the point provided we can solve for alpha.
-
     Vec3f pp = pos - point;
     float a = Dot(dir, dir); // Equals 1.
     float b = 2 * Dot(dir, pp);
@@ -53,7 +52,6 @@ static bool CollideSphereWithPoint(const Vec3f &pos, const Vec3f &dir, float rad
 
 static bool CollideSphereWithSegment(const Vec3f &pos, const Vec3f &dir, float radius, const Vec3f &p0, const Vec3f &p1,
                                      float *outDistance) {
-
     // OK this one requires some magic. Instead of colliding sphere with a segment we can collide a ray with a cylinder.
     // We don't care about cylinder base as those should be handled separately by CollideSphereWithPoint.
     // So we have a cylinder equation ||M * (x - a)|| = r, where M is a projection matrix onto the plane
@@ -92,7 +90,6 @@ static bool CollideSphereWithSegment(const Vec3f &pos, const Vec3f &dir, float r
             return true; // We're already inside the cylinder, we should've collided long ago.
         }
     }
-
 }
 
 /**
