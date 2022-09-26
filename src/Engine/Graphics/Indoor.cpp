@@ -1235,6 +1235,14 @@ void BLVFace::_get_normals(Vec3i *a2, Vec3i *a3) {
     return;
 }
 
+Vec3i BLVFace::Point(size_t index, int model_idx) const {
+    if (model_idx == MODEL_INDOOR) {
+        return pIndoor->pVertices[this->pVertexIDs[index]];
+    } else {
+        return pOutdoor->pBModels[model_idx].pVertices[this->pVertexIDs[index]];
+    }
+}
+
 void BLVFace::Flatten(FlatFace *points, int model_idx, FaceAttributes override_plane) const {
     Assert(!override_plane ||
             override_plane == FACE_XY_PLANE || override_plane == FACE_YZ_PLANE || override_plane == FACE_XZ_PLANE);

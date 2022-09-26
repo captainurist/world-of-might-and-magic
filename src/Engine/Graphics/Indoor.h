@@ -431,6 +431,8 @@ struct BLVFace {  // 60h
                                 : this->uAttributes | FACE_TEXTURE_FRAME;
     }
 
+    Vec3i Point(size_t index, int model_idx) const;
+
     /**
      * @param[out] points               Coordinate storage. The storage is populated by the coordinates of this
      *                                  face's vertices projected onto this face's primary plane.

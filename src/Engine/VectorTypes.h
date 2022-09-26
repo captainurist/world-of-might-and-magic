@@ -115,6 +115,10 @@ struct Vec3 {
         return r * l;
     }
 
+    friend bool operator==(const Vec3 &l, const Vec3 &r) {
+        return l.x == r.x && l.y == r.y && l.z == r.z;
+    }
+
     Vec3 &operator+=(const Vec3 &v) {
         *this = *this + v;
         return *this;
