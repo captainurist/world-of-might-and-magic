@@ -19,50 +19,70 @@ CollisionState collision_state;
  * Helper functions.
  */
 
-static bool CollideSphereWithPoint(const Vec3f &pos, const Vec3f &dir, float radius, const Vec3f &point,
-                                   float *outDistance) {
-    // Moving sphere equation: ||pos + alpha * dir - x|| = r, alpha >= 0.
-    // Substituting x for the point provided we can solve for alpha.
-    Vec3f pp = pos - point;
-    float a = Dot(dir, dir); // Equals 1.
+static bool CollideRayWithSphere(const Vec3f &pos, const Vec3f &dir, const Vec3f &center, float radius,
+                                 float *outDistance) {
+    Assert(FuzzyEquals(Dot(dir, dir), 1.0f));
+    Assert(radius > 0);
+
+    // Sphere equation:
+    //     ||point - x|| = r.                      (1)
+    // Ray equation:
+    //     x = pos + alpha * dir, alpha >= 0.      (2)
+    // Substituting (2) into (1) we can solve for alpha.
+    Vec3f pp = pos - center;
+    float a = 1; // Actually Dot(dir, dir), but dir is a unit vector.
     float b = 2 * Dot(dir, pp);
     float c = Dot(pp, pp) - radius * radius;
     float d = b * b - 4 * a * c;
 
     if (FuzzyIsNull(d)) {
-        return false; // Even if we collide with the point, we'll just brush it slightly => no collision.
+        return false; // Ray just brushes a sphere => no collision.
     } else if (d < 0) {
         return false; // No intersection points.
     } else {
         d = sqrt(d);
         float alpha1 = (-b - d) / (2 * a);
         float alpha2 = (-b + d) / (2 * a);
+        Assert(alpha1 < alpha2);
 
         if (alpha2 < 0 || FuzzyIsNull(alpha2)) {
-            return false; // Moving away from the point or touching it with the back side => no collision.
+            return false; // Ray is pointing away from the sphere, even if ray origin is on the surface it's not a collision.
         } else if (alpha1 > 0 || FuzzyIsNull(alpha1)) {
             *outDistance = alpha1;
-            return true; // Moving towards the point or touching it with the front side => collision.
+            return true; // Ray is pointing towards the sphere, it's a collision.
         } else {
             *outDistance = 0;
-            return true; // The point's already inside the sphere, we should've collided long ago.
+            return true; // Ray's origin is inside the sphere, collision already happened.
         }
     }
 }
 
-static bool CollideSphereWithSegment(const Vec3f &pos, const Vec3f &dir, float radius, const Vec3f &p0, const Vec3f &p1,
-                                     float *outDistance) {
-    // OK this one requires some magic. Instead of colliding sphere with a segment we can collide a ray with a cylinder.
-    // We don't care about cylinder base as those should be handled separately by CollideSphereWithPoint.
-    // So we have a cylinder equation ||M * (x - a)|| = r, where M is a projection matrix onto the plane
-    // perpendicular to the segment. Substituting x for the point in a ray equation (x = pos + alpha * dir)
-    // we can solve for alpha.
+static bool CollideRayWithCylinder(const Vec3f &pos, const Vec3f &dir, const Vec3f &p0, const Vec3f &p1, float radius,
+                                   float *outDistance) {
+    Assert(FuzzyEquals(Dot(dir, dir), 1.0f));
+    Assert(!FuzzyIsNull(Dot(p0 - p1, p0 - p1)));
+    Assert(radius > 0);
 
-    Vec3f edge = p1 - p0;
-    float edgeLengthSqr = edge.LengthSqr();
-    Vec3f mdir = dir - edge * Dot(edge, dir) / edgeLengthSqr; // M * dir
+    // We're only interested in ray's intersection with the cylinder's side surface.
+    // Cylinder equation:
+    //     e = p1 - p0,
+    //     M = I - e * eT / ||e||^2, a projection matrix onto the plane perpendicular to the segment,
+    //     ||M * (x - p0)|| = r,                                                                       (1)
+    //     e * (x - p0) > 0,
+    //     e * (x - p1) < 0.
+    // Ray equation:
+    //     x = pos + alpha * dir, alpha > 0.                                                           (2)
+    // Substituting (2) into (1) we can solve for alpha.
+
+    Vec3f e = p1 - p0;
+    float eLenSqr = e.LengthSqr();
+    Vec3f mdir = dir - e * Dot(e, dir) / eLenSqr; // M * dir
     Vec3f pp = pos - p0;
-    Vec3f mpp = pp - edge * Dot(edge, pp) / edgeLengthSqr; // M * pp
+    Vec3f mpp = pp - e * Dot(e, pp) / eLenSqr; // M * pp
+
+    auto inCylinder = [&](const Vec3f &x) {
+        return Dot(e, x - p0) > 0 && Dot(e, x - p1) < 0;
+    };
 
     float a = Dot(mdir, mdir);
     float b = 2 * Dot(mdir, mpp);
@@ -70,25 +90,84 @@ static bool CollideSphereWithSegment(const Vec3f &pos, const Vec3f &dir, float r
     float d = b * b - 4 * a * c;
 
     if (FuzzyIsNull(d)) {
-        return false; // Even if we collide with the cylinder, we'll just brush it slightly => no collision.
+        return false; // Ray just brushes a cylinder => no collision.
     } else if (d < 0) {
         return false; // No intersection points.
     } else {
         d = sqrt(d);
         float alpha1 = (-b - d) / (2 * a);
         float alpha2 = (-b + d) / (2 * a);
-
-        // TODO: this code doesn't handle cylinder ends correctly
+        Assert(alpha1 < alpha2);
 
         if (alpha2 < 0 || FuzzyIsNull(alpha2)) {
-            return false; // Moving away from the cylinder or touching it with the back side => no collision.
+            return false; // Ray is pointing away from the cylinder, even if ray origin is on the surface it's not a collision.
         } else if (alpha1 > 0 || FuzzyIsNull(alpha1)) {
-            *outDistance = alpha1;
-            return true; // Moving towards the cylinder or touching it with the front side => collision.
+            // Moving towards the cylinder and maybe touching it => maybe a collision, gotta check if
+            // the intersection point is in bounds.
         } else {
-            *outDistance = 0;
-            return true; // We're already inside the cylinder, we should've collided long ago.
+            // We're already inside the cylinder. Still need to check for bounds though.
+            alpha1 = alpha2 = 0;
         }
+
+        if (inCylinder(pos + alpha1 * dir)) {
+            *outDistance = alpha1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+static bool CollideRayWithPie(const Vec3f &pos, const Vec3f &dir, BLVFace *face, int model_idx, float radius,
+                              float *outDistance) {
+    Assert(FuzzyEquals(Dot(dir, dir), 1));
+    Assert(face->uNumVertices >= 3);
+    // Assert(FuzzyEquals(Dot(face->pFacePlane.vNormal, face->pFacePlane.vNormal), 1)); // Fails because of int->float conversion.
+    Assert(radius > 0);
+
+    // We're only interested in ray intersections with the pie's upper and lower surfaces.
+    // Pie surface equations:
+    //     n * (x - p0) = r                         (1)
+    //     n * (x - p0) = -r                        (2)
+    // Ray equation:
+    //     x = pos + alpha * dir, alpha > 0.        (3)
+    // Substituting (3) into (1) and (2) we can solve for alpha.
+
+    float alpha1;
+    float alpha2;
+
+    float distance = face->pFacePlane.SignedDistanceTo(pos);
+    float cosAngle = Dot(dir, face->pFacePlane.vNormal);
+    if (FuzzyIsNull(cosAngle)) {
+        if (distance < -radius || FuzzyEquals(distance, -radius) || distance > radius || FuzzyEquals(distance, radius)) {
+            return false; // Moving parallel to the pie, maybe along one of the sides.
+        } else {
+            alpha1 = alpha2 = 0; // Moving inside the pie's planes, gotta check if origin's inside the polygon.
+        }
+    } else {
+        alpha1 = (radius - distance) / cosAngle;
+        alpha2 = (-radius - distance) / cosAngle;
+        if (alpha1 > alpha2)
+            std::swap(alpha1, alpha2);
+        Assert(alpha1 < alpha2);
+
+        if (alpha2 < 0 || FuzzyIsNull(alpha2)) {
+            return false; // Ray is pointing away from the pie, even if ray origin is on the surface it's not a collision.
+        } else if (alpha1 > 0 || FuzzyIsNull(alpha1)) {
+            // Moving towards the pie and maybe touching it => maybe a collision, gotta check if
+            // the intersection point is in bounds.
+        } else {
+            // We're already inside the pie, gotta check for bounds.
+            alpha1 = alpha2 = 0;
+        }
+    }
+
+    Vec3f x = pos + alpha1 * dir;
+    if (face->Contains(x.ToInt(), model_idx, 0)) {
+        *outDistance = alpha1;
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -113,40 +192,52 @@ static bool CollideSphereWithFace(BLVFace *face, const Vec3f &pos, float radius,
     if (ignore_ethereal && face->Ethereal())
         return false;
 
-    // dot_product(dir, normal) is a cosine of an angle between them.
-    float cos_dir_normal = Dot(dir, face->pFacePlane.vNormal);
+    if (face->uNumVertices < 3)
+        return false; // Apparently this happens.
 
-    float pos_face_distance = face->pFacePlane.SignedDistanceTo(pos);
+    bool result = false;
+    float minDistance = std::numeric_limits<float>::max();
+    float distance;
 
-    // How deep into the model that the face belongs to we already are,
-    // positive value => actor's sphere already intersects the model.
-    float overshoot = -pos_face_distance + radius;
-    float move_distance = 0;
-    if (abs(overshoot) < radius) {
-        // We got here => we're not that deep into the model. Can just push us back a little.
-        move_distance = 0;
-    } else {
-        // We got here => we're already inside the model. Or way outside.
-        // We just say we overshot by radius. No idea why.
-        overshoot = radius;
+    auto updateStateAndReturnEarly = [&] {
+        minDistance = std::min(minDistance, distance);
+        if (distance == 0) {
+            *out_move_distance = 0;
+            return true;
+        } else {
+            result = true;
+            return false;
+        }
+    };
 
-        // Then this is a correction needed to bring us to the point where actor's sphere is just touching the face.
-        move_distance = overshoot / cos_dir_normal;
+    // Note that comparing distance with zero below is OK as that's the exact value that the functions return when
+    // the ray's origin is inside the primitive.
+
+    for (size_t i = 0; i < face->uNumVertices; i++) {
+        Vec3f point = face->Point(i, model_idx).ToFloat();
+        if (CollideRayWithSphere(pos, dir, point, radius, &distance))
+            if (updateStateAndReturnEarly())
+                return true;
     }
 
-    Vec3f new_pos =
-        pos + move_distance * dir - overshoot * face->pFacePlane.vNormal;
+    for (size_t i = 0, j = face->uNumVertices - 1; i < face->uNumVertices; j = i++) {
+        Vec3i p0 = face->Point(i, model_idx);
+        Vec3i p1 = face->Point(j, model_idx);
+        if (p0 == p1)
+            continue; // This happens.
 
-    if (!face->Contains(new_pos.ToInt(), model_idx))
-        return false; // We've just managed to slide past the face, so pretend no collision happened.
-
-    if (move_distance < 0) {
-        *out_move_distance = 0;
-    } else {
-        *out_move_distance = move_distance;
+        if (CollideRayWithCylinder(pos, dir, p0.ToFloat(), p1.ToFloat(), radius, &distance))
+            if (updateStateAndReturnEarly())
+                return true;
     }
 
-    return true;
+    if (CollideRayWithPie(pos, dir, face, model_idx, radius, &distance))
+        if (updateStateAndReturnEarly())
+            return true;
+
+    if (result)
+        *out_move_distance = minDistance;
+    return result;
 }
 
 /**
@@ -216,23 +307,16 @@ static void CollideBodyWithFace(BLVFace *face, int face_pid, bool ignore_etherea
     auto collide_once = [&](const Vec3f &old_pos, const Vec3f &new_pos, const Vec3f &dir, int radius) {
         float distance_old = face->pFacePlane.SignedDistanceTo(old_pos);
         float distance_new = face->pFacePlane.SignedDistanceTo(new_pos);
-        if (distance_old > 0 && (distance_old <= radius || distance_new <= radius) && distance_new <= distance_old) {
-            bool have_collision = false;
-            float move_distance = collision_state.move_distance;
-            if (CollideSphereWithFace(face, old_pos, radius, dir, &move_distance, ignore_ethereal, model_idx)) {
-                have_collision = true;
-            } else {
-                move_distance = collision_state.move_distance + radius;
-                if (CollidePointWithFace(face, old_pos, dir, &move_distance, model_idx)) {
-                    have_collision = true;
-                    move_distance -= radius;
-                }
-            }
+        if (distance_old < 0 || distance_new > radius)
+            return;
 
-            if (have_collision && move_distance < collision_state.adjusted_move_distance) {
-                collision_state.adjusted_move_distance = move_distance;
-                collision_state.pid = face_pid;
-            }
+        float move_distance = collision_state.move_distance;
+        if (!CollideSphereWithFace(face, old_pos, radius, dir, &move_distance, ignore_ethereal, model_idx))
+            return;
+
+        if (move_distance < collision_state.adjusted_move_distance) {
+            collision_state.adjusted_move_distance = move_distance;
+            collision_state.pid = face_pid;
         }
     };
 
