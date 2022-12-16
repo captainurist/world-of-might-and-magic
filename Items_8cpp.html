@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;e010a29</span>
+   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;9538cb2</span>
    </div>
   </td>
  </tr>
@@ -83,53 +83,51 @@ $(function() {
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h.html">Engine/Engine.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Localization_8h.html">Engine/Localization.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LOD_8h.html">Engine/LOD.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MapInfo_8h.html">Engine/MapInfo.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ItemEnchantment_8h.html">Engine/Objects/ItemEnchantment.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ItemTable_8h.html">Engine/Objects/ItemTable.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Monsters_8h.html">Engine/Objects/Monsters.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PlayerEnums_8h.html">Engine/Objects/PlayerEnums.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="OurMath_8h.html">Engine/OurMath.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Party_8h.html">Engine/Party.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FactionTable_8h.html">Engine/Tables/FactionTable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StorylineTextTable_8h.html">Engine/Tables/StorylineTextTable.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GUIButton_8h.html">GUI/GUIButton.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="UIHouses_8h.html">GUI/UI/UIHouses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MapAccess_8h.html">Utility/MapAccess.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b2a84063df1b9c7e128a26f945fbff6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a5b2a84063df1b9c7e128a26f945fbff6">Tokenize</a> (char *input, const char separator)</td></tr>
-<tr class="separator:a5b2a84063df1b9c7e128a26f945fbff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af40d6b8845d75fb6cbbfaf628b530e30"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#af40d6b8845d75fb6cbbfaf628b530e30">AddToMap</a> (std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt; &amp;maptoadd, int enchId, <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a> attrId, int bonusValue=0, uint16_t Player::*skillPtr=nullptr)</td></tr>
-<tr class="separator:af40d6b8845d75fb6cbbfaf628b530e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18efecf0621e2ea498d38e3af459df02"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a18efecf0621e2ea498d38e3af459df02">AddToMap</a> (std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt; &amp;maptoadd, int enchId, <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a> attrId, int bonusValue, unsigned __int16 Player::*skillPtr)</td></tr>
-<tr class="separator:a18efecf0621e2ea498d38e3af459df02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a799f25e1f6a9dd027983b2eaec0a4160"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a799f25e1f6a9dd027983b2eaec0a4160">GetItemTextureFilename</a> (char *pOut, signed int item_id, int index, int shoulder)</td></tr>
-<tr class="separator:a799f25e1f6a9dd027983b2eaec0a4160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdcf5a77988f85cbc574aa41936f264f"><td class="memTemplParams" colspan="2">template&lt;class Key , class ActualKey &gt; </td></tr>
+<tr class="memitem:afdcf5a77988f85cbc574aa41936f264f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#afdcf5a77988f85cbc574aa41936f264f">AddToMap</a> (std::map&lt; Key, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> &gt; &gt; &amp;map, ActualKey key, <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a> subkey, int bonusValue=0, uint16_t Player::*skillPtr=NULL)</td></tr>
+<tr class="separator:afdcf5a77988f85cbc574aa41936f264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab840295964185d144cd6af405fc5bfda"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#ab840295964185d144cd6af405fc5bfda">GetItemTextureFilename</a> (<a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a> item_id, int index, int shoulder)</td></tr>
+<tr class="separator:ab840295964185d144cd6af405fc5bfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1eed85d5a079febb247d7399bfd86b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSegment.html">Segment</a>&lt; <a class="el" href="ItemEnums_8h.html#ad20c3ee7b5967d80cee8e0ec3e061a9c">ITEM_TREASURE_LEVEL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#af1eed85d5a079febb247d7399bfd86b3">RemapTreasureLevel</a> (<a class="el" href="ItemEnums_8h.html#ad20c3ee7b5967d80cee8e0ec3e061a9c">ITEM_TREASURE_LEVEL</a> itemTreasureLevel, <a class="el" href="MapInfo_8h.html#aa5e8f9854586648a9b0c43f8572d84d1">MAP_TREASURE_LEVEL</a> mapTreasureLevel)</td></tr>
+<tr class="separator:af1eed85d5a079febb247d7399bfd86b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a884866cb1aba240306882d01856cab27"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::array&lt; char, 14 &gt;, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a884866cb1aba240306882d01856cab27">byte_4E8168</a></td></tr>
-<tr class="separator:a884866cb1aba240306882d01856cab27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d5a37b95e74c5a294efbfc9a1e7e082"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structItemGen.html">ItemGen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a8d5a37b95e74c5a294efbfc9a1e7e082">ptr_50C9A4_ItemToEnchant</a></td></tr>
 <tr class="separator:a8d5a37b95e74c5a294efbfc9a1e7e082"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf52bfff3807296d2b51dd2af081c59f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structItemsTable.html">ItemsTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#abf52bfff3807296d2b51dd2af081c59f">pItemsTable</a></td></tr>
-<tr class="separator:abf52bfff3807296d2b51dd2af081c59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5cd7aa4c901842aef87c3ae57f40b66"><td class="memItemLeft" align="right" valign="top">static std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#af5cd7aa4c901842aef87c3ae57f40b66">regularBonusMap</a></td></tr>
-<tr class="separator:af5cd7aa4c901842aef87c3ae57f40b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42e522adf6a98f2779058fe10ad2cbcb"><td class="memItemLeft" align="right" valign="top">static std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a42e522adf6a98f2779058fe10ad2cbcb">specialBonusMap</a></td></tr>
-<tr class="separator:a42e522adf6a98f2779058fe10ad2cbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14ead2af17b3826c8d750aa990531051"><td class="memItemLeft" align="right" valign="top">static std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a14ead2af17b3826c8d750aa990531051">artifactBonusMap</a></td></tr>
-<tr class="separator:a14ead2af17b3826c8d750aa990531051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d337a583e1a7315356c57d49bc34bf1"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structItemTable.html">ItemTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a9d337a583e1a7315356c57d49bc34bf1">pItemTable</a></td></tr>
+<tr class="separator:a9d337a583e1a7315356c57d49bc34bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db013bdacb4ac543eecbf8e365cb22d"><td class="memItemLeft" align="right" valign="top">static std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a9db013bdacb4ac543eecbf8e365cb22d">regularBonusMap</a></td></tr>
+<tr class="separator:a9db013bdacb4ac543eecbf8e365cb22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57bac83bffcf0c2e710375047111bcbd"><td class="memItemLeft" align="right" valign="top">static std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a57bac83bffcf0c2e710375047111bcbd">specialBonusMap</a></td></tr>
+<tr class="separator:a57bac83bffcf0c2e710375047111bcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67fb39a89f1f86e0c951be6967fe2c9"><td class="memItemLeft" align="right" valign="top">static std::map&lt; <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#ae67fb39a89f1f86e0c951be6967fe2c9">artifactBonusMap</a></td></tr>
+<tr class="separator:ae67fb39a89f1f86e0c951be6967fe2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6de1b88600bd5a5ffb7917e09be48684"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Items_8cpp.html#a6de1b88600bd5a5ffb7917e09be48684">itemTextureIdByItemId</a></td></tr>
+<tr class="separator:a6de1b88600bd5a5ffb7917e09be48684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a18efecf0621e2ea498d38e3af459df02" name="a18efecf0621e2ea498d38e3af459df02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18efecf0621e2ea498d38e3af459df02">&#9670;&#160;</a></span>AddToMap() <span class="overload">[1/2]</span></h2>
+<a id="afdcf5a77988f85cbc574aa41936f264f" name="afdcf5a77988f85cbc574aa41936f264f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdcf5a77988f85cbc574aa41936f264f">&#9670;&#160;</a></span>AddToMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class Key , class ActualKey &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -137,74 +135,20 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void AddToMap </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>maptoadd</em>, </td>
+          <td class="paramtype">std::map&lt; Key, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>enchId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>&#160;</td>
-          <td class="paramname"><em>attrId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bonusValue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned __int16 Player::*&#160;</td>
-          <td class="paramname"><em>skillPtr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af40d6b8845d75fb6cbbfaf628b530e30" name="af40d6b8845d75fb6cbbfaf628b530e30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af40d6b8845d75fb6cbbfaf628b530e30">&#9670;&#160;</a></span>AddToMap() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void AddToMap </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; int, std::map&lt; <a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a> * &gt; * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>maptoadd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>enchId</em>, </td>
+          <td class="paramtype">ActualKey&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>&#160;</td>
-          <td class="paramname"><em>attrId</em>, </td>
+          <td class="paramname"><em>subkey</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -216,7 +160,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t Player::*&#160;</td>
-          <td class="paramname"><em>skillPtr</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>skillPtr</em> = <code>NULL</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -233,22 +177,16 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a799f25e1f6a9dd027983b2eaec0a4160" name="a799f25e1f6a9dd027983b2eaec0a4160"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a799f25e1f6a9dd027983b2eaec0a4160">&#9670;&#160;</a></span>GetItemTextureFilename()</h2>
+<a id="ab840295964185d144cd6af405fc5bfda" name="ab840295964185d144cd6af405fc5bfda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab840295964185d144cd6af405fc5bfda">&#9670;&#160;</a></span>GetItemTextureFilename()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int GetItemTextureFilename </td>
+          <td class="memname">std::string GetItemTextureFilename </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>pOut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">signed int&#160;</td>
+          <td class="paramtype"><a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>&#160;</td>
           <td class="paramname"><em>item_id</em>, </td>
         </tr>
         <tr>
@@ -273,23 +211,23 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b2a84063df1b9c7e128a26f945fbff6" name="a5b2a84063df1b9c7e128a26f945fbff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b2a84063df1b9c7e128a26f945fbff6">&#9670;&#160;</a></span>Tokenize()</h2>
+<a id="af1eed85d5a079febb247d7399bfd86b3" name="af1eed85d5a079febb247d7399bfd86b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1eed85d5a079febb247d7399bfd86b3">&#9670;&#160;</a></span>RemapTreasureLevel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; char * &gt; Tokenize </td>
+          <td class="memname"><a class="el" href="classSegment.html">Segment</a>&lt; <a class="el" href="ItemEnums_8h.html#ad20c3ee7b5967d80cee8e0ec3e061a9c">ITEM_TREASURE_LEVEL</a> &gt; RemapTreasureLevel </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
+          <td class="paramtype"><a class="el" href="ItemEnums_8h.html#ad20c3ee7b5967d80cee8e0ec3e061a9c">ITEM_TREASURE_LEVEL</a>&#160;</td>
+          <td class="paramname"><em>itemTreasureLevel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char&#160;</td>
-          <td class="paramname"><em>separator</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="MapInfo_8h.html#aa5e8f9854586648a9b0c43f8572d84d1">MAP_TREASURE_LEVEL</a>&#160;</td>
+          <td class="paramname"><em>mapTreasureLevel</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -302,8 +240,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a14ead2af17b3826c8d750aa990531051" name="a14ead2af17b3826c8d750aa990531051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14ead2af17b3826c8d750aa990531051">&#9670;&#160;</a></span>artifactBonusMap</h2>
+<a id="ae67fb39a89f1f86e0c951be6967fe2c9" name="ae67fb39a89f1f86e0c951be6967fe2c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67fb39a89f1f86e0c951be6967fe2c9">&#9670;&#160;</a></span>artifactBonusMap</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +250,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;int, std::map&lt;<a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a>*&gt;*&gt; artifactBonusMap</td>
+          <td class="memname">std::map&lt;<a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>, std::map&lt;<a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a>&gt; &gt; artifactBonusMap</td>
         </tr>
       </table>
   </td>
@@ -324,37 +262,89 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a884866cb1aba240306882d01856cab27" name="a884866cb1aba240306882d01856cab27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a884866cb1aba240306882d01856cab27">&#9670;&#160;</a></span>byte_4E8168</h2>
+<a id="a6de1b88600bd5a5ffb7917e09be48684" name="a6de1b88600bd5a5ffb7917e09be48684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6de1b88600bd5a5ffb7917e09be48684">&#9670;&#160;</a></span>itemTextureIdByItemId</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;std::array&lt;char, 14&gt;, 7&gt; byte_4E8168</td>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>&gt; itemTextureIdByItemId</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {{  </div>
-<div class="line">    {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}},</div>
-<div class="line">    {{1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}},</div>
-<div class="line">    {{1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}},</div>
-<div class="line">    {{2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4}},</div>
-<div class="line">    {{2, 2, 2, 2, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5}},</div>
-<div class="line">    {{2, 2, 2, 2, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6}},</div>
-<div class="line">    {{2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}}</div>
-<div class="line">}}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aeb40a9fba355baa4dca6c57038ea081a">ITEM_RELIC_HARECKS_LEATHER</a>,       <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a81ec201f7a975589152cf6df6ff7c982">ITEM_POTION_STONESKIN</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a2716c44dd0d7b2f6d7cb2fc51a118ce3">ITEM_ARTIFACT_YORUBA</a>,             <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a0794405388288b4d16d4d80859648560">ITEM_POTION_HARDEN_ITEM</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a5ba21bd1b623bced958aa00a530ff16f">ITEM_ARTIFACT_GOVERNORS_ARMOR</a>,    <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a8503f0fc2e24b18a1c69543a05c6f9db">ITEM_POTION_WATER_BREATHING</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a5f2474493df01ec8ea4ba3898ef9f83b">ITEM_ARTIFACT_ELVEN_CHAINMAIL</a>,    <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a784b29f6c7dea37e8d7441e67042b2ad">ITEM_FINE_CHAIN_MAIL</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa97aa2b62a697bd86831aa3b75bcc31f">ITEM_ARTIFACT_SEVEN_LEAGUE_BOOTS</a>, <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5af3bdbf65594801f1267d23d315d49f0a">ITEM_SCROLL_FEATHER_FALL</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ad8fedf943dd9760a6a4a9eef9391a505">ITEM_RELIC_TALEDONS_HELM</a>,         <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5adb86497e619f01d8c6c454f28d5c579f">ITEM_POTION_CURE_INSANITY</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a61b21ab8984dab1e9581b2a9e4f67a91">ITEM_RELIC_SCHOLARS_CAP</a>,          <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a8ee50e9838fa22d5193d56c2d926ec0a">ITEM_POTION_MIGHT_BOOST</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a4b675ebcb489ddfc0f041207d73e05de">ITEM_RELIC_PHYNAXIAN_CROWN</a>,       <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ad6bbd82abf2931feee85eb23015d6bcb">ITEM_POTION_INTELLECT_BOOST</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ab6c2abb6b39fe8e66e3eba579d7fa733">ITEM_ARTIFACT_MINDS_EYE</a>,          <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a498c266af3303e76676a0b768551a318">ITEM_MOGRED_HELM</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aefb1de17b2baeeed647464ea2f743c17">ITEM_RARE_SHADOWS_MASK</a>,           <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a9305bc95975b48480a4da6b9d7eab6bc">ITEM_SCROLL_DETECT_LIFE</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a6151375b87f42580e0c4cc8aaa5f5954">ITEM_RELIC_TITANS_BELT</a>,           <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa5b18fa0a32afc2085000147209ff275">ITEM_SCROLL_WATER_RESISTANCE</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ae99eecd2dd272d1568e39bf40854a565">ITEM_ARTIFACT_HEROS_BELT</a>,         <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ae8b7aba5eab1ce544cbcf2bdecfef885">ITEM_GILDED_BELT</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a09846a5b2230dd400c57ed253c2621c5">ITEM_RELIC_TWILIGHT</a>,              <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a7ffdf23766bfedd96a4cc0839d9beb44">ITEM_SCROLL_ICE_BOLT</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a272e776f06c46df46d17ff0ae37df756">ITEM_ARTIFACT_CLOAK_OF_THE_SHEEP</a>, <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5af1e6c6cae364cad5748b7693358ff16f">ITEM_SCROLL_TOWN_PORTAL</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ac89d7754dac7baf274042c9d2336a171">ITEM_RARE_SUN_CLOAK</a>,              <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa7579b8ed56223c6f169dabb74b26cdc">ITEM_SCROLL_TURN_UNDEAD</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ae8cbd53ff8638753da3442fd85bbf6d0">ITEM_RARE_MOON_CLOAK</a>,             <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5af4350440dd201461a8184408c7f95d56">ITEM_SCROLL_REMOVE_CURSE</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a9e87e5e1f2314309519189596c5562c7">ITEM_RARE_VAMPIRES_CAPE</a>,          <a class="code hl_enumvalue" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5abc33c6b647fd00aed77be09dc2c5053a">ITEM_SCROLL_HEROISM</a> }</div>
+<div class="line">}</div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a0794405388288b4d16d4d80859648560"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a0794405388288b4d16d4d80859648560">ITEM_TYPE::ITEM_POTION_HARDEN_ITEM</a></div><div class="ttdeci">@ ITEM_POTION_HARDEN_ITEM</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a09846a5b2230dd400c57ed253c2621c5"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a09846a5b2230dd400c57ed253c2621c5">ITEM_TYPE::ITEM_RELIC_TWILIGHT</a></div><div class="ttdeci">@ ITEM_RELIC_TWILIGHT</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a2716c44dd0d7b2f6d7cb2fc51a118ce3"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a2716c44dd0d7b2f6d7cb2fc51a118ce3">ITEM_TYPE::ITEM_ARTIFACT_YORUBA</a></div><div class="ttdeci">@ ITEM_ARTIFACT_YORUBA</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a272e776f06c46df46d17ff0ae37df756"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a272e776f06c46df46d17ff0ae37df756">ITEM_TYPE::ITEM_ARTIFACT_CLOAK_OF_THE_SHEEP</a></div><div class="ttdeci">@ ITEM_ARTIFACT_CLOAK_OF_THE_SHEEP</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a498c266af3303e76676a0b768551a318"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a498c266af3303e76676a0b768551a318">ITEM_TYPE::ITEM_MOGRED_HELM</a></div><div class="ttdeci">@ ITEM_MOGRED_HELM</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a4b675ebcb489ddfc0f041207d73e05de"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a4b675ebcb489ddfc0f041207d73e05de">ITEM_TYPE::ITEM_RELIC_PHYNAXIAN_CROWN</a></div><div class="ttdeci">@ ITEM_RELIC_PHYNAXIAN_CROWN</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a5ba21bd1b623bced958aa00a530ff16f"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a5ba21bd1b623bced958aa00a530ff16f">ITEM_TYPE::ITEM_ARTIFACT_GOVERNORS_ARMOR</a></div><div class="ttdeci">@ ITEM_ARTIFACT_GOVERNORS_ARMOR</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a5f2474493df01ec8ea4ba3898ef9f83b"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a5f2474493df01ec8ea4ba3898ef9f83b">ITEM_TYPE::ITEM_ARTIFACT_ELVEN_CHAINMAIL</a></div><div class="ttdeci">@ ITEM_ARTIFACT_ELVEN_CHAINMAIL</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a6151375b87f42580e0c4cc8aaa5f5954"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a6151375b87f42580e0c4cc8aaa5f5954">ITEM_TYPE::ITEM_RELIC_TITANS_BELT</a></div><div class="ttdeci">@ ITEM_RELIC_TITANS_BELT</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a61b21ab8984dab1e9581b2a9e4f67a91"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a61b21ab8984dab1e9581b2a9e4f67a91">ITEM_TYPE::ITEM_RELIC_SCHOLARS_CAP</a></div><div class="ttdeci">@ ITEM_RELIC_SCHOLARS_CAP</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a784b29f6c7dea37e8d7441e67042b2ad"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a784b29f6c7dea37e8d7441e67042b2ad">ITEM_TYPE::ITEM_FINE_CHAIN_MAIL</a></div><div class="ttdeci">@ ITEM_FINE_CHAIN_MAIL</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a7ffdf23766bfedd96a4cc0839d9beb44"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a7ffdf23766bfedd96a4cc0839d9beb44">ITEM_TYPE::ITEM_SCROLL_ICE_BOLT</a></div><div class="ttdeci">@ ITEM_SCROLL_ICE_BOLT</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a81ec201f7a975589152cf6df6ff7c982"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a81ec201f7a975589152cf6df6ff7c982">ITEM_TYPE::ITEM_POTION_STONESKIN</a></div><div class="ttdeci">@ ITEM_POTION_STONESKIN</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a8503f0fc2e24b18a1c69543a05c6f9db"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a8503f0fc2e24b18a1c69543a05c6f9db">ITEM_TYPE::ITEM_POTION_WATER_BREATHING</a></div><div class="ttdeci">@ ITEM_POTION_WATER_BREATHING</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a8ee50e9838fa22d5193d56c2d926ec0a"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a8ee50e9838fa22d5193d56c2d926ec0a">ITEM_TYPE::ITEM_POTION_MIGHT_BOOST</a></div><div class="ttdeci">@ ITEM_POTION_MIGHT_BOOST</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a9305bc95975b48480a4da6b9d7eab6bc"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a9305bc95975b48480a4da6b9d7eab6bc">ITEM_TYPE::ITEM_SCROLL_DETECT_LIFE</a></div><div class="ttdeci">@ ITEM_SCROLL_DETECT_LIFE</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5a9e87e5e1f2314309519189596c5562c7"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5a9e87e5e1f2314309519189596c5562c7">ITEM_TYPE::ITEM_RARE_VAMPIRES_CAPE</a></div><div class="ttdeci">@ ITEM_RARE_VAMPIRES_CAPE</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5aa5b18fa0a32afc2085000147209ff275"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa5b18fa0a32afc2085000147209ff275">ITEM_TYPE::ITEM_SCROLL_WATER_RESISTANCE</a></div><div class="ttdeci">@ ITEM_SCROLL_WATER_RESISTANCE</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5aa7579b8ed56223c6f169dabb74b26cdc"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa7579b8ed56223c6f169dabb74b26cdc">ITEM_TYPE::ITEM_SCROLL_TURN_UNDEAD</a></div><div class="ttdeci">@ ITEM_SCROLL_TURN_UNDEAD</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5aa97aa2b62a697bd86831aa3b75bcc31f"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa97aa2b62a697bd86831aa3b75bcc31f">ITEM_TYPE::ITEM_ARTIFACT_SEVEN_LEAGUE_BOOTS</a></div><div class="ttdeci">@ ITEM_ARTIFACT_SEVEN_LEAGUE_BOOTS</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ab6c2abb6b39fe8e66e3eba579d7fa733"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ab6c2abb6b39fe8e66e3eba579d7fa733">ITEM_TYPE::ITEM_ARTIFACT_MINDS_EYE</a></div><div class="ttdeci">@ ITEM_ARTIFACT_MINDS_EYE</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5abc33c6b647fd00aed77be09dc2c5053a"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5abc33c6b647fd00aed77be09dc2c5053a">ITEM_TYPE::ITEM_SCROLL_HEROISM</a></div><div class="ttdeci">@ ITEM_SCROLL_HEROISM</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ac89d7754dac7baf274042c9d2336a171"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ac89d7754dac7baf274042c9d2336a171">ITEM_TYPE::ITEM_RARE_SUN_CLOAK</a></div><div class="ttdeci">@ ITEM_RARE_SUN_CLOAK</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ad6bbd82abf2931feee85eb23015d6bcb"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ad6bbd82abf2931feee85eb23015d6bcb">ITEM_TYPE::ITEM_POTION_INTELLECT_BOOST</a></div><div class="ttdeci">@ ITEM_POTION_INTELLECT_BOOST</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ad8fedf943dd9760a6a4a9eef9391a505"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ad8fedf943dd9760a6a4a9eef9391a505">ITEM_TYPE::ITEM_RELIC_TALEDONS_HELM</a></div><div class="ttdeci">@ ITEM_RELIC_TALEDONS_HELM</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5adb86497e619f01d8c6c454f28d5c579f"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5adb86497e619f01d8c6c454f28d5c579f">ITEM_TYPE::ITEM_POTION_CURE_INSANITY</a></div><div class="ttdeci">@ ITEM_POTION_CURE_INSANITY</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ae8b7aba5eab1ce544cbcf2bdecfef885"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ae8b7aba5eab1ce544cbcf2bdecfef885">ITEM_TYPE::ITEM_GILDED_BELT</a></div><div class="ttdeci">@ ITEM_GILDED_BELT</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ae8cbd53ff8638753da3442fd85bbf6d0"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ae8cbd53ff8638753da3442fd85bbf6d0">ITEM_TYPE::ITEM_RARE_MOON_CLOAK</a></div><div class="ttdeci">@ ITEM_RARE_MOON_CLOAK</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5ae99eecd2dd272d1568e39bf40854a565"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5ae99eecd2dd272d1568e39bf40854a565">ITEM_TYPE::ITEM_ARTIFACT_HEROS_BELT</a></div><div class="ttdeci">@ ITEM_ARTIFACT_HEROS_BELT</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5aeb40a9fba355baa4dca6c57038ea081a"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aeb40a9fba355baa4dca6c57038ea081a">ITEM_TYPE::ITEM_RELIC_HARECKS_LEATHER</a></div><div class="ttdeci">@ ITEM_RELIC_HARECKS_LEATHER</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5aefb1de17b2baeeed647464ea2f743c17"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aefb1de17b2baeeed647464ea2f743c17">ITEM_TYPE::ITEM_RARE_SHADOWS_MASK</a></div><div class="ttdeci">@ ITEM_RARE_SHADOWS_MASK</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5af1e6c6cae364cad5748b7693358ff16f"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5af1e6c6cae364cad5748b7693358ff16f">ITEM_TYPE::ITEM_SCROLL_TOWN_PORTAL</a></div><div class="ttdeci">@ ITEM_SCROLL_TOWN_PORTAL</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5af3bdbf65594801f1267d23d315d49f0a"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5af3bdbf65594801f1267d23d315d49f0a">ITEM_TYPE::ITEM_SCROLL_FEATHER_FALL</a></div><div class="ttdeci">@ ITEM_SCROLL_FEATHER_FALL</div></div>
+<div class="ttc" id="aItemEnums_8h_html_a3423a9b7221dd99ce926bcad62ae96a5af4350440dd201461a8184408c7f95d56"><div class="ttname"><a href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5af4350440dd201461a8184408c7f95d56">ITEM_TYPE::ITEM_SCROLL_REMOVE_CURSE</a></div><div class="ttdeci">@ ITEM_SCROLL_REMOVE_CURSE</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="abf52bfff3807296d2b51dd2af081c59f" name="abf52bfff3807296d2b51dd2af081c59f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf52bfff3807296d2b51dd2af081c59f">&#9670;&#160;</a></span>pItemsTable</h2>
+<a id="a9d337a583e1a7315356c57d49bc34bf1" name="a9d337a583e1a7315356c57d49bc34bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d337a583e1a7315356c57d49bc34bf1">&#9670;&#160;</a></span>pItemTable</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structItemsTable.html">ItemsTable</a>* pItemsTable</td>
+          <td class="memname">struct <a class="el" href="structItemTable.html">ItemTable</a>* pItemTable</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -375,8 +365,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af5cd7aa4c901842aef87c3ae57f40b66" name="af5cd7aa4c901842aef87c3ae57f40b66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5cd7aa4c901842aef87c3ae57f40b66">&#9670;&#160;</a></span>regularBonusMap</h2>
+<a id="a9db013bdacb4ac543eecbf8e365cb22d" name="a9db013bdacb4ac543eecbf8e365cb22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db013bdacb4ac543eecbf8e365cb22d">&#9670;&#160;</a></span>regularBonusMap</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,7 +375,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;int, std::map&lt;<a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a>*&gt;*&gt; regularBonusMap</td>
+          <td class="memname">std::map&lt;int, std::map&lt;<a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a>&gt; &gt; regularBonusMap</td>
         </tr>
       </table>
   </td>
@@ -397,8 +387,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a42e522adf6a98f2779058fe10ad2cbcb" name="a42e522adf6a98f2779058fe10ad2cbcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42e522adf6a98f2779058fe10ad2cbcb">&#9670;&#160;</a></span>specialBonusMap</h2>
+<a id="a57bac83bffcf0c2e710375047111bcbd" name="a57bac83bffcf0c2e710375047111bcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57bac83bffcf0c2e710375047111bcbd">&#9670;&#160;</a></span>specialBonusMap</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,7 +397,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;int, std::map&lt;<a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a>*&gt;*&gt; specialBonusMap</td>
+          <td class="memname">std::map&lt;int, std::map&lt;<a class="el" href="PlayerEnums_8h.html#af7a3ec7aad73ec22b61f03b17390d80a">CHARACTER_ATTRIBUTE_TYPE</a>, <a class="el" href="structCEnchantment.html">CEnchantment</a>&gt; &gt; specialBonusMap</td>
         </tr>
       </table>
   </td>

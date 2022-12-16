@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgbcolor_0',['RGBColor',['../GUIWindow_8cpp.html#acbc9da7672f18f747dcc88210702a6e9',1,'GUIWindow.cpp']]]
+  ['marginsi_0',['Marginsi',['../Margins_8h.html#af54b4ff4492cf2e8fcef8f00c26bb08e',1,'Margins.h']]]
 ];

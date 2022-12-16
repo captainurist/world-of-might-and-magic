@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;e010a29</span>
+   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;9538cb2</span>
    </div>
   </td>
  </tr>
@@ -92,6 +92,7 @@ $(function() {
 <code>#include &lt;glm.hpp&gt;</code><br />
 <code>#include &lt;glm/glm/gtc/matrix_transform.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h.html">Engine/Engine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EngineGlobals_8h.html">Engine/EngineGlobals.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BspRenderer_8h.html">Engine/Graphics/BspRenderer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Image_8h.html">Engine/Graphics/Image.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ImageLoader_8h.html">Engine/Graphics/ImageLoader.h</a>&quot;</code><br />
@@ -111,6 +112,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="Viewport_8h.html">Engine/Graphics/Viewport.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vis_8h.html">Engine/Graphics/Vis.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Weather_8h.html">Engine/Graphics/Weather.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PaletteManager_8h.html">Engine/Graphics/PaletteManager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Actor_8h.html">Engine/Objects/Actor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ObjectList_8h.html">Engine/Objects/ObjectList.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="SpriteObject_8h.html">Engine/Objects/SpriteObject.h</a>&quot;</code><br />
@@ -119,7 +121,9 @@ $(function() {
 <code>#include &quot;<a class="el" href="SpellFxRenderer_8h.html">Engine/SpellFxRenderer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Arcomage_8h.html">Arcomage/Arcomage.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Api_8h.html">Platform/Api.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OSWindow_8h.html">Platform/OSWindow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Size_8h.html">Utility/Geometry/Size.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Memory_8h.html">Utility/Memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TrigLut_8h.html">Utility/Math/TrigLut.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -143,8 +147,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad66aefaf313123d00ece06f54749f1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#ad66aefaf313123d00ece06f54749f1dd">GL_Check_Errors</a> (bool breakonerr=true)</td></tr>
-<tr class="separator:ad66aefaf313123d00ece06f54749f1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1acc1a9ced112b44e0f5cfac1576936a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#a1acc1a9ced112b44e0f5cfac1576936a">GL_Check_Errors</a> (void *ret, const char *name, GLADapiproc apiproc, int len_args,...)</td></tr>
+<tr class="separator:a1acc1a9ced112b44e0f5cfac1576936a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99692fd7f5691c536b66eae01c931b01"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#a99692fd7f5691c536b66eae01c931b01">BlendColors</a> (unsigned int a1, unsigned int a2)</td></tr>
 <tr class="separator:a99692fd7f5691c536b66eae01c931b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -168,6 +172,8 @@ Variables</h2></td></tr>
 <tr class="separator:aff3f9230007a6151608f5bc0e1a40b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7722562f00abbc88c6d6dfc91e713986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRenderVertexSoft.html">RenderVertexSoft</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#a7722562f00abbc88c6d6dfc91e713986">array_507D30</a> [50]</td></tr>
 <tr class="separator:a7722562f00abbc88c6d6dfc91e713986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776a07ab498286a9abe8032e72ad628f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Size_8h.html#a075755610ebd937662bd46b0703fbabf">Sizei</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#a776a07ab498286a9abe8032e72ad628f">output</a> = {0, 0}</td></tr>
+<tr class="separator:a776a07ab498286a9abe8032e72ad628f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18031432193548d2f8ddabdc9c38f2e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlinesverts.html">linesverts</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#a18031432193548d2f8ddabdc9c38f2e0">lineshaderstore</a> [2000] = {}</td></tr>
 <tr class="separator:a18031432193548d2f8ddabdc9c38f2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7ca8e502ab3eb959994252d2ecdb6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderOpenGL_8cpp.html#aeb7ca8e502ab3eb959994252d2ecdb6c">linevertscnt</a> = 0</td></tr>
@@ -255,8 +261,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad66aefaf313123d00ece06f54749f1dd" name="ad66aefaf313123d00ece06f54749f1dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad66aefaf313123d00ece06f54749f1dd">&#9670;&#160;</a></span>GL_Check_Errors()</h2>
+<a id="a1acc1a9ced112b44e0f5cfac1576936a" name="a1acc1a9ced112b44e0f5cfac1576936a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1acc1a9ced112b44e0f5cfac1576936a">&#9670;&#160;</a></span>GL_Check_Errors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,9 +270,37 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void GL_Check_Errors </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>breakonerr</em> = <code>true</code></td><td>)</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLADapiproc&#160;</td>
+          <td class="paramname"><em>apiproc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -478,6 +512,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structGLshaderverts.html">GLshaderverts</a>* outbuildshaderstore[16] = { nullptr }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a776a07ab498286a9abe8032e72ad628f" name="a776a07ab498286a9abe8032e72ad628f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a776a07ab498286a9abe8032e72ad628f">&#9670;&#160;</a></span>output</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Size_8h.html#a075755610ebd937662bd46b0703fbabf">Sizei</a> output = {0, 0}</td>
         </tr>
       </table>
 </div><div class="memdoc">

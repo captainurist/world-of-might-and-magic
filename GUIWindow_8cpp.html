@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;e010a29</span>
+   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;9538cb2</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,7 @@ $(function() {
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h.html">Engine/Engine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EngineGlobals_8h.html">Engine/EngineGlobals.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AssetsManager_8h.html">Engine/AssetsManager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Autonotes_8h.html">Engine/Autonotes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Awards_8h.html">Engine/Awards.h</a>&quot;</code><br />
@@ -108,10 +109,8 @@ $(function() {
 <code>#include &quot;<a class="el" href="Time_8h.html">Engine/Time.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GUIButton_8h.html">GUI/GUIButton.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GUIFont_8h.html">GUI/GUIFont.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="UIArena_8h.html">GUI/UI/UIArena.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="UIBooks_8h.html">GUI/UI/UIBooks.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="UICharacter_8h.html">GUI/UI/UICharacter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="UIDialogue_8h.html">GUI/UI/UIDialogue.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="UIGame_8h.html">GUI/UI/UIGame.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="UIHouses_8h.html">GUI/UI/UIHouses.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="UIPopup_8h.html">GUI/UI/UIPopup.h</a>&quot;</code><br />
@@ -119,8 +118,8 @@ $(function() {
 <code>#include &quot;<a class="el" href="InputAction_8h.html">Io/InputAction.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Mouse_8h.html">Io/Mouse.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AudioPlayer_8h.html">Media/Audio/AudioPlayer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MediaPlayer_8h.html">Media/MediaPlayer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Api_8h.html">Platform/Api.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OSWindow_8h.html">Platform/OSWindow.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -136,18 +135,18 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a002df67ce4902edee123ff8539c16ac2"><td class="memItemLeft" align="right" valign="top">const wchar_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a002df67ce4902edee123ff8539c16ac2">MENU_STATE_to_string</a> (<a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a> m)</td></tr>
+<tr class="memitem:a002df67ce4902edee123ff8539c16ac2"><td class="memItemLeft" align="right" valign="top">const wchar_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a002df67ce4902edee123ff8539c16ac2">MENU_STATE_to_string</a> (<a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a> m)</td></tr>
 <tr class="separator:a002df67ce4902edee123ff8539c16ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca0ff8541e8260e43b99836c51395283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#aca0ff8541e8260e43b99836c51395283">SetCurrentMenuID</a> (<a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a> uMenu)</td></tr>
+<tr class="memitem:aca0ff8541e8260e43b99836c51395283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#aca0ff8541e8260e43b99836c51395283">SetCurrentMenuID</a> (<a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a> uMenu)</td></tr>
 <tr class="separator:aca0ff8541e8260e43b99836c51395283"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a839bc8361ffe7444793beceebebcb228"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a839bc8361ffe7444793beceebebcb228">GetCurrentMenuID</a> ()</td></tr>
+<tr class="memitem:a839bc8361ffe7444793beceebebcb228"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a839bc8361ffe7444793beceebebcb228">GetCurrentMenuID</a> ()</td></tr>
 <tr class="separator:a839bc8361ffe7444793beceebebcb228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6945bcb6854c648afd995364124e3e17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a6945bcb6854c648afd995364124e3e17">PauseGameDrawing</a> ()</td></tr>
 <tr class="separator:a6945bcb6854c648afd995364124e3e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a466c4d559ebbbc754399b7375d9998f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a466c4d559ebbbc754399b7375d9998f1">GUI_ReplaceHotkey</a> (GameKey oldKey, GameKey newKey, char bFirstCall)</td></tr>
-<tr class="separator:a466c4d559ebbbc754399b7375d9998f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b666c917f44b5f7618d3aef4648e62b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIButton.html">GUIButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a5b666c917f44b5f7618d3aef4648e62b">GUI_HandleHotkey</a> (GameKey <a class="el" href="structhotkey.html">hotkey</a>)</td></tr>
-<tr class="separator:a5b666c917f44b5f7618d3aef4648e62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184fb72ca77fd7278ec6cde7b50ae905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a184fb72ca77fd7278ec6cde7b50ae905">GUI_ReplaceHotkey</a> (<a class="el" href="PlatformKey_8h.html#a2ba59747730ab559dd1191f51081eecc">PlatformKey</a> oldKey, <a class="el" href="PlatformKey_8h.html#a2ba59747730ab559dd1191f51081eecc">PlatformKey</a> newKey, char bFirstCall)</td></tr>
+<tr class="separator:a184fb72ca77fd7278ec6cde7b50ae905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd07d3cdc8b1265cd0ecc8e46005eef4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIButton.html">GUIButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#afd07d3cdc8b1265cd0ecc8e46005eef4">GUI_HandleHotkey</a> (<a class="el" href="PlatformKey_8h.html#a2ba59747730ab559dd1191f51081eecc">PlatformKey</a> <a class="el" href="structhotkey.html">hotkey</a>)</td></tr>
+<tr class="separator:afd07d3cdc8b1265cd0ecc8e46005eef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9687bf16d9ab309d1827aaa993af4ee"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#ad9687bf16d9ab309d1827aaa993af4ee">MakeDateTimeString</a> (<a class="el" href="structGameTime.html">GameTime</a> time)</td></tr>
 <tr class="separator:ad9687bf16d9ab309d1827aaa993af4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5336f922a30d07a89cd895ceeb7f8eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a5336f922a30d07a89cd895ceeb7f8eb4">DrawJoinGuildWindow</a> (<a class="el" href="GUIWindow_8h.html#ad5b17819485bfe6ede8299978e6f0c34">GUILD_ID</a> guild_id)</td></tr>
@@ -158,18 +157,18 @@ Functions</h2></td></tr>
 <tr class="separator:a9cafb995f3f6b03139380e5fb4fee184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a654d97d977e64feddb452cb78523a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a88a654d97d977e64feddb452cb78523a">CreateScrollWindow</a> ()</td></tr>
 <tr class="separator:a88a654d97d977e64feddb452cb78523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a358b41a6dd45056bcadd1cd7812a0f39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a358b41a6dd45056bcadd1cd7812a0f39">CreateMsgScrollWindow</a> (signed int mscroll_id)</td></tr>
-<tr class="separator:a358b41a6dd45056bcadd1cd7812a0f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9cc377e0440b592cae99c29bec8c29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a2c9cc377e0440b592cae99c29bec8c29">CreateMsgScrollWindow</a> (<a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a> mscroll_id)</td></tr>
+<tr class="separator:a2c9cc377e0440b592cae99c29bec8c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a221404912d4cdb0dc2bb25b45fb6a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a9a221404912d4cdb0dc2bb25b45fb6a3">free_book_subwindow</a> ()</td></tr>
 <tr class="separator:a9a221404912d4cdb0dc2bb25b45fb6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3146e8710350a4cfa1f0315a8e85b33e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a3146e8710350a4cfa1f0315a8e85b33e">SetUserInterface</a> (<a class="el" href="Party_8h.html#ad55d82c9cec54b99b21cdea81cfcbf7e">PartyAlignment</a> align, bool bReplace)</td></tr>
+<tr class="memitem:a3146e8710350a4cfa1f0315a8e85b33e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a3146e8710350a4cfa1f0315a8e85b33e">SetUserInterface</a> (<a class="el" href="Party_8h.html#a1d55b380c0ae0f422472f1de19d01e36">PartyAlignment</a> align, bool bReplace)</td></tr>
 <tr class="separator:a3146e8710350a4cfa1f0315a8e85b33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a035c6832c1355c22e9f5ac3a19e0f844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a035c6832c1355c22e9f5ac3a19e0f844">DrawBuff_remaining_time_string</a> (int uY, <a class="el" href="classGUIWindow.html">GUIWindow</a> *<a class="el" href="OSWindow_8cpp.html#adca3af5e71934d0b3a17fc2b75ea1b75">window</a>, <a class="el" href="structGameTime.html">GameTime</a> remaining_time, <a class="el" href="classGUIFont.html">GUIFont</a> *Font)</td></tr>
+<tr class="memitem:a035c6832c1355c22e9f5ac3a19e0f844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a035c6832c1355c22e9f5ac3a19e0f844">DrawBuff_remaining_time_string</a> (int uY, <a class="el" href="classGUIWindow.html">GUIWindow</a> *<a class="el" href="EngineGlobals_8cpp.html#a88500cd1785fee2e88c7a54241cb6a4e">window</a>, <a class="el" href="structGameTime.html">GameTime</a> remaining_time, <a class="el" href="classGUIFont.html">GUIFont</a> *Font)</td></tr>
 <tr class="separator:a035c6832c1355c22e9f5ac3a19e0f844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75eca7bd9f867fb443ed0d45ca438b6e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a75eca7bd9f867fb443ed0d45ca438b6e">sub_4637E0_is_there_popup_onscreen</a> ()</td></tr>
 <tr class="separator:a75eca7bd9f867fb443ed0d45ca438b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0711e63b702cbbce669cc2e1e15db9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a2b0711e63b702cbbce669cc2e1e15db9">GetSkillColor</a> (unsigned int uPlayerClass, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5">PLAYER_SKILL_TYPE</a> uPlayerSkillType, signed int skill_level)</td></tr>
-<tr class="separator:a2b0711e63b702cbbce669cc2e1e15db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5f09184e327ea7912bb4fcadf2a204"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a9b5f09184e327ea7912bb4fcadf2a204">GetSkillColor</a> (unsigned int uPlayerClass, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5">PLAYER_SKILL_TYPE</a> uPlayerSkillType, <a class="el" href="PlayerEnums_8h.html#ae7fdd356d1b4ddbdd59bcba036e6f942">PLAYER_SKILL_MASTERY</a> skill_mastery)</td></tr>
+<tr class="separator:a9b5f09184e327ea7912bb4fcadf2a204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2706ee0d26c5e93fd7eb31f540d22d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a2706ee0d26c5e93fd7eb31f540d22d86">ClickNPCTopic</a> (<a class="el" href="GUIDialogues_8h.html#afcd7885d9ec6583fa04d9e8f0f641d00">DIALOGUE_TYPE</a> topic)</td></tr>
 <tr class="separator:a2706ee0d26c5e93fd7eb31f540d22d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc59f2d8e738930ab8071ad3c16e6570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#adc59f2d8e738930ab8071ad3c16e6570">_4B3FE5_training_dialogue</a> (int eventId)</td></tr>
@@ -181,22 +180,22 @@ Functions</h2></td></tr>
 <tr class="separator:ab4ec1cf42ce06a529f7079489419b91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d47d1cad06df6704c93798e109cbd8b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a1d47d1cad06df6704c93798e109cbd8b">_4B254D_SkillMasteryTeacher</a> (int trainerInfo)</td></tr>
 <tr class="separator:a1d47d1cad06df6704c93798e109cbd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a820fadbca2d04f786acc08d38ab3d35d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a820fadbca2d04f786acc08d38ab3d35d">BuildDialogueString</a> (const char *lpsz, unsigned __int8 uPlayerID, <a class="el" href="structItemGen.html">ItemGen</a> *a3, int eventId, int a5, <a class="el" href="structGameTime.html">GameTime</a> *a6)</td></tr>
-<tr class="separator:a820fadbca2d04f786acc08d38ab3d35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e7bcca8c5a54b7d4408ac06a8a800c0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a8e7bcca8c5a54b7d4408ac06a8a800c0">BuildDialogueString</a> (std::string &amp;str, unsigned __int8 uPlayerID, <a class="el" href="structItemGen.html">ItemGen</a> *a3, int eventId, int shop_screen, <a class="el" href="structGameTime.html">GameTime</a> *a6)</td></tr>
-<tr class="separator:a8e7bcca8c5a54b7d4408ac06a8a800c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ef08336e2d33e2e0ed95da50dc65e4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a63ef08336e2d33e2e0ed95da50dc65e4">BuildDialogueString</a> (const char *lpsz, uint8_t uPlayerID, <a class="el" href="structItemGen.html">ItemGen</a> *a3, int eventId, int a5, <a class="el" href="structGameTime.html">GameTime</a> *a6)</td></tr>
+<tr class="separator:a63ef08336e2d33e2e0ed95da50dc65e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a304a2277e742f98e7ecfc69094202c2f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a304a2277e742f98e7ecfc69094202c2f">BuildDialogueString</a> (std::string &amp;str, uint8_t uPlayerID, <a class="el" href="structItemGen.html">ItemGen</a> *a3, int eventId, int shop_screen, <a class="el" href="structGameTime.html">GameTime</a> *a6)</td></tr>
+<tr class="separator:a304a2277e742f98e7ecfc69094202c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a820ed99a03030a29e6d14ef53cfa20d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a820ed99a03030a29e6d14ef53cfa20d8">MainMenuUI_LoadFontsAndSomeStuff</a> ()</td></tr>
 <tr class="separator:a820ed99a03030a29e6d14ef53cfa20d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ee385e81873672505e1eb405756b1e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a1ee385e81873672505e1eb405756b1e7">LoadPartyBuffIcons</a> ()</td></tr>
 <tr class="separator:a1ee385e81873672505e1eb405756b1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a4f6626d579a2a8ab868b451395866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#ab2a4f6626d579a2a8ab868b451395866">UI_Create</a> ()</td></tr>
 <tr class="separator:ab2a4f6626d579a2a8ab868b451395866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a884a77b94fdb71b61365ffb4252a19b5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a884a77b94fdb71b61365ffb4252a19b5">NameAndTitle</a> (const char *name, const char *title)</td></tr>
-<tr class="separator:a884a77b94fdb71b61365ffb4252a19b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6348cd67d89ac1faa44764a865a465f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#aa6348cd67d89ac1faa44764a865a465f">NameAndTitle</a> (const char *name, <a class="el" href="PlayerEnums_8h.html#a8b0f780d4f163891fe834eebde9c9955">PLAYER_CLASS_TYPE</a> class_type)</td></tr>
-<tr class="separator:aa6348cd67d89ac1faa44764a865a465f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6742fb21be5babd1f214274491e98830"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a6742fb21be5babd1f214274491e98830">NameAndTitle</a> (const char *name, <a class="el" href="NPCProf_8h.html#ae6501f571f97d74c2c78fddcb371bad4">NPCProf</a> profession)</td></tr>
-<tr class="separator:a6742fb21be5babd1f214274491e98830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acdf32f5caec50a2095d7ae989352f3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a0acdf32f5caec50a2095d7ae989352f3">NameAndTitle</a> (const std::string &amp;name, const std::string &amp;title)</td></tr>
+<tr class="separator:a0acdf32f5caec50a2095d7ae989352f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d85777317717f1e9f3402c76b56906"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#ac5d85777317717f1e9f3402c76b56906">NameAndTitle</a> (const std::string &amp;name, <a class="el" href="PlayerEnums_8h.html#a8b0f780d4f163891fe834eebde9c9955">PLAYER_CLASS_TYPE</a> class_type)</td></tr>
+<tr class="separator:ac5d85777317717f1e9f3402c76b56906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7646bf9e2ff938ebdd5e2672361fe5dc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a7646bf9e2ff938ebdd5e2672361fe5dc">NameAndTitle</a> (const std::string &amp;name, <a class="el" href="NPCEnums_8h.html#ae6501f571f97d74c2c78fddcb371bad4">NPCProf</a> profession)</td></tr>
+<tr class="separator:a7646bf9e2ff938ebdd5e2672361fe5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa58fe7136ef95f60d8ca2b1eb0cedc70"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#aa58fe7136ef95f60d8ca2b1eb0cedc70">NameAndTitle</a> (<a class="el" href="structNPCData.html">NPCData</a> *npc)</td></tr>
 <tr class="separator:aa58fe7136ef95f60d8ca2b1eb0cedc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56a66a5269c41f46116b23b3ace515fa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a56a66a5269c41f46116b23b3ace515fa">GetDisplayName</a> (<a class="el" href="classActor.html">Actor</a> *actor)</td></tr>
@@ -220,8 +219,8 @@ Variables</h2></td></tr>
 <tr class="separator:a4b874ab8ae0f632bb61c5cf097f5f708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c21cb6398ef7d81614d2eb8938b7462"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIWindow.html">GUIWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a9c21cb6398ef7d81614d2eb8938b7462">window_SpeakInHouse</a></td></tr>
 <tr class="separator:a9c21cb6398ef7d81614d2eb8938b7462"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71d8b1daf8080329a092d0912689d4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIWindow.html">GUIWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#af71d8b1daf8080329a092d0912689d4c">pGUIWindow_ScrollWindow</a></td></tr>
-<tr class="separator:af71d8b1daf8080329a092d0912689d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc8025eb3a9aa1241fafe6c68d3058d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIWindow__Scroll.html">GUIWindow_Scroll</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a1bc8025eb3a9aa1241fafe6c68d3058d">pGUIWindow_ScrollWindow</a></td></tr>
+<tr class="separator:a1bc8025eb3a9aa1241fafe6c68d3058d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad34cd703e4ff9de992448afc7c18a612"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIWindow.html">GUIWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#ad34cd703e4ff9de992448afc7c18a612">ptr_507BC8</a></td></tr>
 <tr class="separator:ad34cd703e4ff9de992448afc7c18a612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af07bd46153a7b735d9862f5769696e8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGUIWindow.html">GUIWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#af07bd46153a7b735d9862f5769696e8a">pGUIWindow_CastTargetedSpell</a></td></tr>
@@ -236,7 +235,7 @@ Variables</h2></td></tr>
 <tr class="separator:a64f57b4f8081e247d7363918e79f74f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa00d8b3e2304a6143a2e364ccfeb696c"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classGUIWindow.html">GUIWindow</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#aa00d8b3e2304a6143a2e364ccfeb696c">lWindowList</a></td></tr>
 <tr class="separator:aa00d8b3e2304a6143a2e364ccfeb696c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bf4750f50fc8a84e1641e6689b4c168"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a8bf4750f50fc8a84e1641e6689b4c168">sCurrentMenuID</a></td></tr>
+<tr class="memitem:a8bf4750f50fc8a84e1641e6689b4c168"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a8bf4750f50fc8a84e1641e6689b4c168">sCurrentMenuID</a></td></tr>
 <tr class="separator:a8bf4750f50fc8a84e1641e6689b4c168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf585dbf96fdd1acbe15981837ebdb2"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="GUIWindow_8h.html#af188298480c77be8835d6760fa6edfd7">CURRENT_SCREEN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GUIWindow_8cpp.html#a9cf585dbf96fdd1acbe15981837ebdb2">current_screen_type</a> = <a class="el" href="GUIWindow_8h.html#af188298480c77be8835d6760fa6edfd7a610e61ee058a5573d7e6b712d9d01d51">CURRENT_SCREEN::SCREEN_VIDEO</a></td></tr>
 <tr class="separator:a9cf585dbf96fdd1acbe15981837ebdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,8 +348,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a820fadbca2d04f786acc08d38ab3d35d" name="a820fadbca2d04f786acc08d38ab3d35d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a820fadbca2d04f786acc08d38ab3d35d">&#9670;&#160;</a></span>BuildDialogueString() <span class="overload">[1/2]</span></h2>
+<a id="a63ef08336e2d33e2e0ed95da50dc65e4" name="a63ef08336e2d33e2e0ed95da50dc65e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ef08336e2d33e2e0ed95da50dc65e4">&#9670;&#160;</a></span>BuildDialogueString() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +363,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned __int8&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>uPlayerID</em>, </td>
         </tr>
         <tr>
@@ -401,8 +400,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a8e7bcca8c5a54b7d4408ac06a8a800c0" name="a8e7bcca8c5a54b7d4408ac06a8a800c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e7bcca8c5a54b7d4408ac06a8a800c0">&#9670;&#160;</a></span>BuildDialogueString() <span class="overload">[2/2]</span></h2>
+<a id="a304a2277e742f98e7ecfc69094202c2f" name="a304a2277e742f98e7ecfc69094202c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a304a2277e742f98e7ecfc69094202c2f">&#9670;&#160;</a></span>BuildDialogueString() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +415,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned __int8&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>uPlayerID</em>, </td>
         </tr>
         <tr>
@@ -488,8 +487,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a358b41a6dd45056bcadd1cd7812a0f39" name="a358b41a6dd45056bcadd1cd7812a0f39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a358b41a6dd45056bcadd1cd7812a0f39">&#9670;&#160;</a></span>CreateMsgScrollWindow()</h2>
+<a id="a2c9cc377e0440b592cae99c29bec8c29" name="a2c9cc377e0440b592cae99c29bec8c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c9cc377e0440b592cae99c29bec8c29">&#9670;&#160;</a></span>CreateMsgScrollWindow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -497,7 +496,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void CreateMsgScrollWindow </td>
           <td>(</td>
-          <td class="paramtype">signed int&#160;</td>
+          <td class="paramtype"><a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>&#160;</td>
           <td class="paramname"><em>mscroll_id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -622,7 +621,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a> GetCurrentMenuID </td>
+          <td class="memname"><a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a> GetCurrentMenuID </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -668,8 +667,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a2b0711e63b702cbbce669cc2e1e15db9" name="a2b0711e63b702cbbce669cc2e1e15db9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0711e63b702cbbce669cc2e1e15db9">&#9670;&#160;</a></span>GetSkillColor()</h2>
+<a id="a9b5f09184e327ea7912bb4fcadf2a204" name="a9b5f09184e327ea7912bb4fcadf2a204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5f09184e327ea7912bb4fcadf2a204">&#9670;&#160;</a></span>GetSkillColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,8 +688,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">signed int&#160;</td>
-          <td class="paramname"><em>skill_level</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="PlayerEnums_8h.html#ae7fdd356d1b4ddbdd59bcba036e6f942">PLAYER_SKILL_MASTERY</a>&#160;</td>
+          <td class="paramname"><em>skill_mastery</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -702,8 +701,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b666c917f44b5f7618d3aef4648e62b" name="a5b666c917f44b5f7618d3aef4648e62b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b666c917f44b5f7618d3aef4648e62b">&#9670;&#160;</a></span>GUI_HandleHotkey()</h2>
+<a id="afd07d3cdc8b1265cd0ecc8e46005eef4" name="afd07d3cdc8b1265cd0ecc8e46005eef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd07d3cdc8b1265cd0ecc8e46005eef4">&#9670;&#160;</a></span>GUI_HandleHotkey()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -711,7 +710,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classGUIButton.html">GUIButton</a> * GUI_HandleHotkey </td>
           <td>(</td>
-          <td class="paramtype">GameKey&#160;</td>
+          <td class="paramtype"><a class="el" href="PlatformKey_8h.html#a2ba59747730ab559dd1191f51081eecc">PlatformKey</a>&#160;</td>
           <td class="paramname"><em>hotkey</em></td><td>)</td>
           <td></td>
         </tr>
@@ -720,8 +719,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a466c4d559ebbbc754399b7375d9998f1" name="a466c4d559ebbbc754399b7375d9998f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a466c4d559ebbbc754399b7375d9998f1">&#9670;&#160;</a></span>GUI_ReplaceHotkey()</h2>
+<a id="a184fb72ca77fd7278ec6cde7b50ae905" name="a184fb72ca77fd7278ec6cde7b50ae905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184fb72ca77fd7278ec6cde7b50ae905">&#9670;&#160;</a></span>GUI_ReplaceHotkey()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -729,13 +728,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void GUI_ReplaceHotkey </td>
           <td>(</td>
-          <td class="paramtype">GameKey&#160;</td>
+          <td class="paramtype"><a class="el" href="PlatformKey_8h.html#a2ba59747730ab559dd1191f51081eecc">PlatformKey</a>&#160;</td>
           <td class="paramname"><em>oldKey</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GameKey&#160;</td>
+          <td class="paramtype"><a class="el" href="PlatformKey_8h.html#a2ba59747730ab559dd1191f51081eecc">PlatformKey</a>&#160;</td>
           <td class="paramname"><em>newKey</em>, </td>
         </tr>
         <tr>
@@ -840,7 +839,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">const wchar_t * MENU_STATE_to_string </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a>&#160;</td>
           <td class="paramname"><em>m</em></td><td>)</td>
           <td></td>
         </tr>
@@ -849,8 +848,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a884a77b94fdb71b61365ffb4252a19b5" name="a884a77b94fdb71b61365ffb4252a19b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a884a77b94fdb71b61365ffb4252a19b5">&#9670;&#160;</a></span>NameAndTitle() <span class="overload">[1/4]</span></h2>
+<a id="a0acdf32f5caec50a2095d7ae989352f3" name="a0acdf32f5caec50a2095d7ae989352f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0acdf32f5caec50a2095d7ae989352f3">&#9670;&#160;</a></span>NameAndTitle() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -858,13 +857,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">std::string NameAndTitle </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>title</em>&#160;</td>
         </tr>
         <tr>
@@ -877,8 +876,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6742fb21be5babd1f214274491e98830" name="a6742fb21be5babd1f214274491e98830"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6742fb21be5babd1f214274491e98830">&#9670;&#160;</a></span>NameAndTitle() <span class="overload">[2/4]</span></h2>
+<a id="a7646bf9e2ff938ebdd5e2672361fe5dc" name="a7646bf9e2ff938ebdd5e2672361fe5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7646bf9e2ff938ebdd5e2672361fe5dc">&#9670;&#160;</a></span>NameAndTitle() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -886,13 +885,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">std::string NameAndTitle </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="NPCProf_8h.html#ae6501f571f97d74c2c78fddcb371bad4">NPCProf</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="NPCEnums_8h.html#ae6501f571f97d74c2c78fddcb371bad4">NPCProf</a>&#160;</td>
           <td class="paramname"><em>profession</em>&#160;</td>
         </tr>
         <tr>
@@ -905,8 +904,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa6348cd67d89ac1faa44764a865a465f" name="aa6348cd67d89ac1faa44764a865a465f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6348cd67d89ac1faa44764a865a465f">&#9670;&#160;</a></span>NameAndTitle() <span class="overload">[3/4]</span></h2>
+<a id="ac5d85777317717f1e9f3402c76b56906" name="ac5d85777317717f1e9f3402c76b56906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d85777317717f1e9f3402c76b56906">&#9670;&#160;</a></span>NameAndTitle() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -914,7 +913,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">std::string NameAndTitle </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
@@ -1051,7 +1050,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void SetCurrentMenuID </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a>&#160;</td>
           <td class="paramname"><em>uMenu</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1069,7 +1068,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void SetUserInterface </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="Party_8h.html#ad55d82c9cec54b99b21cdea81cfcbf7e">PartyAlignment</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Party_8h.html#a1d55b380c0ae0f422472f1de19d01e36">PartyAlignment</a>&#160;</td>
           <td class="paramname"><em>align</em>, </td>
         </tr>
         <tr>
@@ -1345,14 +1344,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af71d8b1daf8080329a092d0912689d4c" name="af71d8b1daf8080329a092d0912689d4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af71d8b1daf8080329a092d0912689d4c">&#9670;&#160;</a></span>pGUIWindow_ScrollWindow</h2>
+<a id="a1bc8025eb3a9aa1241fafe6c68d3058d" name="a1bc8025eb3a9aa1241fafe6c68d3058d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc8025eb3a9aa1241fafe6c68d3058d">&#9670;&#160;</a></span>pGUIWindow_ScrollWindow</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classGUIWindow.html">GUIWindow</a>* pGUIWindow_ScrollWindow</td>
+          <td class="memname"><a class="el" href="classGUIWindow__Scroll.html">GUIWindow_Scroll</a>* pGUIWindow_ScrollWindow</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1450,7 +1449,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="GUIWindow_8h.html#ae3ad6ef2afe43c2e4bd1454810d934ea">MENU_STATE</a> sCurrentMenuID</td>
+          <td class="memname"><a class="el" href="GUIWindow_8h.html#a0be99aa2d974499af97de5b44821500d">MENU_STATE</a> sCurrentMenuID</td>
         </tr>
       </table>
 </div><div class="memdoc">

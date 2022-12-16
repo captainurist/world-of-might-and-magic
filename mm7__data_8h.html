@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;e010a29</span>
+   <div id="projectname">World of Might and Magic<span id="projectnumber">&#160;9538cb2</span>
    </div>
   </td>
  </tr>
@@ -82,12 +82,17 @@ $(function() {
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="Time_8h.html">Engine/Time.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="MM7_8h.html">Engine/MM7.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Autonotes_8h.html">Engine/Autonotes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ItemEnums_8h.html">Engine/Objects/ItemEnums.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NPCEnums_8h.html">Engine/Objects/NPCEnums.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PlayerEnums_8h.html">Engine/Objects/PlayerEnums.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MapInfo_8h.html">Engine/MapInfo.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GUIDialogues_8h.html">GUI/GUIDialogues.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NZIArray_8h.html">NZIArray.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="VectorTypes_8h.html">VectorTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IndexedArray_8h.html">Utility/IndexedArray.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vec_8h.html">Utility/Geometry/Vec.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -204,8 +209,6 @@ Variables</h2></td></tr>
 <tr class="separator:ad7204929de76f2cc3e43a6f5e92875fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a770c130797a0a50a7ef18fdc4869a9b2"><td class="memItemLeft" align="right" valign="top">std::array&lt; int16_t, 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a770c130797a0a50a7ef18fdc4869a9b2">word_4E8152</a></td></tr>
 <tr class="separator:a770c130797a0a50a7ef18fdc4869a9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a884866cb1aba240306882d01856cab27"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::array&lt; char, 14 &gt;, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a884866cb1aba240306882d01856cab27">byte_4E8168</a></td></tr>
-<tr class="separator:a884866cb1aba240306882d01856cab27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c9e3cddcf1b4a335b539376a965001a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a1c9e3cddcf1b4a335b539376a965001a">_4E94D0_light_type</a></td></tr>
 <tr class="separator:a1c9e3cddcf1b4a335b539376a965001a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a501d911e0d5904195f31b6c5dc9f154f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a501d911e0d5904195f31b6c5dc9f154f">_4E94D2_light_type</a></td></tr>
@@ -234,8 +237,14 @@ Variables</h2></td></tr>
 <tr class="separator:a167fa0bf6695690bbbc951b85a66191f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd3a0e86660f90a24ea69faeb3cc9fb2"><td class="memItemLeft" align="right" valign="top">std::array&lt; int16_t, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#abd3a0e86660f90a24ea69faeb3cc9fb2">pPlayerPortraitsXCoords_For_PlayerBuffAnimsDrawing</a></td></tr>
 <tr class="separator:abd3a0e86660f90a24ea69faeb3cc9fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1745a0f801c575399db654d5fd74a368"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::array&lt; char, 37 &gt;, 36 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a1745a0f801c575399db654d5fd74a368">byte_4ED970_skill_learn_ability_by_class_table</a></td></tr>
-<tr class="separator:a1745a0f801c575399db654d5fd74a368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab75d9083d0d5b057cbec666de40fd4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; <a class="el" href="PlayerEnums_8h.html#adb9cb0391b2119e3d28341d2f340964e">PLAYER_SKILL_LEVEL</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aab75d9083d0d5b057cbec666de40fd4a">skills_max_level</a></td></tr>
+<tr class="separator:aab75d9083d0d5b057cbec666de40fd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486cbdbf871d6996a54b2a0472bd6779"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; <a class="el" href="MM7_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a486cbdbf871d6996a54b2a0472bd6779">base_recovery_times_per_weapon_type</a></td></tr>
+<tr class="separator:a486cbdbf871d6996a54b2a0472bd6779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a328adfbc89355482cbf71be58f46f"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; <a class="el" href="PlayerEnums_8h.html#a41cfcbb7cd5d9e8279582963908f8250">CLASS_SKILL</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a> &gt;, 9 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad8a328adfbc89355482cbf71be58f46f">pSkillAvailabilityPerClass</a></td></tr>
+<tr class="separator:ad8a328adfbc89355482cbf71be58f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13338becdf410f41f8fd272b72f5c13"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; <a class="el" href="PlayerEnums_8h.html#ae7fdd356d1b4ddbdd59bcba036e6f942">PLAYER_SKILL_MASTERY</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a> &gt;, 36 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad13338becdf410f41f8fd272b72f5c13">byte_4ED970_skill_learn_ability_by_class_table</a></td></tr>
+<tr class="separator:ad13338becdf410f41f8fd272b72f5c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a515c4d8d435b979a19ccfcd1a06c807a"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned int, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a515c4d8d435b979a19ccfcd1a06c807a">pHiredNPCsIconsOffsetsX</a></td></tr>
 <tr class="separator:a515c4d8d435b979a19ccfcd1a06c807a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44c42557b24f3ea430144f465906873f"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned int, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a44c42557b24f3ea430144f465906873f">pHiredNPCsIconsOffsetsY</a></td></tr>
@@ -250,8 +259,8 @@ Variables</h2></td></tr>
 <tr class="separator:a17957e8d22a317dc3d10a27331a3279d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c84e7dcaebe5b3e5af1106088e1d937"><td class="memItemLeft" align="right" valign="top">std::array&lt; int16_t, 49 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a2c84e7dcaebe5b3e5af1106088e1d937">word_4F0754</a></td></tr>
 <tr class="separator:a2c84e7dcaebe5b3e5af1106088e1d937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d3cd75e4fc05f253abdf933756c16b8"><td class="memItemLeft" align="right" valign="top">std::array&lt; int16_t, 54 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a4d3cd75e4fc05f253abdf933756c16b8">_4F0882_evt_VAR_PlayerItemInHands_vals</a></td></tr>
-<tr class="separator:a4d3cd75e4fc05f253abdf933756c16b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e98d02c42f0025e80ba1938dab9d1d7"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::pair&lt; int16_t, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a> &gt;, 27 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a5e98d02c42f0025e80ba1938dab9d1d7">_4F0882_evt_VAR_PlayerItemInHands_vals</a></td></tr>
+<tr class="separator:a5e98d02c42f0025e80ba1938dab9d1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5030c14c508d6c7fe048ef712daa0c0"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned short, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ae5030c14c508d6c7fe048ef712daa0c0">pMaxLevelPerTrainingHallType</a></td></tr>
 <tr class="separator:ae5030c14c508d6c7fe048ef712daa0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb9d5a46955f22b7ee80f7cb591d211c"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#acb9d5a46955f22b7ee80f7cb591d211c">price_for_membership</a></td></tr>
@@ -286,8 +295,8 @@ Variables</h2></td></tr>
 <tr class="separator:ae87b12224cb7e52c0f6b85521e643e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeeffe26d64e6162a062bdffdfdf1485d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aeeffe26d64e6162a062bdffdfdf1485d">_506348_current_lloyd_playerid</a></td></tr>
 <tr class="separator:aeeffe26d64e6162a062bdffdfdf1485d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12ed1a78456f21e77566dbf8d2296cb6"><td class="memItemLeft" align="right" valign="top">__int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a12ed1a78456f21e77566dbf8d2296cb6">lloyds_beacon_spell_level</a></td></tr>
-<tr class="separator:a12ed1a78456f21e77566dbf8d2296cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d78aa3aab31f99ed22a1dd21ed55ba8"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a1d78aa3aab31f99ed22a1dd21ed55ba8">lloyds_beacon_spell_level</a></td></tr>
+<tr class="separator:a1d78aa3aab31f99ed22a1dd21ed55ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9eb9e1875d22e3c6c40ea0912f0959c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#af9eb9e1875d22e3c6c40ea0912f0959c">MapBookOpen</a></td></tr>
 <tr class="separator:af9eb9e1875d22e3c6c40ea0912f0959c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb55ab9e28d0568bdbd6f6e3533687aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#abb55ab9e28d0568bdbd6f6e3533687aa">books_page_number</a></td></tr>
@@ -416,7 +425,7 @@ Variables</h2></td></tr>
 <tr class="separator:ad45ce96590aea90ca1e4b4e94926f833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a59001acc2df1771124276c9e6cc743"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a7a59001acc2df1771124276c9e6cc743">dword_50CDC8</a></td></tr>
 <tr class="separator:a7a59001acc2df1771124276c9e6cc743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e4af72bf8637e17730246bddc5e51f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="VectorTypes_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a4e4af72bf8637e17730246bddc5e51f3">layingitem_vel_50FDFC</a></td></tr>
+<tr class="memitem:a4e4af72bf8637e17730246bddc5e51f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Vec_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a4e4af72bf8637e17730246bddc5e51f3">layingitem_vel_50FDFC</a></td></tr>
 <tr class="separator:a4e4af72bf8637e17730246bddc5e51f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d060f01052ea0a98e53234d5fb55129"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a7d060f01052ea0a98e53234d5fb55129">pStartingMapName</a> [32]</td></tr>
 <tr class="separator:a7d060f01052ea0a98e53234d5fb55129"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -424,8 +433,6 @@ Variables</h2></td></tr>
 <tr class="separator:aac46b967c11f6bb4d1804b604f07b10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a097e515a7a8f18f8918d3251bde7180c"><td class="memItemLeft" align="right" valign="top">std::array&lt; char, 54 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a097e515a7a8f18f8918d3251bde7180c">party_has_equipment</a></td></tr>
 <tr class="separator:a097e515a7a8f18f8918d3251bde7180c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bb1a3109b32022de9450dade28975e6"><td class="memItemLeft" align="right" valign="top">std::array&lt; char, 17 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a5bb1a3109b32022de9450dade28975e6">byte_5111F6_OwnedArtifacts</a></td></tr>
-<tr class="separator:a5bb1a3109b32022de9450dade28975e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a635f50ee8f03b2425d661c15f2ddc476"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a635f50ee8f03b2425d661c15f2ddc476">uNumBlueFacesInBLVMinimap</a></td></tr>
 <tr class="separator:a635f50ee8f03b2425d661c15f2ddc476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61b496577d536c31f7f359ee4403ee84"><td class="memItemLeft" align="right" valign="top">std::array&lt; uint16_t, 50 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a61b496577d536c31f7f359ee4403ee84">pBlueFacesInBLVMinimapIDs</a></td></tr>
@@ -500,8 +507,8 @@ Variables</h2></td></tr>
 <tr class="separator:adfb47ec6ce542fc77e7f72c3d56b0036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeec6b47a335bd82456f0dc589ee5ef97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aeec6b47a335bd82456f0dc589ee5ef97">bDialogueUI_InitializeActor_NPC_ID</a></td></tr>
 <tr class="separator:aeec6b47a335bd82456f0dc589ee5ef97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb3e514897941f0af48d32427d019fd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a6cb3e514897941f0af48d32427d019fd">p2DEventsTXT_Raw</a></td></tr>
-<tr class="separator:a6cb3e514897941f0af48d32427d019fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e5d3cb46f6697b55de835147d188cb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a39e5d3cb46f6697b55de835147d188cb">p2DEventsTXT_Raw</a></td></tr>
+<tr class="separator:a39e5d3cb46f6697b55de835147d188cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c95e54890a92be02f2ab734aba7e33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a80c95e54890a92be02f2ab734aba7e33">dword_5C35D4</a></td></tr>
 <tr class="separator:a80c95e54890a92be02f2ab734aba7e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f727b27744edd6e10fb5c1d57b68a1f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a8f727b27744edd6e10fb5c1d57b68a1f">byte_5C45AF</a> []</td></tr>
@@ -554,16 +561,16 @@ Variables</h2></td></tr>
 <tr class="separator:a905aac9bbe1e250677da90d4e7b06a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9413dbff8d2062c1f28ed3228211639f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFactionTable.html">FactionTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a9413dbff8d2062c1f28ed3228211639f">pFactionTable</a></td></tr>
 <tr class="separator:a9413dbff8d2062c1f28ed3228211639f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50148730dd1ba9c7d8db902f1ed9b662"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a50148730dd1ba9c7d8db902f1ed9b662">pMonstersTXT_Raw</a></td></tr>
-<tr class="separator:a50148730dd1ba9c7d8db902f1ed9b662"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a753663efa466240d6114a0dcab5b0216"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a753663efa466240d6114a0dcab5b0216">pMonsterPlacementTXT_Raw</a></td></tr>
-<tr class="separator:a753663efa466240d6114a0dcab5b0216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae350df9650965340f44ef75928718437"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ae350df9650965340f44ef75928718437">pSpellsTXT_Raw</a></td></tr>
-<tr class="separator:ae350df9650965340f44ef75928718437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06d67b94d19537967948924d19ac1ec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ae06d67b94d19537967948924d19ac1ec">pMonstersTXT_Raw</a></td></tr>
+<tr class="separator:ae06d67b94d19537967948924d19ac1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f0d066096cedc0c7a25f1b31a8e9324"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a7f0d066096cedc0c7a25f1b31a8e9324">pMonsterPlacementTXT_Raw</a></td></tr>
+<tr class="separator:a7f0d066096cedc0c7a25f1b31a8e9324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad872a45861fb7c9f1f24f4a85359b86b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad872a45861fb7c9f1f24f4a85359b86b">pSpellsTXT_Raw</a></td></tr>
+<tr class="separator:ad872a45861fb7c9f1f24f4a85359b86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af357dbf2bb17f4adbae2a46632319013"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#af357dbf2bb17f4adbae2a46632319013">pMapStatsTXT_Raw</a></td></tr>
 <tr class="separator:af357dbf2bb17f4adbae2a46632319013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20002b8a0a3b850ed4a0bc9fc7be54f6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a20002b8a0a3b850ed4a0bc9fc7be54f6">pHostileTXT_Raw</a></td></tr>
-<tr class="separator:a20002b8a0a3b850ed4a0bc9fc7be54f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b7a455d5ff23c8236d8fea4d5b24f4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad4b7a455d5ff23c8236d8fea4d5b24f4">pHostileTXT_Raw</a></td></tr>
+<tr class="separator:ad4b7a455d5ff23c8236d8fea4d5b24f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a4025d11e4a023688d9259527987f78"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a7a4025d11e4a023688d9259527987f78">pPotionsTXT_Raw</a></td></tr>
 <tr class="separator:a7a4025d11e4a023688d9259527987f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef88f45478bf415a441c83b664af6813"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aef88f45478bf415a441c83b664af6813">pPotionNotesTXT_Raw</a></td></tr>
@@ -640,7 +647,7 @@ Variables</h2></td></tr>
 <tr class="separator:a9db87cbae4727d73e10560e6babe2d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd30c818848b195f65c28ad3fd70cf62"><td class="memItemLeft" align="right" valign="top">std::array&lt; int16_t, 104 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#acd30c818848b195f65c28ad3fd70cf62">odm_floor_face_vert_coord_X</a></td></tr>
 <tr class="separator:acd30c818848b195f65c28ad3fd70cf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6b1777154634979ababd2d3f3b4924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="VectorTypes_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a6c6b1777154634979ababd2d3f3b4924">blv_prev_party_pos</a></td></tr>
+<tr class="memitem:a6c6b1777154634979ababd2d3f3b4924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Vec_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a6c6b1777154634979ababd2d3f3b4924">blv_prev_party_pos</a></td></tr>
 <tr class="separator:a6c6b1777154634979ababd2d3f3b4924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15cf0ae2c50d39b18d4da05994bc77f8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a15cf0ae2c50d39b18d4da05994bc77f8">dword_722F10</a></td></tr>
 <tr class="separator:a15cf0ae2c50d39b18d4da05994bc77f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -648,31 +655,31 @@ Variables</h2></td></tr>
 <tr class="separator:a3c7d1d14a1aa8737c474a4ae75b0820d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85c19f61df22cfe2195406dd9e861591"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a85c19f61df22cfe2195406dd9e861591">dword_723718_autonote_related</a></td></tr>
 <tr class="separator:a85c19f61df22cfe2195406dd9e861591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68c16c6ab4a26edd1f9c558300645468"><td class="memItemLeft" align="right" valign="top">std::array&lt; const char *, 82 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a68c16c6ab4a26edd1f9c558300645468">pScrolls</a></td></tr>
-<tr class="separator:a68c16c6ab4a26edd1f9c558300645468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd383f22f336fd1cfcced5d672a9445f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; const char *, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aad5907bf1548807261f7b2448fc08f3a">ITEM_FIRST_MESSAGE_SCROLL</a>, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa0d4005bcb683e5c8b2f638bbdf9e074">ITEM_LAST_MESSAGE_SCROLL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#afd383f22f336fd1cfcced5d672a9445f">pScrolls</a></td></tr>
+<tr class="separator:afd383f22f336fd1cfcced5d672a9445f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e3d753b2437a1fa76c5d5dd4b8327b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a3e3d753b2437a1fa76c5d5dd4b8327b9">dword_7241C8</a></td></tr>
 <tr class="separator:a3e3d753b2437a1fa76c5d5dd4b8327b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba8f0a0d17c3334888091efc91ee764b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aba8f0a0d17c3334888091efc91ee764b">pAwardsTXT_Raw</a></td></tr>
-<tr class="separator:aba8f0a0d17c3334888091efc91ee764b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f3b5d7153e4e82e618898b3cc647736"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a6f3b5d7153e4e82e618898b3cc647736">pScrollsTXT_Raw</a></td></tr>
-<tr class="separator:a6f3b5d7153e4e82e618898b3cc647736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b0a2896c10a489bd72d322263313be5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a5b0a2896c10a489bd72d322263313be5">pMerchantsTXT_Raw</a></td></tr>
-<tr class="separator:a5b0a2896c10a489bd72d322263313be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22327681bc5c26e8919a85dbb065cc0c"><td class="memItemLeft" align="right" valign="top">std::array&lt; const char *, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a22327681bc5c26e8919a85dbb065cc0c">pMerchantsBuyPhrases</a></td></tr>
-<tr class="separator:a22327681bc5c26e8919a85dbb065cc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ec3a696f3a39e49b0e835730456b36"><td class="memItemLeft" align="right" valign="top">std::array&lt; const char *, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad6ec3a696f3a39e49b0e835730456b36">pMerchantsSellPhrases</a></td></tr>
-<tr class="separator:ad6ec3a696f3a39e49b0e835730456b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77c6c85342def28b23a5e7c9574e52c"><td class="memItemLeft" align="right" valign="top">std::array&lt; const char *, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad77c6c85342def28b23a5e7c9574e52c">pMerchantsRepairPhrases</a></td></tr>
-<tr class="separator:ad77c6c85342def28b23a5e7c9574e52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf3ec3d1f18610b35a385cccf629403e"><td class="memItemLeft" align="right" valign="top">std::array&lt; const char *, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#acf3ec3d1f18610b35a385cccf629403e">pMerchantsIdentifyPhrases</a></td></tr>
-<tr class="separator:acf3ec3d1f18610b35a385cccf629403e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa70da01224d6d97aa4fb7ab9a8ffcd2e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aa70da01224d6d97aa4fb7ab9a8ffcd2e">pTransitionsTXT_Raw</a></td></tr>
-<tr class="separator:aa70da01224d6d97aa4fb7ab9a8ffcd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af115f9ea724fb0d1ff281a835b210ae3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#af115f9ea724fb0d1ff281a835b210ae3">pAutonoteTXT_Raw</a></td></tr>
-<tr class="separator:af115f9ea724fb0d1ff281a835b210ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7563164040274cc211327d85d8a5dd54"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a7563164040274cc211327d85d8a5dd54">pQuestsTXT_Raw</a></td></tr>
-<tr class="separator:a7563164040274cc211327d85d8a5dd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52acf64447d0a69526e6507cf3076481"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="VectorTypes_8h.html#a40b8356e33151c22cb4d1adaf2b762a8">Vec3f</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a52acf64447d0a69526e6507cf3076481">pTerrainNormals</a></td></tr>
+<tr class="memitem:adb817c80feaf33c936cecc37ae449dd1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#adb817c80feaf33c936cecc37ae449dd1">pAwardsTXT_Raw</a></td></tr>
+<tr class="separator:adb817c80feaf33c936cecc37ae449dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e3bf176a8dfac3fe1a99265ae944ebc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a8e3bf176a8dfac3fe1a99265ae944ebc">pScrollsTXT_Raw</a></td></tr>
+<tr class="separator:a8e3bf176a8dfac3fe1a99265ae944ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eddee821f0bfe82984194e44bcd448f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a7eddee821f0bfe82984194e44bcd448f">pMerchantsTXT_Raw</a></td></tr>
+<tr class="separator:a7eddee821f0bfe82984194e44bcd448f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd25dcf75d8e4cf7f86e9ab655b33d13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#acd25dcf75d8e4cf7f86e9ab655b33d13">pMerchantsBuyPhrases</a></td></tr>
+<tr class="separator:acd25dcf75d8e4cf7f86e9ab655b33d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2227b64bec6b60c3fb6031b944aed7ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a2227b64bec6b60c3fb6031b944aed7ae">pMerchantsSellPhrases</a></td></tr>
+<tr class="separator:a2227b64bec6b60c3fb6031b944aed7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712249bbe93df30defc048a47644dec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a712249bbe93df30defc048a47644dec0">pMerchantsRepairPhrases</a></td></tr>
+<tr class="separator:a712249bbe93df30defc048a47644dec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c16a091f6844ff3548d450ea5ccf2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt; const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a47c16a091f6844ff3548d450ea5ccf2b">pMerchantsIdentifyPhrases</a></td></tr>
+<tr class="separator:a47c16a091f6844ff3548d450ea5ccf2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e3d90b10f7bdaffc6965b448356837"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ae2e3d90b10f7bdaffc6965b448356837">pTransitionsTXT_Raw</a></td></tr>
+<tr class="separator:ae2e3d90b10f7bdaffc6965b448356837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d134f2855344ddf28c9fcbfcc5bb69a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a8d134f2855344ddf28c9fcbfcc5bb69a">pAutonoteTXT_Raw</a></td></tr>
+<tr class="separator:a8d134f2855344ddf28c9fcbfcc5bb69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad840ec4f9ad2e8c7cd1812764289a89a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#ad840ec4f9ad2e8c7cd1812764289a89a">pQuestsTXT_Raw</a></td></tr>
+<tr class="separator:ad840ec4f9ad2e8c7cd1812764289a89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52acf64447d0a69526e6507cf3076481"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="Vec_8h.html#a40b8356e33151c22cb4d1adaf2b762a8">Vec3f</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a52acf64447d0a69526e6507cf3076481">pTerrainNormals</a></td></tr>
 <tr class="separator:a52acf64447d0a69526e6507cf3076481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f410251cb7f2084350c4c2d247bdabf"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned short, 128 *128 *2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a0f410251cb7f2084350c4c2d247bdabf">pTerrainNormalIndices</a></td></tr>
 <tr class="separator:a0f410251cb7f2084350c4c2d247bdabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -704,8 +711,8 @@ Variables</h2></td></tr>
 <tr class="separator:a7ecd918106be280c2dd10d99d55e4b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41e6f6a37a68a26205a85dee4621a3c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a41e6f6a37a68a26205a85dee4621a3c2">guild_membership_approved</a></td></tr>
 <tr class="separator:a41e6f6a37a68a26205a85dee4621a3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae72435bf802091aebdb1f3db51c7cd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#aae72435bf802091aebdb1f3db51c7cd7">dword_F8B1B0_MasteryBeingTaught</a></td></tr>
-<tr class="separator:aae72435bf802091aebdb1f3db51c7cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe206ab0eb29b56e62672d4c49d0de1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PlayerEnums_8h.html#ae7fdd356d1b4ddbdd59bcba036e6f942">PLAYER_SKILL_MASTERY</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#afbe206ab0eb29b56e62672d4c49d0de1">dword_F8B1B0_MasteryBeingTaught</a></td></tr>
+<tr class="separator:afbe206ab0eb29b56e62672d4c49d0de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb6508ee8f5604384798ce3ac89243b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a4bb6508ee8f5604384798ce3ac89243b">gold_transaction_amount</a></td></tr>
 <tr class="separator:a4bb6508ee8f5604384798ce3ac89243b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a860ffc8780eb65ed03010159873b72b4"><td class="memItemLeft" align="right" valign="top">std::array&lt; const char *, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mm7__data_8h.html#a860ffc8780eb65ed03010159873b72b4">pShopOptions</a></td></tr>
@@ -1023,8 +1030,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d3cd75e4fc05f253abdf933756c16b8" name="a4d3cd75e4fc05f253abdf933756c16b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d3cd75e4fc05f253abdf933756c16b8">&#9670;&#160;</a></span>_4F0882_evt_VAR_PlayerItemInHands_vals</h2>
+<a id="a5e98d02c42f0025e80ba1938dab9d1d7" name="a5e98d02c42f0025e80ba1938dab9d1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e98d02c42f0025e80ba1938dab9d1d7">&#9670;&#160;</a></span>_4F0882_evt_VAR_PlayerItemInHands_vals</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1033,7 +1040,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;int16_t, 54&gt; _4F0882_evt_VAR_PlayerItemInHands_vals</td>
+          <td class="memname">std::array&lt;std::pair&lt;int16_t, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>&gt;, 27&gt; _4F0882_evt_VAR_PlayerItemInHands_vals</td>
         </tr>
       </table>
   </td>
@@ -1661,6 +1668,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a486cbdbf871d6996a54b2a0472bd6779" name="a486cbdbf871d6996a54b2a0472bd6779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486cbdbf871d6996a54b2a0472bd6779">&#9670;&#160;</a></span>base_recovery_times_per_weapon_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;<a class="el" href="MM7_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a>&gt; base_recovery_times_per_weapon_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aeec6b47a335bd82456f0dc589ee5ef97" name="aeec6b47a335bd82456f0dc589ee5ef97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeec6b47a335bd82456f0dc589ee5ef97">&#9670;&#160;</a></span>bDialogueUI_InitializeActor_NPC_ID</h2>
 
@@ -1803,7 +1832,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="VectorTypes_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a> blv_prev_party_pos</td>
+          <td class="memname"><a class="el" href="Vec_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a> blv_prev_party_pos</td>
         </tr>
       </table>
   </td>
@@ -2167,28 +2196,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a884866cb1aba240306882d01856cab27" name="a884866cb1aba240306882d01856cab27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a884866cb1aba240306882d01856cab27">&#9670;&#160;</a></span>byte_4E8168</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt;std::array&lt;char, 14&gt;, 7&gt; byte_4E8168</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae312e333acdc4d62e19030e47b21f065" name="ae312e333acdc4d62e19030e47b21f065"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae312e333acdc4d62e19030e47b21f065">&#9670;&#160;</a></span>byte_4ECF08</h2>
 
@@ -2211,8 +2218,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a1745a0f801c575399db654d5fd74a368" name="a1745a0f801c575399db654d5fd74a368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1745a0f801c575399db654d5fd74a368">&#9670;&#160;</a></span>byte_4ED970_skill_learn_ability_by_class_table</h2>
+<a id="ad13338becdf410f41f8fd272b72f5c13" name="ad13338becdf410f41f8fd272b72f5c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13338becdf410f41f8fd272b72f5c13">&#9670;&#160;</a></span>byte_4ED970_skill_learn_ability_by_class_table</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2221,7 +2228,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;std::array&lt;char, 37&gt;, 36&gt; byte_4ED970_skill_learn_ability_by_class_table</td>
+          <td class="memname">std::array&lt;<a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;<a class="el" href="PlayerEnums_8h.html#ae7fdd356d1b4ddbdd59bcba036e6f942">PLAYER_SKILL_MASTERY</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a>&gt;, 36&gt; byte_4ED970_skill_learn_ability_by_class_table</td>
         </tr>
       </table>
   </td>
@@ -2244,28 +2251,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">char byte_506550</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5bb1a3109b32022de9450dade28975e6" name="a5bb1a3109b32022de9450dade28975e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bb1a3109b32022de9450dade28975e6">&#9670;&#160;</a></span>byte_5111F6_OwnedArtifacts</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt;char, 17&gt; byte_5111F6_OwnedArtifacts</td>
         </tr>
       </table>
   </td>
@@ -3600,8 +3585,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aae72435bf802091aebdb1f3db51c7cd7" name="aae72435bf802091aebdb1f3db51c7cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae72435bf802091aebdb1f3db51c7cd7">&#9670;&#160;</a></span>dword_F8B1B0_MasteryBeingTaught</h2>
+<a id="afbe206ab0eb29b56e62672d4c49d0de1" name="afbe206ab0eb29b56e62672d4c49d0de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe206ab0eb29b56e62672d4c49d0de1">&#9670;&#160;</a></span>dword_F8B1B0_MasteryBeingTaught</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3610,7 +3595,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int dword_F8B1B0_MasteryBeingTaught</td>
+          <td class="memname"><a class="el" href="PlayerEnums_8h.html#ae7fdd356d1b4ddbdd59bcba036e6f942">PLAYER_SKILL_MASTERY</a> dword_F8B1B0_MasteryBeingTaught</td>
         </tr>
       </table>
   </td>
@@ -4380,7 +4365,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="VectorTypes_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a> layingitem_vel_50FDFC</td>
+          <td class="memname"><a class="el" href="Vec_8h.html#adf6e1d7d066bb09da957cc89f2b3ceb2">Vec3i</a> layingitem_vel_50FDFC</td>
         </tr>
       </table>
   </td>
@@ -4436,8 +4421,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a12ed1a78456f21e77566dbf8d2296cb6" name="a12ed1a78456f21e77566dbf8d2296cb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12ed1a78456f21e77566dbf8d2296cb6">&#9670;&#160;</a></span>lloyds_beacon_spell_level</h2>
+<a id="a1d78aa3aab31f99ed22a1dd21ed55ba8" name="a1d78aa3aab31f99ed22a1dd21ed55ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d78aa3aab31f99ed22a1dd21ed55ba8">&#9670;&#160;</a></span>lloyds_beacon_spell_level</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4446,7 +4431,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__int64 lloyds_beacon_spell_level</td>
+          <td class="memname">int64_t lloyds_beacon_spell_level</td>
         </tr>
       </table>
   </td>
@@ -4634,8 +4619,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6cb3e514897941f0af48d32427d019fd" name="a6cb3e514897941f0af48d32427d019fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb3e514897941f0af48d32427d019fd">&#9670;&#160;</a></span>p2DEventsTXT_Raw</h2>
+<a id="a39e5d3cb46f6697b55de835147d188cb" name="a39e5d3cb46f6697b55de835147d188cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e5d3cb46f6697b55de835147d188cb">&#9670;&#160;</a></span>p2DEventsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4644,7 +4629,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* p2DEventsTXT_Raw</td>
+          <td class="memname">std::string p2DEventsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -4964,8 +4949,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af115f9ea724fb0d1ff281a835b210ae3" name="af115f9ea724fb0d1ff281a835b210ae3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af115f9ea724fb0d1ff281a835b210ae3">&#9670;&#160;</a></span>pAutonoteTXT_Raw</h2>
+<a id="a8d134f2855344ddf28c9fcbfcc5bb69a" name="a8d134f2855344ddf28c9fcbfcc5bb69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d134f2855344ddf28c9fcbfcc5bb69a">&#9670;&#160;</a></span>pAutonoteTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4974,7 +4959,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pAutonoteTXT_Raw</td>
+          <td class="memname">std::string pAutonoteTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -4986,8 +4971,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aba8f0a0d17c3334888091efc91ee764b" name="aba8f0a0d17c3334888091efc91ee764b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba8f0a0d17c3334888091efc91ee764b">&#9670;&#160;</a></span>pAwardsTXT_Raw</h2>
+<a id="adb817c80feaf33c936cecc37ae449dd1" name="adb817c80feaf33c936cecc37ae449dd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb817c80feaf33c936cecc37ae449dd1">&#9670;&#160;</a></span>pAwardsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4996,7 +4981,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pAwardsTXT_Raw</td>
+          <td class="memname">std::string pAwardsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -5338,8 +5323,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a20002b8a0a3b850ed4a0bc9fc7be54f6" name="a20002b8a0a3b850ed4a0bc9fc7be54f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20002b8a0a3b850ed4a0bc9fc7be54f6">&#9670;&#160;</a></span>pHostileTXT_Raw</h2>
+<a id="ad4b7a455d5ff23c8236d8fea4d5b24f4" name="ad4b7a455d5ff23c8236d8fea4d5b24f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b7a455d5ff23c8236d8fea4d5b24f4">&#9670;&#160;</a></span>pHostileTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5348,7 +5333,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pHostileTXT_Raw</td>
+          <td class="memname">std::string pHostileTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -5492,8 +5477,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a22327681bc5c26e8919a85dbb065cc0c" name="a22327681bc5c26e8919a85dbb065cc0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22327681bc5c26e8919a85dbb065cc0c">&#9670;&#160;</a></span>pMerchantsBuyPhrases</h2>
+<a id="acd25dcf75d8e4cf7f86e9ab655b33d13" name="acd25dcf75d8e4cf7f86e9ab655b33d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd25dcf75d8e4cf7f86e9ab655b33d13">&#9670;&#160;</a></span>pMerchantsBuyPhrases</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5502,7 +5487,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;const char *, 7&gt; pMerchantsBuyPhrases</td>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a>&gt; pMerchantsBuyPhrases</td>
         </tr>
       </table>
   </td>
@@ -5514,8 +5499,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="acf3ec3d1f18610b35a385cccf629403e" name="acf3ec3d1f18610b35a385cccf629403e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf3ec3d1f18610b35a385cccf629403e">&#9670;&#160;</a></span>pMerchantsIdentifyPhrases</h2>
+<a id="a47c16a091f6844ff3548d450ea5ccf2b" name="a47c16a091f6844ff3548d450ea5ccf2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c16a091f6844ff3548d450ea5ccf2b">&#9670;&#160;</a></span>pMerchantsIdentifyPhrases</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5524,7 +5509,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;const char *, 7&gt; pMerchantsIdentifyPhrases</td>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a>&gt; pMerchantsIdentifyPhrases</td>
         </tr>
       </table>
   </td>
@@ -5536,8 +5521,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad77c6c85342def28b23a5e7c9574e52c" name="ad77c6c85342def28b23a5e7c9574e52c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad77c6c85342def28b23a5e7c9574e52c">&#9670;&#160;</a></span>pMerchantsRepairPhrases</h2>
+<a id="a712249bbe93df30defc048a47644dec0" name="a712249bbe93df30defc048a47644dec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712249bbe93df30defc048a47644dec0">&#9670;&#160;</a></span>pMerchantsRepairPhrases</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5546,7 +5531,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;const char *, 7&gt; pMerchantsRepairPhrases</td>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a>&gt; pMerchantsRepairPhrases</td>
         </tr>
       </table>
   </td>
@@ -5558,8 +5543,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad6ec3a696f3a39e49b0e835730456b36" name="ad6ec3a696f3a39e49b0e835730456b36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6ec3a696f3a39e49b0e835730456b36">&#9670;&#160;</a></span>pMerchantsSellPhrases</h2>
+<a id="a2227b64bec6b60c3fb6031b944aed7ae" name="a2227b64bec6b60c3fb6031b944aed7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2227b64bec6b60c3fb6031b944aed7ae">&#9670;&#160;</a></span>pMerchantsSellPhrases</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5568,7 +5553,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;const char *, 7&gt; pMerchantsSellPhrases</td>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;const char *, <a class="el" href="NPCEnums_8h.html#a4daf86d2fc45619eeed9db250e6c8b67ad5563645d306e9ee1aa8dc386b40aa70">MERCHANT_PHRASE_COUNT</a>&gt; pMerchantsSellPhrases</td>
         </tr>
       </table>
   </td>
@@ -5580,8 +5565,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b0a2896c10a489bd72d322263313be5" name="a5b0a2896c10a489bd72d322263313be5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b0a2896c10a489bd72d322263313be5">&#9670;&#160;</a></span>pMerchantsTXT_Raw</h2>
+<a id="a7eddee821f0bfe82984194e44bcd448f" name="a7eddee821f0bfe82984194e44bcd448f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eddee821f0bfe82984194e44bcd448f">&#9670;&#160;</a></span>pMerchantsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5590,7 +5575,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pMerchantsTXT_Raw</td>
+          <td class="memname">std::string pMerchantsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -5668,8 +5653,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a753663efa466240d6114a0dcab5b0216" name="a753663efa466240d6114a0dcab5b0216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a753663efa466240d6114a0dcab5b0216">&#9670;&#160;</a></span>pMonsterPlacementTXT_Raw</h2>
+<a id="a7f0d066096cedc0c7a25f1b31a8e9324" name="a7f0d066096cedc0c7a25f1b31a8e9324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f0d066096cedc0c7a25f1b31a8e9324">&#9670;&#160;</a></span>pMonsterPlacementTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5678,7 +5663,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pMonsterPlacementTXT_Raw</td>
+          <td class="memname">std::string pMonsterPlacementTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -5690,8 +5675,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a50148730dd1ba9c7d8db902f1ed9b662" name="a50148730dd1ba9c7d8db902f1ed9b662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50148730dd1ba9c7d8db902f1ed9b662">&#9670;&#160;</a></span>pMonstersTXT_Raw</h2>
+<a id="ae06d67b94d19537967948924d19ac1ec" name="ae06d67b94d19537967948924d19ac1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06d67b94d19537967948924d19ac1ec">&#9670;&#160;</a></span>pMonstersTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5700,7 +5685,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pMonstersTXT_Raw</td>
+          <td class="memname">std::string pMonstersTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -5998,8 +5983,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7563164040274cc211327d85d8a5dd54" name="a7563164040274cc211327d85d8a5dd54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7563164040274cc211327d85d8a5dd54">&#9670;&#160;</a></span>pQuestsTXT_Raw</h2>
+<a id="ad840ec4f9ad2e8c7cd1812764289a89a" name="ad840ec4f9ad2e8c7cd1812764289a89a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad840ec4f9ad2e8c7cd1812764289a89a">&#9670;&#160;</a></span>pQuestsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6008,7 +5993,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pQuestsTXT_Raw</td>
+          <td class="memname">std::string pQuestsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -6086,8 +6071,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a68c16c6ab4a26edd1f9c558300645468" name="a68c16c6ab4a26edd1f9c558300645468"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68c16c6ab4a26edd1f9c558300645468">&#9670;&#160;</a></span>pScrolls</h2>
+<a id="afd383f22f336fd1cfcced5d672a9445f" name="afd383f22f336fd1cfcced5d672a9445f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd383f22f336fd1cfcced5d672a9445f">&#9670;&#160;</a></span>pScrolls</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6096,7 +6081,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;const char *, 82&gt; pScrolls</td>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;const char *, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aad5907bf1548807261f7b2448fc08f3a">ITEM_FIRST_MESSAGE_SCROLL</a>, <a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5aa0d4005bcb683e5c8b2f638bbdf9e074">ITEM_LAST_MESSAGE_SCROLL</a>&gt; pScrolls</td>
         </tr>
       </table>
   </td>
@@ -6108,8 +6093,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f3b5d7153e4e82e618898b3cc647736" name="a6f3b5d7153e4e82e618898b3cc647736"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f3b5d7153e4e82e618898b3cc647736">&#9670;&#160;</a></span>pScrollsTXT_Raw</h2>
+<a id="a8e3bf176a8dfac3fe1a99265ae944ebc" name="a8e3bf176a8dfac3fe1a99265ae944ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3bf176a8dfac3fe1a99265ae944ebc">&#9670;&#160;</a></span>pScrollsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6118,7 +6103,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pScrollsTXT_Raw</td>
+          <td class="memname">std::string pScrollsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -6141,6 +6126,28 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::array&lt;const char *, 4&gt; pShopOptions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8a328adfbc89355482cbf71be58f46f" name="ad8a328adfbc89355482cbf71be58f46f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a328adfbc89355482cbf71be58f46f">&#9670;&#160;</a></span>pSkillAvailabilityPerClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;<a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;<a class="el" href="PlayerEnums_8h.html#a41cfcbb7cd5d9e8279582963908f8250">CLASS_SKILL</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a>&gt;, 9&gt; pSkillAvailabilityPerClass</td>
         </tr>
       </table>
   </td>
@@ -6196,8 +6203,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae350df9650965340f44ef75928718437" name="ae350df9650965340f44ef75928718437"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae350df9650965340f44ef75928718437">&#9670;&#160;</a></span>pSpellsTXT_Raw</h2>
+<a id="ad872a45861fb7c9f1f24f4a85359b86b" name="ad872a45861fb7c9f1f24f4a85359b86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad872a45861fb7c9f1f24f4a85359b86b">&#9670;&#160;</a></span>pSpellsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6206,7 +6213,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pSpellsTXT_Raw</td>
+          <td class="memname">std::string pSpellsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -6272,7 +6279,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="VectorTypes_8h.html#a40b8356e33151c22cb4d1adaf2b762a8">Vec3f</a>&gt; pTerrainNormals</td>
+          <td class="memname">std::vector&lt;<a class="el" href="Vec_8h.html#a40b8356e33151c22cb4d1adaf2b762a8">Vec3f</a>&gt; pTerrainNormals</td>
         </tr>
       </table>
   </td>
@@ -6394,8 +6401,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa70da01224d6d97aa4fb7ab9a8ffcd2e" name="aa70da01224d6d97aa4fb7ab9a8ffcd2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa70da01224d6d97aa4fb7ab9a8ffcd2e">&#9670;&#160;</a></span>pTransitionsTXT_Raw</h2>
+<a id="ae2e3d90b10f7bdaffc6965b448356837" name="ae2e3d90b10f7bdaffc6965b448356837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e3d90b10f7bdaffc6965b448356837">&#9670;&#160;</a></span>pTransitionsTXT_Raw</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6404,7 +6411,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* pTransitionsTXT_Raw</td>
+          <td class="memname">std::string pTransitionsTXT_Raw</td>
         </tr>
       </table>
   </td>
@@ -6669,6 +6676,28 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">signed int sDialogue_SpeakingActorNPC_ID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab75d9083d0d5b057cbec666de40fd4a" name="aab75d9083d0d5b057cbec666de40fd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab75d9083d0d5b057cbec666de40fd4a">&#9670;&#160;</a></span>skills_max_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classIndexedArray.html">IndexedArray</a>&lt;<a class="el" href="PlayerEnums_8h.html#adb9cb0391b2119e3d28341d2f340964e">PLAYER_SKILL_LEVEL</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5ad7d2fb4775761af8b6e5025c83785f1c">PLAYER_SKILL_FIRST</a>, <a class="el" href="PlayerEnums_8h.html#a882aeeabc7e03f0fa334764a909ab3f5a5c5a2546d4757ab60553f61a6f3f65f1">PLAYER_SKILL_LAST</a>&gt; skills_max_level</td>
         </tr>
       </table>
   </td>
