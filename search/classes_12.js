@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['testeventloop_0',['TestEventLoop',['../classTestEventLoop.html',1,'']]],
-  ['testopenglcontext_1',['TestOpenGLContext',['../classTestOpenGLContext.html',1,'']]],
-  ['testplatform_2',['TestPlatform',['../classTestPlatform.html',1,'']]],
-  ['teststate_3',['TestState',['../classTestState.html',1,'']]],
-  ['teststatehandle_4',['TestStateHandle',['../classTestStateHandle.html',1,'']]],
-  ['testwindow_5',['TestWindow',['../classTestWindow.html',1,'']]],
+  ['testpair_0',['TestPair',['../structTestPair.html',1,'']]],
+  ['testproxy_1',['TestProxy',['../classTestProxy.html',1,'']]],
+  ['teststate_2',['TestState',['../classTestState.html',1,'']]],
+  ['teststatehandle_3',['TestStateHandle',['../classTestStateHandle.html',1,'']]],
+  ['teststruct_4',['TestStruct',['../structTestStruct.html',1,'']]],
+  ['testthread_5',['TestThread',['../classTestThread.html',1,'']]],
   ['texture_6',['Texture',['../classTexture.html',1,'']]],
   ['texture_5fmm7_7',['Texture_MM7',['../structTexture__MM7.html',1,'']]],
   ['textured3d_8',['TextureD3D',['../classTextureD3D.html',1,'']]],
