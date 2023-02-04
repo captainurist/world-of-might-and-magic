@@ -542,7 +542,7 @@ var searchData=
   ['ppressedkeysbuffer_539',['pPressedKeysBuffer',['../classIo_1_1KeyboardInputHandler.html#ab539a0cac6ef7027fe36a8037654f2b8',1,'Io::KeyboardInputHandler']]],
   ['pprimarywindow_540',['pPrimaryWindow',['../GUIWindow_8cpp.html#ae2c9c502485c7db2c74ad737e3c5bd97',1,'pPrimaryWindow():&#160;GUIWindow.cpp'],['../GUIWindow_8h.html#ae2c9c502485c7db2c74ad737e3c5bd97',1,'pPrimaryWindow():&#160;GUIWindow.cpp']]],
   ['pprofessionchance_541',['pProfessionChance',['../structNPCStats.html#a2940022d9e6c1ca9cbf1510f12908de6',1,'NPCStats']]],
-  ['pprofessions_542',['pProfessions',['../structNPCStats.html#ac1a595b03ea23c28c11b230bde3f7743',1,'NPCStats']]],
+  ['pprofessions_542',['pProfessions',['../structNPCStats.html#a5a6e42ae52c006f9774b9029ef82aada',1,'NPCStats']]],
   ['pprojectiles_543',['pProjectiles',['../structSpellFxRenderer.html#aece25b01edc63ec45b9d23f7294fc2ad',1,'SpellFxRenderer']]],
   ['pproperties_544',['pProperties',['../structFrameTableTxtLine.html#a843902bb9c02e00fa7849613a7fcb166',1,'FrameTableTxtLine']]],
   ['pproprietername_545',['pProprieterName',['../struct__2devent.html#ad6545682fc86f9a358c82c996f4334ed',1,'_2devent']]],
