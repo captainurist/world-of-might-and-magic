@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['todo_20list_0',['Todo List',['../todo.html',1,'']]]
+  ['might_20and_20magic_20trilogy_0',['Might and Magic Trilogy',['../index.html',1,'']]]
 ];
