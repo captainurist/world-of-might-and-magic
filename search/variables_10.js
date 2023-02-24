@@ -596,7 +596,7 @@ var searchData=
   ['pspecialenchantments_593',['pSpecialEnchantments',['../structItemTable.html#a41e7d1d63dff3fe2e483b85a74dab7a9',1,'ItemTable']]],
   ['pspecialenchantments_5fcount_594',['pSpecialEnchantments_count',['../structItemTable.html#a28c44495aeed065407d10fb2010bb928',1,'ItemTable']]],
   ['pspellbookspellindices_595',['pSpellbookSpellIndices',['../Spellbook_8cpp.html#a915cf87b886cb0a37b7212f084cc92b6',1,'Spellbook.cpp']]],
-  ['pspelldatas_596',['pSpellDatas',['../Spells_8cpp.html#ad6316f9f01d380d9e3306e5734cd669b',1,'pSpellDatas():&#160;Spells.cpp'],['../Spells_8h.html#ad6316f9f01d380d9e3306e5734cd669b',1,'pSpellDatas():&#160;Spells.cpp']]],
+  ['pspelldatas_596',['pSpellDatas',['../Spells_8cpp.html#ac969674ff9650a7e35f615fad1632eab',1,'pSpellDatas():&#160;Spells.cpp'],['../Spells_8h.html#ac969674ff9650a7e35f615fad1632eab',1,'pSpellDatas():&#160;Spells.cpp']]],
   ['pspellfont_597',['pSpellFont',['../GUIFont_8cpp.html#a1e244eec57294250bd240fd5b4202429',1,'pSpellFont():&#160;GUIFont.cpp'],['../GUIFont_8h.html#a1e244eec57294250bd240fd5b4202429',1,'pSpellFont():&#160;GUIFont.cpp']]],
   ['pspellpointsattributedescription_598',['pSpellPointsAttributeDescription',['../mm7__data_8cpp.html#a095ac7f5c72810bea7d728a7690fd431',1,'pSpellPointsAttributeDescription():&#160;mm7_data.cpp'],['../mm7__data_8h.html#a095ac7f5c72810bea7d728a7690fd431',1,'pSpellPointsAttributeDescription():&#160;mm7_data.cpp']]],
   ['pspellstats_599',['pSpellStats',['../Spells_8cpp.html#a627363ab8ebcce2dc02cc92efff9a04e',1,'pSpellStats():&#160;Spells.cpp'],['../Spells_8h.html#a627363ab8ebcce2dc02cc92efff9a04e',1,'pSpellStats():&#160;Spells.cpp']]],
