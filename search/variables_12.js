@@ -11,8 +11,8 @@ var searchData=
   ['rangedattackdepth_8',['RangedAttackDepth',['../classApplication_1_1GameConfig_1_1Gameplay.html#ac120def27b912c0afb7469c206a1daee',1,'Application::GameConfig::Gameplay']]],
   ['receives_5fkeyboard_5finput_9',['receives_keyboard_input',['../classGUIWindow.html#aaedaee57b8df9772e3d7a1a19d2b02e8',1,'GUIWindow']]],
   ['recovery_5fper_5fskill_10',['recovery_per_skill',['../classSpellData.html#a0cab291bda882b4dcfe5b7348324a851',1,'SpellData']]],
-  ['red_11',['Red',['../classColorTable.html#a68b9a56fa9c09baa7f92b311e87c2a87',1,'ColorTable']]],
-  ['red_12',['red',['../structGLdecalverts.html#aaf45c445abb8d8eb45335455bba1ad00',1,'GLdecalverts']]],
+  ['red_11',['red',['../structGLdecalverts.html#aaf45c445abb8d8eb45335455bba1ad00',1,'GLdecalverts']]],
+  ['red_12',['Red',['../classColorTable.html#a68b9a56fa9c09baa7f92b311e87c2a87',1,'ColorTable']]],
   ['reef_13',['Reef',['../classColorTable.html#a467d4d2feb2dc7c538438242498eaf3d',1,'ColorTable']]],
   ['regularbonusmap_14',['regularBonusMap',['../Items_8cpp.html#a9db013bdacb4ac543eecbf8e365cb22d',1,'Items.cpp']]],
   ['relations_15',['relations',['../structFactionTable.html#a8841090571c6b9f6a4579b4700e1b791',1,'FactionTable']]],
@@ -49,8 +49,9 @@ var searchData=
   ['right_46',['Right',['../classApplication_1_1GameConfig_1_1Keybindings.html#aa8b25af5c01b8ab1e9327e67cb9f5421',1,'Application::GameConfig::Keybindings::Right()'],['../classApplication_1_1GameConfig_1_1Gamepad.html#adcfb450b60ecf107df7621785fcfe4e8',1,'Application::GameConfig::Gamepad::Right()']]],
   ['rightclickportraitxmax_47',['RightClickPortraitXmax',['../mm7__data_8cpp.html#a1e0bb2e5df8caceb874ccbac8afb592b',1,'RightClickPortraitXmax():&#160;mm7_data.cpp'],['../mm7__data_8h.html#a1e0bb2e5df8caceb874ccbac8afb592b',1,'RightClickPortraitXmax():&#160;mm7_data.cpp']]],
   ['rightclickportraitxmin_48',['RightClickPortraitXmin',['../mm7__data_8cpp.html#a271bcf3fdc5ff14473042faddbd0cfa3',1,'RightClickPortraitXmin():&#160;mm7_data.cpp'],['../mm7__data_8h.html#a271bcf3fdc5ff14473042faddbd0cfa3',1,'RightClickPortraitXmin():&#160;mm7_data.cpp']]],
-  ['rot_5fx_49',['rot_x',['../structTownPortalData.html#a4e82ac9655728eaeaecabc8eca40b71a',1,'TownPortalData']]],
-  ['rot_5fy_50',['rot_y',['../structTownPortalData.html#ac1f4f99e78574e664ce01b4ca5c72a27',1,'TownPortalData']]],
-  ['rotated_5fnormal_51',['rotated_normal',['../structLightsData.html#a0f92fde30cff4753d4cfadb6ab41fcd4',1,'LightsData']]],
-  ['rotation_5fspeed_52',['rotation_speed',['../structParticle.html#afc3be85262f36cb5f78cf3a51d8e61b3',1,'Particle']]]
+  ['riogrande_49',['RioGrande',['../classColorTable.html#a81f2d91c73ff2c302ee544bfa2b43c0f',1,'ColorTable']]],
+  ['rot_5fx_50',['rot_x',['../structTownPortalData.html#a4e82ac9655728eaeaecabc8eca40b71a',1,'TownPortalData']]],
+  ['rot_5fy_51',['rot_y',['../structTownPortalData.html#ac1f4f99e78574e664ce01b4ca5c72a27',1,'TownPortalData']]],
+  ['rotated_5fnormal_52',['rotated_normal',['../structLightsData.html#a0f92fde30cff4753d4cfadb6ab41fcd4',1,'LightsData']]],
+  ['rotation_5fspeed_53',['rotation_speed',['../structParticle.html#afc3be85262f36cb5f78cf3a51d8e61b3',1,'Particle']]]
 ];
