@@ -84,8 +84,8 @@ var searchData=
   ['releasesframes_81',['ReleaseSFrames',['../structSpriteFrameTable.html#a083f2b40eb13db7bcac69bc5fcc7e16b',1,'SpriteFrameTable']]],
   ['releasesprite_82',['ReleaseSprite',['../classAssetsManager.html#a69b65579d57b249366fcbb90332a5dda',1,'AssetsManager']]],
   ['releaseterrain_83',['ReleaseTerrain',['../classRenderOpenGL.html#aa556fc14c717fed7a8b1398d6b7c3ffc',1,'RenderOpenGL::ReleaseTerrain()'],['../classIRender.html#aac446770a7f1b656ae69986b464a2e5c',1,'IRender::ReleaseTerrain()']]],
-  ['reload_84',['Reload',['../classNuklear.html#a2295f55c8c0f9bccd4261c2662550238',1,'Nuklear']]],
-  ['reload_85',['reload',['../classGLShader.html#a28b164dd3cf319f3a78a5cebbf85b87e',1,'GLShader']]],
+  ['reload_84',['reload',['../classGLShader.html#a28b164dd3cf319f3a78a5cebbf85b87e',1,'GLShader']]],
+  ['reload_85',['Reload',['../classNuklear.html#a2295f55c8c0f9bccd4261c2662550238',1,'Nuklear']]],
   ['reloadfonts_86',['ReloadFonts',['../GUIFont_8cpp.html#a1d6c4719482ed9e33477a25e109829e9',1,'ReloadFonts():&#160;GUIFont.cpp'],['../GUIFont_8h.html#a1d6c4719482ed9e33477a25e109829e9',1,'ReloadFonts():&#160;GUIFont.cpp']]],
   ['reloadshaders_87',['ReloadShaders',['../classApplication_1_1GameConfig_1_1Gamepad.html#afb1967fa4954301d1016965bc577992d',1,'Application::GameConfig::Gamepad::ReloadShaders()'],['../namespaceIo.html#a547e2ba6c6a5bb3a0b5987131e62a90cabb0c83712eee939897ad589bbc71f3ef',1,'Io::ReloadShaders()'],['../classRenderOpenGL.html#a278be3592b53f85bca6ab1195536c335',1,'RenderOpenGL::ReloadShaders()'],['../classIRender.html#a64b75ae58f37d81aa4b1fce9d03c3da4',1,'IRender::ReloadShaders()'],['../classApplication_1_1GameConfig_1_1Keybindings.html#a0881a114356860cf52d9bbae5a1a490b',1,'Application::GameConfig::Keybindings::ReloadShaders()']]],
   ['reloadtex_88',['ReloadTex',['../classApplication_1_1GameConfig_1_1Window.html#a166755373998c33b30c17c0b4fd62556',1,'Application::GameConfig::Window']]],
@@ -215,8 +215,8 @@ var searchData=
   ['rotated_5fnormal_212',['rotated_normal',['../structLightsData.html#a0f92fde30cff4753d4cfadb6ab41fcd4',1,'LightsData']]],
   ['rotation_5fspeed_213',['rotation_speed',['../structParticle.html#afc3be85262f36cb5f78cf3a51d8e61b3',1,'Particle']]],
   ['round_5fto_5fint_214',['round_to_int',['../OurMath_8h.html#a50ee4d4946888926bdf5a920129a322a',1,'OurMath.h']]],
-  ['run_215',['run',['../classGameThread.html#a5d4531cb04b18f0f50a7ec71c05a41cd',1,'GameThread']]],
-  ['run_216',['Run',['../classApplication_1_1Game.html#a1880d9816a978b82bb91e4679743173d',1,'Application::Game']]],
+  ['run_215',['Run',['../classApplication_1_1Game.html#a1880d9816a978b82bb91e4679743173d',1,'Application::Game']]],
+  ['run_216',['run',['../classGameThread.html#a5d4531cb04b18f0f50a7ec71c05a41cd',1,'GameThread']]],
   ['runcontrolroutine_217',['runControlRoutine',['../classEngineControlPlugin.html#ac496c546ef0e78dc971b43fc902c9f22',1,'EngineControlPlugin']]],
   ['rungameroutine_218',['runGameRoutine',['../classEngineController.html#a6c5f0921fa661e54726b268508a3271b',1,'EngineController']]]
 ];
