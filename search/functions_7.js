@@ -196,7 +196,7 @@ var searchData=
   ['geticonname_193',['GetIconName',['../structItemGen.html#a670a9aa2c4150975e25bd86af446a89e',1,'ItemGen']]],
   ['getidentifiedname_194',['GetIdentifiedName',['../structItemGen.html#a7e0a902ad83ca1e749f422755582c72b',1,'ItemGen']]],
   ['getimage_5falpha_195',['GetImage_Alpha',['../classAssetsManager.html#a74cd4e03fc13d2849bce991048ee1201',1,'AssetsManager']]],
-  ['getimage_5fcolorkey_196',['GetImage_ColorKey',['../classAssetsManager.html#a543285c278581ebbf9eaed33fe56940a',1,'AssetsManager']]],
+  ['getimage_5fcolorkey_196',['GetImage_ColorKey',['../classAssetsManager.html#ac2ad55a16171d5929ac884edc1104cfa',1,'AssetsManager']]],
   ['getimage_5fpaletted_197',['GetImage_Paletted',['../classAssetsManager.html#aff2926fec2a17d8f77adefd789c73293',1,'AssetsManager']]],
   ['getimage_5fpcxfromfile_198',['GetImage_PCXFromFile',['../classAssetsManager.html#a9733f51d66581a5ec864829d34273200',1,'AssetsManager']]],
   ['getimage_5fpcxfromiconslod_199',['GetImage_PCXFromIconsLOD',['../classAssetsManager.html#a1fca8798f1a6572e714655ba55e6abc0',1,'AssetsManager']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['c16_0',['C16',['../classColorTable_1_1Color.html#a684e79ad62c406f70b3d9d7747a450be',1,'ColorTable::Color']]],
-  ['c32_1',['C32',['../classColorTable_1_1Color.html#af55e8e48997d15c30ac59f7f37abe3c7',1,'ColorTable::Color']]],
+  ['c16_0',['c16',['../classColorTable_1_1Color.html#a7ef1e61a0478aa6ba2a3c0830e016e36',1,'ColorTable::Color']]],
+  ['c32_1',['c32',['../classColorTable_1_1Color.html#adcba8ed82c5817f5332705a0e9c2d046',1,'ColorTable::Color']]],
   ['calcdistpointtoline_2',['CalcDistPointToLine',['../Indoor_8h.html#a2a197c141a9bd00322e6808d35032aef',1,'CalcDistPointToLine(int a1, int a2, int a3, int a4, int a5, int a6):&#160;Indoor.cpp'],['../Indoor_8cpp.html#a0a30df2bace671fdb9c53d5955263ae2',1,'CalcDistPointToLine(int x1, int y1, int x2, int y2, int x3, int y3):&#160;Indoor.cpp']]],
   ['calcfacebounding_3',['CalcFaceBounding',['../structstru10.html#a094fe8f00c5e38adcd8c5eb49bfb89c9',1,'stru10']]],
   ['calcmagicaldamagetoactor_4',['CalcMagicalDamageToActor',['../classActor.html#afabb48d0223212588042fb12141de478',1,'Actor']]],
@@ -116,8 +116,8 @@ var searchData=
   ['collidewithdecoration_113',['CollideWithDecoration',['../Collisions_8cpp.html#a923f898f6deb9db4826f20993aa7bfd3',1,'Collisions.cpp']]],
   ['collidewithparty_114',['CollideWithParty',['../Collisions_8cpp.html#a8cdd9e6db8e019634d19bd556b187a7d',1,'CollideWithParty(bool jagged_top):&#160;Collisions.cpp'],['../Collisions_8h.html#a8cdd9e6db8e019634d19bd556b187a7d',1,'CollideWithParty(bool jagged_top):&#160;Collisions.cpp']]],
   ['color_115',['Color',['../classColorTable_1_1Color.html#a0d364ea01ca1312b6fba11bea784c0aa',1,'ColorTable::Color']]],
-  ['color16_116',['Color16',['../Color_8h.html#a4923f91255365cc0b9ea45e77e90bbf3',1,'Color.h']]],
-  ['color32_117',['Color32',['../Color_8h.html#a46640c3facd457bbc08375d296c95438',1,'Color32(uint16_t color16):&#160;Color.h'],['../Color_8h.html#aee487abca0e1444150a220cdfeea26cd',1,'Color32(uint8_t r, uint8_t g, uint8_t b, uint8_t a=255):&#160;Color.h']]],
+  ['color16_116',['color16',['../Color_8h.html#ab1408336154985d918907e88ba961430',1,'Color.h']]],
+  ['color32_117',['color32',['../Color_8h.html#a180cf2fbd6c0b61136091514722d96fa',1,'color32(uint16_t color16):&#160;Color.h'],['../Color_8h.html#a089753f5b3407a4b0656cc7f9613b902',1,'color32(uint8_t r, uint8_t g, uint8_t b, uint8_t a=255):&#160;Color.h']]],
   ['colorformat_118',['ColorFormat',['../structColorFormat.html#afb72ec61ad84078ad0513b74f0b9adc5',1,'ColorFormat']]],
   ['colorkey_5flod_5floader_119',['ColorKey_LOD_Loader',['../classColorKey__LOD__Loader.html#ae4bae6095d0dd74b1805e907d0479a6b',1,'ColorKey_LOD_Loader']]],
   ['compactlayingitemslist_120',['CompactLayingItemsList',['../SpriteObject_8h.html#aaba2939e1540dd4a568dbcdb4591117b',1,'CompactLayingItemsList():&#160;SpriteObject.cpp'],['../SpriteObject_8cpp.html#aaba2939e1540dd4a568dbcdb4591117b',1,'CompactLayingItemsList():&#160;SpriteObject.cpp']]],
