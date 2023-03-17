@@ -567,7 +567,7 @@ var searchData=
   ['globaltestcontroller_564',['globalTestController',['../GameTest_8cpp.html#a890dd80bed47accd00ac5c4970962c48',1,'GameTest.cpp']]],
   ['globalthrowlistenerenabled_565',['globalThrowListenerEnabled',['../ThrowingAssertions_8cpp.html#a35c86fef7111f9d6c408d86eb3f7d83c',1,'ThrowingAssertions.cpp']]],
   ['globalthrowlistenerinstalled_566',['globalThrowListenerInstalled',['../ThrowingAssertions_8cpp.html#aef4196a0004f7989fc29edd7a280461e',1,'ThrowingAssertions.cpp']]],
-  ['globalvalidatelist_567',['globalValidateList',['../DataPath_8cpp.html#a2be1e1d8f3f593406bbb0c6842780ca3',1,'DataPath.cpp']]],
+  ['globalvalidatelist_567',['globalValidateList',['../DataPath_8cpp.html#a7213d109956218a2e177a067d6d5bfc8',1,'DataPath.cpp']]],
   ['globalwaitformessages_568',['globalWaitForMessages',['../namespacedetail.html#ab1892a4a5733ec83f0734ad3b41ad4f6',1,'detail']]],
   ['glpalettereset_569',['GLPaletteReset',['../structPaletteManager.html#a71c4a3fdd64673d6be2d803125e4eaff',1,'PaletteManager']]],
   ['glshader_570',['GLShader',['../classGLShader.html#a71d842a6a99dac037c8d0f91e4de593b',1,'GLShader::GLShader()'],['../classGLShader.html',1,'GLShader']]],

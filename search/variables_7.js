@@ -96,7 +96,7 @@ var searchData=
   ['globaltestcontroller_93',['globalTestController',['../GameTest_8cpp.html#a890dd80bed47accd00ac5c4970962c48',1,'GameTest.cpp']]],
   ['globalthrowlistenerenabled_94',['globalThrowListenerEnabled',['../ThrowingAssertions_8cpp.html#a35c86fef7111f9d6c408d86eb3f7d83c',1,'ThrowingAssertions.cpp']]],
   ['globalthrowlistenerinstalled_95',['globalThrowListenerInstalled',['../ThrowingAssertions_8cpp.html#aef4196a0004f7989fc29edd7a280461e',1,'ThrowingAssertions.cpp']]],
-  ['globalvalidatelist_96',['globalValidateList',['../DataPath_8cpp.html#a2be1e1d8f3f593406bbb0c6842780ca3',1,'DataPath.cpp']]],
+  ['globalvalidatelist_96',['globalValidateList',['../DataPath_8cpp.html#a7213d109956218a2e177a067d6d5bfc8',1,'DataPath.cpp']]],
   ['gold_5ftransaction_5famount_97',['gold_transaction_amount',['../mm7__data_8h.html#a4bb6508ee8f5604384798ce3ac89243b',1,'gold_transaction_amount():&#160;mm7_data.cpp'],['../mm7__data_8cpp.html#a4bb6508ee8f5604384798ce3ac89243b',1,'gold_transaction_amount():&#160;mm7_data.cpp']]],
   ['gpu_5fmax_5ftex_5flayers_98',['GPU_MAX_TEX_LAYERS',['../classRenderOpenGL.html#ac079748a71dcbaa6efd94882815af940',1,'RenderOpenGL']]],
   ['gpu_5fmax_5ftex_5fsize_99',['GPU_MAX_TEX_SIZE',['../classRenderOpenGL.html#ab57cc0a6e63ca43cd66f91adb1291870',1,'RenderOpenGL']]],
