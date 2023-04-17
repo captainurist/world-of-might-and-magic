@@ -11,8 +11,8 @@ var searchData=
   ['rangedattackdepth_8',['RangedAttackDepth',['../classGameConfig_1_1Gameplay.html#ac926cf728f08b0c1b707f7545761399c',1,'GameConfig::Gameplay']]],
   ['receives_5fkeyboard_5finput_9',['receives_keyboard_input',['../classGUIWindow.html#aaedaee57b8df9772e3d7a1a19d2b02e8',1,'GUIWindow']]],
   ['recovery_5fper_5fskill_10',['recovery_per_skill',['../classSpellData.html#a0cab291bda882b4dcfe5b7348324a851',1,'SpellData']]],
-  ['red_11',['red',['../structGLdecalverts.html#aaf45c445abb8d8eb45335455bba1ad00',1,'GLdecalverts']]],
-  ['red_12',['Red',['../classColorTable.html#a68b9a56fa9c09baa7f92b311e87c2a87',1,'ColorTable']]],
+  ['red_11',['Red',['../classColorTable.html#a68b9a56fa9c09baa7f92b311e87c2a87',1,'ColorTable']]],
+  ['red_12',['red',['../structGLdecalverts.html#aaf45c445abb8d8eb45335455bba1ad00',1,'GLdecalverts']]],
   ['reef_13',['Reef',['../classColorTable.html#a467d4d2feb2dc7c538438242498eaf3d',1,'ColorTable']]],
   ['regularbonusmap_14',['regularBonusMap',['../Items_8cpp.html#a9db013bdacb4ac543eecbf8e365cb22d',1,'Items.cpp']]],
   ['relations_15',['relations',['../structFactionTable.html#a8841090571c6b9f6a4579b4700e1b791',1,'FactionTable']]],
@@ -29,7 +29,7 @@ var searchData=
   ['reserved_26',['reserved',['../structPCXHeader.html#a4d859521016e3943d5f2e8935fdbd5be',1,'PCXHeader']]],
   ['resetconfig_27',['resetConfig',['../structGameStarterOptions.html#acd88534449bd48b5fcc093a061a72fc3',1,'GameStarterOptions']]],
   ['resizable_28',['Resizable',['../classGameConfig_1_1Window.html#a28c622eca951a071930983a24b4421a8',1,'GameConfig::Window']]],
-  ['resource_29',['resource',['../structBLVFace.html#a2c1c89a245c1562d5421f95a690ffdd8',1,'BLVFace::resource()'],['../structODMFace.html#a4867a2d7e1ed52e717987c1eaf4e3175',1,'ODMFace::resource()']]],
+  ['resource_29',['resource',['../structODMFace.html#a4867a2d7e1ed52e717987c1eaf4e3175',1,'ODMFace::resource()'],['../structBLVFace.html#a2c1c89a245c1562d5421f95a690ffdd8',1,'BLVFace::resource()']]],
   ['resource_5fbeasts_30',['resource_beasts',['../structArcomagePlayer.html#a614af2a5b10332f194b2fa4c335fa6e9',1,'ArcomagePlayer']]],
   ['resource_5fbricks_31',['resource_bricks',['../structArcomagePlayer.html#a135aa0792940f0ebb2ff9618a71d2c36',1,'ArcomagePlayer']]],
   ['resource_5fgems_32',['resource_gems',['../structArcomagePlayer.html#a33e69b554cf310d0e9551de0c76717ee',1,'ArcomagePlayer']]],
@@ -53,6 +53,5 @@ var searchData=
   ['rightclickportraitxmax_50',['RightClickPortraitXmax',['../mm7__data_8cpp.html#a1e0bb2e5df8caceb874ccbac8afb592b',1,'RightClickPortraitXmax():&#160;mm7_data.cpp'],['../mm7__data_8h.html#a1e0bb2e5df8caceb874ccbac8afb592b',1,'RightClickPortraitXmax():&#160;mm7_data.cpp']]],
   ['rightclickportraitxmin_51',['RightClickPortraitXmin',['../mm7__data_8cpp.html#a271bcf3fdc5ff14473042faddbd0cfa3',1,'RightClickPortraitXmin():&#160;mm7_data.cpp'],['../mm7__data_8h.html#a271bcf3fdc5ff14473042faddbd0cfa3',1,'RightClickPortraitXmin():&#160;mm7_data.cpp']]],
   ['riogrande_52',['RioGrande',['../classColorTable.html#a81f2d91c73ff2c302ee544bfa2b43c0f',1,'ColorTable']]],
-  ['rotated_5fnormal_53',['rotated_normal',['../structLightsData.html#a0f92fde30cff4753d4cfadb6ab41fcd4',1,'LightsData']]],
-  ['rotation_5fspeed_54',['rotation_speed',['../structParticle.html#afc3be85262f36cb5f78cf3a51d8e61b3',1,'Particle']]]
+  ['rotation_5fspeed_53',['rotation_speed',['../structParticle.html#afc3be85262f36cb5f78cf3a51d8e61b3',1,'Particle']]]
 ];
