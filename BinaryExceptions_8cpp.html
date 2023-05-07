@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OpenEnroth: EventIndex Struct Reference</title>
+<title>OpenEnroth: src/Library/Binary/BinaryExceptions.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;77120c6</span>
+   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;540f74d</span>
    </div>
   </td>
  </tr>
@@ -67,72 +67,60 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f741251061e5c7c7ed48ab45c3348f11.html">Library</a></li><li class="navelem"><a class="el" href="dir_d65e571f4962eeb2aa53e24b959c3903.html">Binary</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structEventIndex-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">EventIndex Struct Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">BinaryExceptions.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;Events.h&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a12388ed5f772a0a98818a36c24f0d4f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEventIndex.html#a12388ed5f772a0a98818a36c24f0d4f2">event_id</a></td></tr>
-<tr class="separator:a12388ed5f772a0a98818a36c24f0d4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec658d0c18912a583f9d576f08768255"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEventIndex.html#aec658d0c18912a583f9d576f08768255">event_step</a></td></tr>
-<tr class="separator:aec658d0c18912a583f9d576f08768255"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f1a38bc80800254d1becc5d2b1eb88"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEventIndex.html#a57f1a38bc80800254d1becc5d2b1eb88">uEventOffsetInEVT</a></td></tr>
-<tr class="separator:a57f1a38bc80800254d1becc5d2b1eb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &quot;<a class="el" href="BinaryExceptions_8h.html">BinaryExceptions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Exception_8h.html">Utility/Exception.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a94db89ca88c8f519628da268be091b65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BinaryExceptions_8cpp.html#a94db89ca88c8f519628da268be091b65">throwBinarySerializationNoMoreDataError</a> (size_t bytesRead, size_t bytesExpected, std::string_view typeName)</td></tr>
+<tr class="separator:a94db89ca88c8f519628da268be091b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a12388ed5f772a0a98818a36c24f0d4f2" name="a12388ed5f772a0a98818a36c24f0d4f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12388ed5f772a0a98818a36c24f0d4f2">&#9670;&#160;</a></span>event_id</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a94db89ca88c8f519628da268be091b65" name="a94db89ca88c8f519628da268be091b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94db89ca88c8f519628da268be091b65">&#9670;&#160;</a></span>throwBinarySerializationNoMoreDataError()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EventIndex::event_id</td>
+          <td class="memname">void throwBinarySerializationNoMoreDataError </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>bytesRead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>bytesExpected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>typeName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aec658d0c18912a583f9d576f08768255" name="aec658d0c18912a583f9d576f08768255"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec658d0c18912a583f9d576f08768255">&#9670;&#160;</a></span>event_step</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int EventIndex::event_step</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a57f1a38bc80800254d1becc5d2b1eb88" name="a57f1a38bc80800254d1becc5d2b1eb88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57f1a38bc80800254d1becc5d2b1eb88">&#9670;&#160;</a></span>uEventOffsetInEVT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int EventIndex::uEventOffsetInEVT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/Engine/<a class="el" href="Events_8h.html">Events.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
