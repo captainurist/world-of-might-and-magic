@@ -461,7 +461,7 @@ var searchData=
   ['power_458',['power',['../structSpellBuff__MM7.html#a8b922a27ff6b11ef90d58a91b80c9907',1,'SpellBuff_MM7::power()'],['../structSpellBuff.html#a0c138cf54a2fe18af6c23144b673b796',1,'SpellBuff::power()']]],
   ['pownitems_459',['pOwnItems',['../structPlayer.html#ab960f25f6b0c3e196c6024601217b3d5',1,'Player']]],
   ['ppagetitle_460',['pPageTitle',['../structStorylineRecord.html#a6b61afae21238fe5e9ca5823aca9b4c0',1,'StorylineRecord']]],
-  ['ppalette_461',['pPalette',['../structViewingParams.html#a18bf3dd12f84b99dda76004966b107ca',1,'ViewingParams::pPalette()'],['../structSoftwareBillboard.html#adee1124f71216e779f890db212d76116',1,'SoftwareBillboard::pPalette()']]],
+  ['ppalette_461',['pPalette',['../structViewingParams.html#a41f10358630b5984a6871dc440074d63',1,'ViewingParams::pPalette()'],['../structSoftwareBillboard.html#adee1124f71216e779f890db212d76116',1,'SoftwareBillboard::pPalette()']]],
   ['ppalette2_462',['pPalette2',['../structSoftwareBillboard.html#a1741827d3e935b315f9df789025008fe',1,'SoftwareBillboard']]],
   ['ppalette24_463',['pPalette24',['../structTexture__MM7.html#aea91ddb893a1973f68692fec9df211ac',1,'Texture_MM7']]],
   ['ppalettemanager_464',['pPaletteManager',['../PaletteManager_8cpp.html#aad70c9e316135e28f2ff86d52f8def9c',1,'pPaletteManager():&#160;PaletteManager.cpp'],['../PaletteManager_8h.html#aad70c9e316135e28f2ff86d52f8def9c',1,'pPaletteManager():&#160;PaletteManager.cpp']]],
