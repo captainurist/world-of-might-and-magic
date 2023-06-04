@@ -34,7 +34,7 @@ var searchData=
   ['renderfilter_31',['RenderFilter',['../classGameConfig_1_1Graphics.html#a8fd4932c716f89f005f8a78ea9acdb6d',1,'GameConfig::Graphics']]],
   ['renderheight_32',['RenderHeight',['../classGameConfig_1_1Graphics.html#a5868c105db37c73b311b1838979613bb',1,'GameConfig::Graphics']]],
   ['renderwidth_33',['RenderWidth',['../classGameConfig_1_1Graphics.html#a295c5d079b098e3b42ba2304dfa43f50',1,'GameConfig::Graphics']]],
-  ['rep_34',['rep',['../structNPCData.html#a05455f48103c0049db299e0f69cac568',1,'NPCData::rep()'],['../structNPCData__MM7.html#a525309ab35d2b68252b6be53680fc156',1,'NPCData_MM7::rep()']]],
+  ['rep_34',['rep',['../structNPCData__MM7.html#a525309ab35d2b68252b6be53680fc156',1,'NPCData_MM7::rep()'],['../structNPCData.html#a05455f48103c0049db299e0f69cac568',1,'NPCData::rep()']]],
   ['reputation_35',['reputation',['../structLocationInfo.html#af8d9ae5823b4f864c76420563f997ff9',1,'LocationInfo::reputation()'],['../structLocationInfo__MM7.html#a54ffe8d095b5be2fb280b2be58d4634d',1,'LocationInfo_MM7::reputation()']]],
   ['resair_36',['resAir',['../structMonsterInfo__MM7.html#a98940dbe51d19702b2a70fa48327dafd',1,'MonsterInfo_MM7']]],
   ['resairbase_37',['resAirBase',['../structPlayer__MM7.html#aa2a0191612b10fb8f73752aa289d6a25',1,'Player_MM7']]],
