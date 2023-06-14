@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OpenEnroth: src/Engine/Graphics/Image.h File Reference</title>
+<title>OpenEnroth: src/GUI/UI/UIMessageScroll.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;7010259</span>
+   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;0f0bc2b</span>
    </div>
   </td>
  </tr>
@@ -69,29 +69,46 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_32f76bd42096cb3656f6b4adb3ae4055.html">Graphics</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4e4e2e75df7fa6971448b424c011c8b5.html">GUI</a></li><li class="navelem"><a class="el" href="dir_a1c8096ddc6fb80a9bdd2e9a1b465426.html">UI</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">Image.h File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">UIMessageScroll.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="IndexedArray_8h.html">Utility/IndexedArray.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Size_8h.html">Utility/Geometry/Size.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Blob_8h.html">Utility/Memory/Blob.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Color_8h.html">Library/Color/Color.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="MessageScrollTable_8h.html">Engine/Tables/MessageScrollTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ItemTable_8h.html">Engine/Tables/ItemTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IRender_8h.html">Engine/Graphics/IRender.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GUIFont_8h.html">GUI/GUIFont.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="UIMessageScroll_8h.html">GUI/UI/UIMessageScroll.h</a>&quot;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraphicsImage.html">GraphicsImage</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageHelper.html">ImageHelper</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2c9cc377e0440b592cae99c29bec8c29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UIMessageScroll_8cpp.html#a2c9cc377e0440b592cae99c29bec8c29">CreateMsgScrollWindow</a> (<a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a> mscroll_id)</td></tr>
+<tr class="separator:a2c9cc377e0440b592cae99c29bec8c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a2c9cc377e0440b592cae99c29bec8c29" name="a2c9cc377e0440b592cae99c29bec8c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c9cc377e0440b592cae99c29bec8c29">&#9670;&#160;</a></span>CreateMsgScrollWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreateMsgScrollWindow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ItemEnums_8h.html#a3423a9b7221dd99ce926bcad62ae96a5">ITEM_TYPE</a>&#160;</td>
+          <td class="paramname"><em>mscroll_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section user"><dt>Original binary offset:</dt><dd>0x467F48 </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
