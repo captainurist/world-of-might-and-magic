@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;a7dad34</span>
+   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;2312469</span>
    </div>
   </td>
  </tr>
@@ -88,8 +88,8 @@ $(function() {
 <code>#include &lt;array&gt;</code><br />
 <code>#include &quot;<a class="el" href="GameConfig_8h.html">Application/GameConfig.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EventMap_8h.html">Engine/Events/EventMap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MapEnums_8h.html">Engine/MapEnums.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mm7__data_8h.html">Engine/mm7_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MapInfo_8h.html">Engine/MapInfo.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Time_8h.html">Engine/Time.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Blob_8h.html">Utility/Memory/Blob.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GUIMessageQueue_8h.html">GUI/GUIMessageQueue.h</a>&quot;</code><br />
@@ -134,8 +134,6 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1cd3528b0bd43ba7c76cceb5ad5a568b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#a1cd3528b0bd43ba7c76cceb5ad5a568b">Engine_DeinitializeAndTerminate</a> (int exitCode)</td></tr>
-<tr class="separator:a1cd3528b0bd43ba7c76cceb5ad5a568b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46472657a76c2669922d1d101c859cdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#a46472657a76c2669922d1d101c859cdd">PlayButtonClickSound</a> ()</td></tr>
 <tr class="separator:a46472657a76c2669922d1d101c859cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2abba234a27ed12ea4d6fa54367ed10b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#a2abba234a27ed12ea4d6fa54367ed10b">back_to_game</a> ()</td></tr>
@@ -180,7 +178,7 @@ Functions</h2></td></tr>
 <tr class="separator:a1ec9273d2cd901e48e54eedaecd87b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c7c70729a3af9d53e1c4fe25879f2cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#a4c7c70729a3af9d53e1c4fe25879f2cb">_44100D_should_alter_right_panel</a> ()</td></tr>
 <tr class="separator:a4c7c70729a3af9d53e1c4fe25879f2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a4592f9b64d929ea91623d21002dc2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#a7a4592f9b64d929ea91623d21002dc2d">Transition_StopSound_Autosave</a> (const std::string &amp;pMapName, <a class="el" href="MapInfo_8h.html#adad43ef8fbf56e2a3bc00fd08cca312f">MapStartPoint</a> point)</td></tr>
+<tr class="memitem:a7a4592f9b64d929ea91623d21002dc2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#a7a4592f9b64d929ea91623d21002dc2d">Transition_StopSound_Autosave</a> (const std::string &amp;pMapName, <a class="el" href="MapEnums_8h.html#adad43ef8fbf56e2a3bc00fd08cca312f">MapStartPoint</a> point)</td></tr>
 <tr class="separator:a7a4592f9b64d929ea91623d21002dc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac081aee5cb02b8e5dfb077674a160d68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Engine_8h.html#ac081aee5cb02b8e5dfb077674a160d68">TeleportToNWCDungeon</a> ()</td></tr>
 <tr class="separator:ac081aee5cb02b8e5dfb077674a160d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,24 +300,6 @@ Variables</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1cd3528b0bd43ba7c76cceb5ad5a568b" name="a1cd3528b0bd43ba7c76cceb5ad5a568b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cd3528b0bd43ba7c76cceb5ad5a568b">&#9670;&#160;</a></span>Engine_DeinitializeAndTerminate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Engine_DeinitializeAndTerminate </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>exitCode</em></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -717,7 +697,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="MapInfo_8h.html#adad43ef8fbf56e2a3bc00fd08cca312f">MapStartPoint</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="MapEnums_8h.html#adad43ef8fbf56e2a3bc00fd08cca312f">MapStartPoint</a>&#160;</td>
           <td class="paramname"><em>point</em>&#160;</td>
         </tr>
         <tr>
