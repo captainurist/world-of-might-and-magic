@@ -28,6 +28,7 @@ endfunction()
 
 macro(resolve_dependencies) # Intentionally a macro - we want set() to work in parent scope.
     if(BUILD_PLATFORM STREQUAL "android")
+        if(0)
         # NOTE: ${CMAKE_SOURCE_DIR} is pointing to OpenEnroth_Android/openenroth/jni directory in this case
         add_library(ffmpeg::avcodec SHARED IMPORTED)
         set_target_properties(ffmpeg::avcodec PROPERTIES
@@ -59,6 +60,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
                 INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/FFmpeg/android/${ANDROID_ABI}/include
                 IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/FFmpeg/android/${ANDROID_ABI}/lib/libswresample-3.so)
         set(SWSCALE_LIBRARIES "ffmpeg::swscale")
+        endif()
         find_package(ZLIB REQUIRED)
     elseif(PREBUILT_DEPENDENCIES)
         message(STATUS "Prebuilt dependencies have been enabled")
@@ -114,6 +116,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         endif()
 
         if (BUILD_PLATFORM STREQUAL "windows")
+            if (0)
             set(FFMPEG_DIR "${LIBRARY_DIR}/ffmpeg-4.2.2")
             set(FFMPEG_INCLUDE_DIRS "${FFMPEG_DIR}/include")
             set(FFMPEG_BIN_DIR "${FFMPEG_DIR}/bin")
@@ -134,6 +137,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
                     "${FFMPEG_BIN_DIR}/postproc-55.dll"
                     "${FFMPEG_BIN_DIR}/swresample-3.dll"
                     "${FFMPEG_BIN_DIR}/swscale-5.dll")
+            endif()
 
             set(ZLIB_DIR "${LIBRARY_DIR}/zlib-1.2.11")
             set(ZLIB_INCLUDE_DIRS "${ZLIB_DIR}/include")
@@ -149,7 +153,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
             message(FATAL_ERROR "Prebuilt dependencies for ${BUILD_PLATFORM} are unknown!")
         endif()
     else()
-        find_package(FFmpeg REQUIRED)
+#        find_package(FFmpeg REQUIRED)
         find_package(OpenGL REQUIRED)
         find_package(ZLIB REQUIRED)
     endif()

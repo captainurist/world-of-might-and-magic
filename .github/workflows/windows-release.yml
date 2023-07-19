@@ -26,6 +26,12 @@ jobs:
       with:
         submodules: 'recursive'
 
+    - name: Install Conan
+      id: conan
+      uses: turtlebrowser/get-conan@main
+      with:
+        version: 1.59.0
+
     - name: Setup environment
       uses: ilammy/msvc-dev-cmd@v1
       with:
