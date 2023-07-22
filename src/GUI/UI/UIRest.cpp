@@ -105,12 +105,12 @@ GUIWindow_Rest::GUIWindow_Rest()
     current_screen_type = SCREEN_REST;
 
     hourglassLoopTimer = 0;
-    rest_ui_restmain = assets->getImage_Alpha("restmain");
-    rest_ui_btn_1 = assets->getImage_Alpha("restb1");
-    rest_ui_btn_2 = assets->getImage_Alpha("restb2");
-    rest_ui_btn_3 = assets->getImage_Alpha("restb3");
-    rest_ui_btn_4 = assets->getImage_Alpha("restb4");
-    rest_ui_btn_exit = assets->getImage_Alpha("restexit");
+    rest_ui_restmain = assets->getImage_ColorKey("restmain", Color(5, 4, 4));
+    rest_ui_btn_1 = assets->getImage_ColorKey("restb1", Color(0, 0, 0));
+    rest_ui_btn_2 = assets->getImage_ColorKey("restb2", Color(0, 0, 0));
+    rest_ui_btn_3 = assets->getImage_ColorKey("restb3", Color(0, 0, 0));
+    rest_ui_btn_4 = assets->getImage_ColorKey("restb4", Color(0, 0, 0));
+    rest_ui_btn_exit = assets->getImage_ColorKey("restexit", Color(4, 4, 4));
 
     OutdoorLocation::LoadActualSkyFrame();
 

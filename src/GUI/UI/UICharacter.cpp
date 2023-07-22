@@ -1396,7 +1396,7 @@ void CharacterUI_DrawPaperdollWithRingOverlay(Character *player) {
 
 //----- (0043BCA7) --------------------------------------------------------
 void CharacterUI_LoadPaperdollTextures() {
-    ui_character_inventory_magnification_glass = assets->getImage_Alpha("MAGNIF-B");
+    ui_character_inventory_magnification_glass = assets->getImage_ColorKey("MAGNIF-B", Color(0, 252, 252));
     ui_character_inventory_paperdoll_background = assets->getImage_ColorKey("BACKDOLL");
     ui_character_inventory_paperdoll_rings_background = assets->getImage_Alpha("BACKHAND");
 
@@ -1421,7 +1421,7 @@ void CharacterUI_LoadPaperdollTextures() {
 
     auto loadTexture = [&](const auto &map, int itemIndex, int bodyIndex, int shoulderIndex) {
         std::string name = GetItemTextureFilename(*valuePtr(map, itemIndex), bodyIndex + 1, shoulderIndex);
-        return assets->getImage_Alpha(name);
+        return assets->getImage_ColorKey(name, Color(255, 16, 12));
     };
 
     for (uint i = 0; i < 2; ++i) {

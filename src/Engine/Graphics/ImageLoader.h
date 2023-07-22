@@ -24,8 +24,9 @@ class ImageLoader {
 
     virtual bool Load(RgbaImage *rgbaImage, GrayscaleImage *indexedImage, Palette *palette) = 0;
 
- protected:
     std::string resource_name;
+
+ protected:
     Logger *log;
 };
 

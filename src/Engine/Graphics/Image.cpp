@@ -30,6 +30,8 @@ GraphicsImage *GraphicsImage::Create(size_t width, size_t height) {
 GraphicsImage *GraphicsImage::Create(std::unique_ptr<ImageLoader> loader) {
     GraphicsImage *img = new GraphicsImage();
     img->_loader = std::move(loader);
+    if (!dynamic_cast<Sprites_LOD_Loader *>(img->_loader.get()) && !img->_loader->resource_name.empty())
+        int i = img->width();
     return img;
 }
 

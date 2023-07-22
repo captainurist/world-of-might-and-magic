@@ -488,8 +488,8 @@ GUIWindow_GameOptions::GUIWindow_GameOptions()
     options_menu_skin.uTextureID_TurnSpeed[2] = assets->getImage_ColorKey("con_16x");
     options_menu_skin.uTextureID_TurnSpeed[1] = assets->getImage_ColorKey("con_32x");
     options_menu_skin.uTextureID_TurnSpeed[0] = assets->getImage_ColorKey("con_Smoo");
-    options_menu_skin.uTextureID_ArrowLeft = assets->getImage_Alpha("con_ArrL");
-    options_menu_skin.uTextureID_ArrowRight = assets->getImage_Alpha("con_ArrR");
+    options_menu_skin.uTextureID_ArrowLeft = assets->getImage_ColorKey("con_ArrL", Color(0, 0, 0));
+    options_menu_skin.uTextureID_ArrowRight = assets->getImage_ColorKey("con_ArrR", Color(0, 0, 0));
     options_menu_skin.uTextureID_SoundLevels[0] = assets->getImage_ColorKey("convol10");
     options_menu_skin.uTextureID_SoundLevels[1] = assets->getImage_ColorKey("convol20");
     options_menu_skin.uTextureID_SoundLevels[2] = assets->getImage_ColorKey("convol30");

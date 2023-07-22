@@ -618,7 +618,7 @@ GUIWindow_PartyCreation::GUIWindow_PartyCreation() :
     ui_partycreation_class_icons[7] = assets->getImage_ColorKey("IC_DRUID");
     ui_partycreation_class_icons[8] = assets->getImage_ColorKey("IC_SORC");
 
-    ui_partycreation_top = assets->getImage_Alpha("MAKETOP");
+    ui_partycreation_top = assets->getImage_ColorKey("MAKETOP", Color(0, 252, 252));
     ui_partycreation_sky_scroller = assets->getImage_Solid("MAKESKY");
 
     for (int uX = 0; uX < 22; ++uX) {
@@ -634,8 +634,8 @@ GUIWindow_PartyCreation::GUIWindow_PartyCreation() :
     assert(ui_partycreation_arrow_l.size() == 19);
     assert(ui_partycreation_arrow_r.size() == 19);
     for (int i = 0; i < ui_partycreation_arrow_l.size(); ++i) {
-        ui_partycreation_arrow_l[i] = assets->getImage_Alpha(fmt::format("arrowl{}", i + 1));
-        ui_partycreation_arrow_r[i] = assets->getImage_Alpha(fmt::format("arrowr{}", i + 1));
+        ui_partycreation_arrow_l[i] = assets->getImage_ColorKey(fmt::format("arrowl{}", i + 1), Color(0, 0, 0));
+        ui_partycreation_arrow_r[i] = assets->getImage_ColorKey(fmt::format("arrowr{}", i + 1), Color(0, 0, 0));
     }
 
     // pGUIWindow_CurrentMenu = new GUIWindow(0, 0, window->GetWidth(), window->GetHeight(), 0);

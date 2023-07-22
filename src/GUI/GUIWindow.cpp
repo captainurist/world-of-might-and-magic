@@ -583,13 +583,13 @@ void SetUserInterface(PartyAlignment align, bool bReplace) {
 
             ui_btn_npc_left = assets->getImage_ColorKey("IB-NPCLD-C");
             ui_btn_npc_right = assets->getImage_ColorKey("IB-NPCRD-C");
-            game_ui_btn_zoomin = assets->getImage_Alpha("ib-autout-C");
-            game_ui_btn_zoomout = assets->getImage_Alpha("ib-autin-C");
+            game_ui_btn_zoomin = assets->getImage_ColorKey("ib-autout-C", Color(0, 0, 0));
+            game_ui_btn_zoomout = assets->getImage_ColorKey("ib-autin-C", Color(0, 0, 0));
             game_ui_player_selection_frame = assets->getImage_ColorKey("IB-selec-C");
-            game_ui_btn_cast = assets->getImage_Alpha("ib-m1d-c");
-            game_ui_btn_rest = assets->getImage_Alpha("ib-m2d-c");
-            game_ui_btn_quickref = assets->getImage_Alpha("ib-m3d-c");
-            game_ui_btn_settings = assets->getImage_Alpha("ib-m4d-c");
+            game_ui_btn_cast = assets->getImage_ColorKey("ib-m1d-c", Color(0, 0, 0));
+            game_ui_btn_rest = assets->getImage_ColorKey("ib-m2d-c", Color(0, 0, 0));
+            game_ui_btn_quickref = assets->getImage_ColorKey("ib-m3d-c", Color(0, 0, 0));
+            game_ui_btn_settings = assets->getImage_ColorKey("ib-m4d-c", Color(0, 0, 0));
 
             game_ui_playerbuff_bless = assets->getImage_ColorKey("isg-01-c");
             game_ui_playerbuff_preservation = assets->getImage_ColorKey("isg-02-c");
@@ -680,10 +680,10 @@ void SetUserInterface(PartyAlignment align, bool bReplace) {
             game_ui_btn_zoomin = assets->getImage_ColorKey("ib-autout-a");
             game_ui_btn_zoomout = assets->getImage_ColorKey("ib-autin-a");
             game_ui_player_selection_frame = assets->getImage_ColorKey("IB-selec-a");
-            game_ui_btn_cast = assets->getImage_Alpha("ib-m1d-a");
-            game_ui_btn_rest = assets->getImage_Alpha("ib-m2d-a");
-            game_ui_btn_quickref = assets->getImage_Alpha("ib-m3d-a");
-            game_ui_btn_settings = assets->getImage_Alpha("ib-m4d-a");
+            game_ui_btn_cast = assets->getImage_ColorKey("ib-m1d-a", Color(0, 0, 0));
+            game_ui_btn_rest = assets->getImage_ColorKey("ib-m2d-a", Color(0, 0, 0));
+            game_ui_btn_quickref = assets->getImage_ColorKey("ib-m3d-a", Color(0, 0, 0));
+            game_ui_btn_settings = assets->getImage_ColorKey("ib-m4d-a", Color(0, 0, 0));
 
             game_ui_playerbuff_bless = assets->getImage_ColorKey("isg-01-a");
             game_ui_playerbuff_preservation = assets->getImage_ColorKey("isg-02-a");
@@ -727,10 +727,10 @@ void SetUserInterface(PartyAlignment align, bool bReplace) {
             ui_btn_npc_left = assets->getImage_ColorKey("IB-NPCLD-A");
             ui_btn_npc_right = assets->getImage_ColorKey("IB-NPCRD-A");
             game_ui_player_selection_frame = assets->getImage_ColorKey("IB-selec-A");
-            game_ui_btn_cast = assets->getImage_Alpha("ib-m1d-a");
-            game_ui_btn_rest = assets->getImage_Alpha("ib-m2d-a");
-            game_ui_btn_quickref = assets->getImage_Alpha("ib-m3d-a");
-            game_ui_btn_settings = assets->getImage_Alpha("ib-m4d-a");
+            game_ui_btn_cast = assets->getImage_ColorKey("ib-m1d-a", Color(0, 0, 0));
+            game_ui_btn_rest = assets->getImage_ColorKey("ib-m2d-a", Color(0, 0, 0));
+            game_ui_btn_quickref = assets->getImage_ColorKey("ib-m3d-a", Color(0, 0, 0));
+            game_ui_btn_settings = assets->getImage_ColorKey("ib-m4d-a", Color(0, 0, 0));
             game_ui_btn_zoomin = assets->getImage_ColorKey("ib-autout-a");
             game_ui_btn_zoomout = assets->getImage_ColorKey("ib-autin-a");
             ui_exit_cancel_button_background = assets->getImage_ColorKey("ib-bcu-a");
@@ -782,10 +782,10 @@ void SetUserInterface(PartyAlignment align, bool bReplace) {
             game_ui_btn_zoomin = assets->getImage_ColorKey("ib-autout-B");
             game_ui_btn_zoomout = assets->getImage_ColorKey("ib-autin-B");
             game_ui_player_selection_frame = assets->getImage_ColorKey("IB-selec-B");
-            game_ui_btn_cast = assets->getImage_Alpha("ib-m1d-b");
-            game_ui_btn_rest = assets->getImage_Alpha("ib-m2d-b");
-            game_ui_btn_quickref = assets->getImage_Alpha("ib-m3d-b");
-            game_ui_btn_settings = assets->getImage_Alpha("ib-m4d-b");
+            game_ui_btn_cast = assets->getImage_ColorKey("ib-m1d-b", Color(0, 0, 0));
+            game_ui_btn_rest = assets->getImage_ColorKey("ib-m2d-b", Color(0, 0, 0));
+            game_ui_btn_quickref = assets->getImage_ColorKey("ib-m3d-b", Color(0, 0, 0));
+            game_ui_btn_settings = assets->getImage_ColorKey("ib-m4d-b", Color(0, 0, 0));
 
             game_ui_playerbuff_bless = assets->getImage_ColorKey("isg-01-b");
             game_ui_playerbuff_preservation = assets->getImage_ColorKey("isg-02-b");
@@ -1177,9 +1177,9 @@ void UI_Create() {
     ui_leather_mm7 = assets->getImage_Solid("LEATHER");
     ui_leather_mm6 = assets->getImage_Solid("ibground");
     dialogue_ui_x_x_u = assets->getImage_ColorKey("x_x_u");
-    ui_buttdesc2 = assets->getImage_Alpha("BUTTESC2");
+    ui_buttdesc2 = assets->getImage_ColorKey("BUTTESC2", Color(0, 252, 252));
     dialogue_ui_x_ok_u = assets->getImage_ColorKey("x_ok_u");
-    ui_buttyes2 = assets->getImage_Alpha("BUTTYES2");
+    ui_buttyes2 = assets->getImage_ColorKey("BUTTYES2", Color(0, 252, 252));
 
     nuklear->Create(WINDOW_GameUI);
     pPrimaryWindow = new GUIWindow(WINDOW_GameUI, {0, 0}, render->GetRenderDimensions(), 0);

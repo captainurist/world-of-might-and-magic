@@ -20,6 +20,13 @@
 
 #include "Utility/DataPath.h"
 
+auto makehist(GrayscaleImageView image) {
+    std::array<int, 256> h = {{}};
+    for (int v : image.pixels())
+        h[v]++;
+    return h;
+}
+
 // List of textures that require additional processing for transparent pixels.
 // TODO: move to OpenEnroth config file.
 static const std::unordered_set<std::string_view> transparentTextures = {
@@ -84,6 +91,11 @@ bool ColorKey_LOD_Loader::Load(RgbaImage *rgbaImage, GrayscaleImage *indexedImag
     *indexedImage = GrayscaleImage::copy(tex->header.uTextureWidth, tex->header.uTextureHeight, tex->paletted_pixels);
 
     if (tex->header.pBits & 512) {
+        auto h = makehist(*indexedImage);
+
+        Color c = Color(tex->pPalette24[0], tex->pPalette24[1], tex->pPalette24[2]);
+        assert(c == Color(0, 255, 255) || c == Color(0, 252, 252) || h[0] == 0);
+
         *palette = MakePaletteAlpha(tex->pPalette24);
     } else {
         *palette = MakePaletteColorKey(tex->pPalette24, colorkey);
@@ -120,7 +132,17 @@ bool Alpha_LOD_Loader::Load(RgbaImage *rgbaImage, GrayscaleImage *indexedImage, 
     *indexedImage = GrayscaleImage::copy(tex->header.uTextureWidth, tex->header.uTextureHeight, tex->paletted_pixels);
 
     if ((tex->header.pBits == 0) || (tex->header.pBits & 512)) {
+        Color c = Color(tex->pPalette24[0], tex->pPalette24[1], tex->pPalette24[2]);
+        assert(tex->header.pBits != 0);
+
         *palette = MakePaletteAlpha(tex->pPalette24);
+
+        if (tex->header.pBits == 0) {
+            auto h = makehist(*indexedImage);
+            for (int i = 1; i < 256; i++)
+                assert(palette->colors[i] != c || h[i] == 0);
+        }
+
     } else {
         *palette = MakePaletteColorKey(tex->pPalette24, colorTable.TealMask);
     }
@@ -211,6 +233,8 @@ bool Bitmaps_LOD_Loader::Load(RgbaImage *rgbaImage, GrayscaleImage *indexedImage
 
     Assert(tex->paletted_pixels);
     Assert(tex->pPalette24);
+
+    assert(!(tex->header.pBits & 512));
 
     std::string name;
     reconstruct(tex->header.pName, &name);
