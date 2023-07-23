@@ -4,6 +4,10 @@
 
 #include "RandomEngine.h"
 
+#include "backward_cpp/backward.hpp"
+
+#include "Utility/Format.h"
+
 class NonRandomEngine : public RandomEngine {
  public:
     virtual float randomFloat() override {
@@ -12,6 +16,21 @@ class NonRandomEngine : public RandomEngine {
 
     virtual int random(int hi) override {
         assert(hi > 0);
+
+        fprintf(stderr, "Random called, returning %d, stacktrace:\n", _state + 1);
+
+        //using namespace backward;
+        backward::StackTrace st;
+        st.load_here(32);
+
+        backward::TraceResolver resolver;
+        resolver.load_stacktrace(st);
+
+        for (size_t trace_idx = st.size(); trace_idx > 0; --trace_idx) {
+            backward::ResolvedTrace frame = resolver.resolve(st[trace_idx - 1]);
+
+            fmt::print(stderr, "#{: <2} {}\n", frame.idx, frame.object_function);
+        }
 
         return ++_state % hi;
     }

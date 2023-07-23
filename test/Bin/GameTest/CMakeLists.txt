@@ -7,10 +7,11 @@ if(ENABLE_TESTS)
     set(GAME_TEST_MAIN_HEADERS
             GameTestOptions.h)
 
-    add_executable(OpenEnroth_GameTest ${GAME_TEST_MAIN_SOURCES} ${GAME_TEST_MAIN_HEADERS})
+    add_executable(OpenEnroth_GameTest ${GAME_TEST_MAIN_SOURCES} ${GAME_TEST_MAIN_HEADERS} ${BACKWARD_ENABLE})
     target_fix_libcxx_assertions(OpenEnroth_GameTest)
     target_link_libraries(OpenEnroth_GameTest PUBLIC application testing_game GTest::gtest CLI11::CLI11)
     target_compile_definitions(OpenEnroth_GameTest PRIVATE TEST_GROUP=None)
+    add_backward(OpenEnroth_GameTest)
 
     target_check_style(OpenEnroth_GameTest)
     target_resolve_prebuilt_dependencies(OpenEnroth_GameTest)
