@@ -14,9 +14,10 @@ if(BUILD_PLATFORM STREQUAL "android")
     target_link_libraries(main PUBLIC application CLI11::CLI11)
 else()
     add_executable(OpenEnroth MACOSX_BUNDLE WIN32)
-    target_sources(OpenEnroth PUBLIC ${BIN_OPENENROTH_HEADERS} ${BIN_OPENENROTH_SOURCES})
+    target_sources(OpenEnroth PUBLIC ${BIN_OPENENROTH_HEADERS} ${BIN_OPENENROTH_SOURCES} ${BACKWARD_ENABLE})
     target_check_style(OpenEnroth)
     target_fix_libcxx_assertions(OpenEnroth)
+    add_backward(OpenEnroth)
 
     target_link_libraries(OpenEnroth PUBLIC application CLI11::CLI11)
 

@@ -36,6 +36,9 @@ set(ALSOFT_EXAMPLES OFF)
 set(ALSOFT_TESTS OFF)
 add_subdirectory(openal_soft)
 
+# backward_cpp
+add_subdirectory(backward_cpp)
+
 # SDL
 if(BUILD_PLATFORM STREQUAL "linux")
     find_package(SDL2 CONFIG REQUIRED GLOBAL) # GLOBAL is required for SDL2 to be available in src/
