@@ -1045,7 +1045,7 @@ void PrepareToLoadODM(bool bLoading, ODMRenderParams *a2) {
     //  level decoration sound
     for (int decorIdx : decorationsWithSound) {
         const DecorationDesc *decoration = pDecorationList->GetDecoration(pLevelDecorations[decorIdx].uDecorationDescID);
-        pAudioPlayer->playSound(SoundID(decoration->uSoundID), PID(OBJECT_Decoration, decorIdx), 0, 0, 0);
+        pAudioPlayer->playSound(SoundID(decoration->uSoundID), Pid::decoration(decorIdx), 0, 0, 0);
     }
 }
 
@@ -1688,7 +1688,7 @@ void RegeneratePartyHealthMana() {
                 spellSprite.uAttributes = 0;
                 spellSprite.uSectorID = 0;
                 spellSprite.uSpriteFrameID = 0;
-                spellSprite.spell_caster_pid = PID(OBJECT_Character, pParty->pPartyBuffs[PARTY_BUFF_IMMOLATION].caster);
+                spellSprite.spell_caster_pid = Pid::character(pParty->pPartyBuffs[PARTY_BUFF_IMMOLATION].caster - 1);
                 spellSprite.uFacing = 0;
                 spellSprite.uSoundID = 0;
 
@@ -1699,8 +1699,8 @@ void RegeneratePartyHealthMana() {
                     spellSprite.vPosition.x = pActors[actorID].pos.x;
                     spellSprite.vPosition.y = pActors[actorID].pos.y;
                     spellSprite.vPosition.z = pActors[actorID].pos.z;
-                    spellSprite.spell_target_pid = PID(OBJECT_Actor, actorID);
-                    Actor::DamageMonsterFromParty(PID(OBJECT_Item, spellSprite.Create(0, 0, 0, 0)), actorID, &cords);
+                    spellSprite.spell_target_pid = Pid::actor(actorID);
+                    Actor::DamageMonsterFromParty(Pid::item(spellSprite.Create(0, 0, 0, 0)), actorID, &cords);
                 }
             }
 

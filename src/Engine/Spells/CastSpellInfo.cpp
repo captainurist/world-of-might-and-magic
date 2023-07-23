@@ -69,7 +69,7 @@ static void initSpellSprite(SpriteObject *spritePtr,
     spritePtr->uSpellID = pCastSpell->uSpellID;
     spritePtr->spell_skill = spellMastery;
     spritePtr->uObjectDescID = pObjectList->ObjectIDByItemID(spritePtr->uType);
-    spritePtr->spell_caster_pid = PID(OBJECT_Character, pCastSpell->uPlayerID);
+    spritePtr->spell_caster_pid = Pid::character(pCastSpell->uPlayerID);
     spritePtr->uSoundID = pCastSpell->sound_id;
 }
 
@@ -149,7 +149,7 @@ void CastSpellInfoHelpers::castSpell() {
         Pid spell_targeted_at = Pid::fromPacked(pCastSpell->spell_target_pid); // TODO(captainurist): #pid
 
         // First try to pick live actor mouse is pointing at
-        if (spell_targeted_at == 0 &&
+        if (!spell_targeted_at &&
                 mouse->uPointingObjectID &&
                 PID_TYPE(mouse->uPointingObjectID) == OBJECT_Actor &&
                 pActors[PID_ID(mouse->uPointingObjectID)].CanAct()) {
@@ -157,7 +157,7 @@ void CastSpellInfoHelpers::castSpell() {
         }
 
         // Otherwise pick closest live actor
-        if (spell_targeted_at == 0) {
+        if (!spell_targeted_at) {
             bool target_undead;
             if (pCastSpell->uSpellID == SPELL_LIGHT_DESTROY_UNDEAD ||
                     pCastSpell->uSpellID == SPELL_SPIRIT_TURN_UNDEAD ||
@@ -367,7 +367,7 @@ void CastSpellInfoHelpers::castSpell() {
                     for (const SpriteObject &spriteObject : pSpriteObjects) {
                         if (spriteObject.uType &&
                                 spriteObject.uSpellID == SPELL_FIRE_FIRE_SPIKE &&
-                                spriteObject.spell_caster_pid == PID(OBJECT_Character, pCastSpell->uPlayerID)) {
+                                spriteObject.spell_caster_pid == Pid::character(pCastSpell->uPlayerID)) {
                             ++spikes_active;
                         }
                     }
@@ -405,8 +405,8 @@ void CastSpellInfoHelpers::castSpell() {
                     Vec3i spell_velocity = Vec3i(0, 0, 0);
                     initSpellSprite(&pSpellSprite, spell_level, spell_mastery, pCastSpell);
                     pSpellSprite.vPosition = pActors[monster_id].pos + Vec3i(0, 0, pActors[monster_id].height / 2);
-                    pSpellSprite.spell_target_pid = PID(OBJECT_Actor, monster_id);
-                    Actor::DamageMonsterFromParty(PID(OBJECT_Item, pSpellSprite.Create(0, 0, 0, 0)), monster_id, &spell_velocity);
+                    pSpellSprite.spell_target_pid = Pid::actor(monster_id);
+                    Actor::DamageMonsterFromParty(Pid::item(pSpellSprite.Create(0, 0, 0, 0)), monster_id, &spell_velocity);
                     break;
                 }
 
@@ -426,8 +426,8 @@ void CastSpellInfoHelpers::castSpell() {
                             .Apply(GameTime(pMiscTimer->uTotalTimeElapsed + 128), spell_mastery, 0, 0, 0);
                         initSpellSprite(&pSpellSprite, spell_level, spell_mastery, pCastSpell);
                         pSpellSprite.vPosition = pActors[monster_id].pos;
-                        pSpellSprite.spell_target_pid = PID(OBJECT_Actor, monster_id);
-                        Actor::DamageMonsterFromParty(PID(OBJECT_Item, pSpellSprite.Create(0, 0, 0, 0)), monster_id, &spell_velocity);
+                        pSpellSprite.spell_target_pid = Pid::actor(monster_id);
+                        Actor::DamageMonsterFromParty(Pid::item(pSpellSprite.Create(0, 0, 0, 0)), monster_id, &spell_velocity);
                     }
                     break;
                 }
@@ -459,7 +459,7 @@ void CastSpellInfoHelpers::castSpell() {
                         setSpellRecovery(pCastSpell, recoveryTime);
                         continue;
                     }
-                    Actor::DamageMonsterFromParty(PID(OBJECT_Item, obj_id), monster_id, &spell_velocity);
+                    Actor::DamageMonsterFromParty(Pid::item(obj_id), monster_id, &spell_velocity);
                     break;
                 }
 
@@ -682,7 +682,7 @@ void CastSpellInfoHelpers::castSpell() {
                 case SPELL_DARK_VAMPIRIC_WEAPON:
                 case SPELL_FIRE_FIRE_AURA:
                 {
-                    ItemGen *item = &pParty->pCharacters[pCastSpell->uPlayerID_2].pInventoryItemList[pCastSpell->spell_target_pid];
+                    ItemGen *item = &pParty->pCharacters[pCastSpell->uPlayerID_2].pInventoryItemList[pCastSpell->item_target_index];
                     item->UpdateTempBonus(pParty->GetPlayingTime());
                     if (item->uItemID == ITEM_BLASTER ||
                             item->uItemID == ITEM_BLASTER_RIFLE ||
@@ -886,8 +886,8 @@ void CastSpellInfoHelpers::castSpell() {
                         Vec3i spell_velocity = Vec3i(0, 0, 0);
                         initSpellSprite(&pSpellSprite, spell_level, spell_mastery, pCastSpell);
                         pSpellSprite.vPosition = pActors[monster_id].pos - Vec3i(0, 0, pActors[monster_id].height * -0.8);
-                        pSpellSprite.spell_target_pid = PID(OBJECT_Actor, spell_targeted_at);
-                        Actor::DamageMonsterFromParty(PID(OBJECT_Item, pSpellSprite.Create(0, 0, 0, 0)), monster_id, &spell_velocity);
+                        pSpellSprite.spell_target_pid = spell_targeted_at;
+                        Actor::DamageMonsterFromParty(Pid::item(pSpellSprite.Create(0, 0, 0, 0)), monster_id, &spell_velocity);
                     } else {
                         spellFailed(pCastSpell, LSTR_SPELL_FAILED);
                         pPlayer->SpendMana(uRequiredMana); // decrease mana on failure
@@ -998,7 +998,7 @@ void CastSpellInfoHelpers::castSpell() {
                         }
                         initSpellSprite(&pSpellSprite, spell_level, spell_mastery, pCastSpell);
                         pSpellSprite.vPosition = dist + Vec3i(0, 0, originHeight + 2500);
-                        pSpellSprite.spell_target_pid = (obj_type == OBJECT_Actor) ? spell_targeted_at : 0;
+                        pSpellSprite.spell_target_pid = (obj_type == OBJECT_Actor) ? spell_targeted_at : Pid();
                         pSpellSprite.field_60_distance_related_prolly_lod = stru_50C198._427546(originHeight + 2500);
                         pSpellSprite.uFacing = yaw;
                         if (pParty->bTurnBasedModeOn) {
@@ -1026,8 +1026,8 @@ void CastSpellInfoHelpers::castSpell() {
                     for (Actor *actor : render->getActorsInViewport(4096)) {
                         Vec3i spell_velocity = Vec3i(0, 0, 0);
                         pSpellSprite.vPosition = actor->pos - Vec3i(0, 0, actor->height * -0.8);
-                        pSpellSprite.spell_target_pid = PID(OBJECT_Actor, actor->id);
-                        Actor::DamageMonsterFromParty(PID(OBJECT_Item, pSpellSprite.Create(0, 0, 0, 0)), actor->id, &spell_velocity);
+                        pSpellSprite.spell_target_pid = Pid::actor(actor->id);
+                        Actor::DamageMonsterFromParty(Pid::item(pSpellSprite.Create(0, 0, 0, 0)), actor->id, &spell_velocity);
                         spell_fx_renderer->RenderAsSprite(&pSpellSprite);
                     }
                     spell_fx_renderer->FadeScreen__like_Turn_Undead_and_mb_Armageddon(colorTable.OrangeyRed, 0x40);
@@ -1201,7 +1201,7 @@ void CastSpellInfoHelpers::castSpell() {
                         }
                         initSpellSprite(&pSpellSprite, spell_level, spell_mastery, pCastSpell);
                         pSpellSprite.vPosition = dist + Vec3i(0, 0, originHeight + 2500);
-                        pSpellSprite.spell_target_pid = (obj_type == OBJECT_Actor) ? spell_targeted_at : 0;
+                        pSpellSprite.spell_target_pid = (obj_type == OBJECT_Actor) ? spell_targeted_at : Pid();
                         pSpellSprite.field_60_distance_related_prolly_lod = stru_50C198._427546(originHeight + 2500);
                         pSpellSprite.uFacing = yaw;
                         if (pParty->bTurnBasedModeOn) {
@@ -1339,7 +1339,7 @@ void CastSpellInfoHelpers::castSpell() {
 
                 case SPELL_WATER_RECHARGE_ITEM:
                 {
-                    ItemGen *item = &pParty->pCharacters[pCastSpell->uPlayerID_2].pInventoryItemList[pCastSpell->spell_target_pid];
+                    ItemGen *item = &pParty->pCharacters[pCastSpell->uPlayerID_2].pInventoryItemList[pCastSpell->item_target_index];
                     if (!item->isWand() || item->IsBroken()) {
                         AfterEnchClickEventId = UIMSG_Escape;
                         AfterEnchClickEventSecondParam = 0;
@@ -1391,7 +1391,7 @@ void CastSpellInfoHelpers::castSpell() {
                     bool spell_failed = true;
                     int rnd = grng->random(100);
                     pPlayer = &pParty->pCharacters[pCastSpell->uPlayerID_2];
-                    ItemGen *spell_item_to_enchant = &pPlayer->pInventoryItemList[pCastSpell->spell_target_pid];
+                    ItemGen *spell_item_to_enchant = &pPlayer->pInventoryItemList[pCastSpell->item_target_index];
                     ITEM_EQUIP_TYPE this_equip_type = pItemTable->pItems[spell_item_to_enchant->uItemID].uEquipType;
 
                     // refs
@@ -1650,7 +1650,7 @@ void CastSpellInfoHelpers::castSpell() {
                             assert(false);
                     }
                     // LODWORD(spellduration) = 300;
-                    if (pCastSpell->spell_target_pid == 0) {
+                    if (!pCastSpell->spell_target_pid) {
                         spell_fx_renderer->SetPlayerBuffAnim(pCastSpell->uSpellID, pCastSpell->uPlayerID_2);
                         pParty->pCharacters[pCastSpell->uPlayerID_2].pCharacterBuffs[CHARACTER_BUFF_FATE]
                             .Apply(pParty->GetPlayingTime() + GameTime::FromMinutes(5), spell_mastery, spell_power, 0, 0);
@@ -1756,7 +1756,7 @@ void CastSpellInfoHelpers::castSpell() {
                     for (Actor *actor : render->getActorsInViewport(4096)) {
                         if (MonsterStats::BelongsToSupertype(actor->monsterInfo.uID, MONSTER_SUPERTYPE_UNDEAD)) {
                             pSpellSprite.vPosition = actor->pos - Vec3i(0, 0, actor->height * -0.8);
-                            pSpellSprite.spell_target_pid = PID(OBJECT_Actor, actor->id);
+                            pSpellSprite.spell_target_pid = Pid::actor(actor->id);
                             pSpellSprite.Create(0, 0, 0, 0);
                             actor->buffs[ACTOR_BUFF_AFRAID].Apply(pParty->GetPlayingTime() + spell_duration, spell_mastery, 0, 0, 0);
                         }
@@ -2111,7 +2111,7 @@ void CastSpellInfoHelpers::castSpell() {
                         // Change: do not exit loop when first undead monster is found
                         if (!MonsterStats::BelongsToSupertype(actor->monsterInfo.uID, MONSTER_SUPERTYPE_UNDEAD)) {
                             pSpellSprite.vPosition = actor->pos - Vec3i(0, 0, actor->height * -0.8);
-                            pSpellSprite.spell_target_pid = PID(OBJECT_Actor, actor->id);
+                            pSpellSprite.spell_target_pid = Pid::actor(actor->id);
                             pSpellSprite.Create(0, 0, 0, 0);
                             if (actor->DoesDmgTypeDoDamage(DMGT_MIND)) {
                                 actor->buffs[ACTOR_BUFF_AFRAID].Apply(pParty->GetPlayingTime() + spell_duration, spell_mastery, 0, 0, 0);
@@ -2202,7 +2202,7 @@ void CastSpellInfoHelpers::castSpell() {
                         if (uCurrentlyLoadedLevelType == LEVEL_INDOOR) {
                             event = pIndoor->pFaceExtras[pIndoor->pFaces[obj_id].uFaceExtraID].uEventID;
                         } else {
-                            event = pOutdoor->pBModels[spell_targeted_at >> 9].pFaces[obj_id & 0x3F].sCogTriggeredID;
+                            event = pOutdoor->face(spell_targeted_at).sCogTriggeredID;
                         }
                         eventProcessor(event, spell_targeted_at, 1);
                     }
@@ -2400,7 +2400,7 @@ void CastSpellInfoHelpers::castSpell() {
                     // Spell damage processing was removed because Dispel Magic does not do damage
                     for (Actor *actor : render->getActorsInViewport(4096)) {
                         pSpellSprite.vPosition = actor->pos - Vec3i(0, 0, actor->height * -0.8);
-                        pSpellSprite.spell_target_pid = PID(OBJECT_Actor, actor->id);
+                        pSpellSprite.spell_target_pid = Pid::actor(actor->id);
                         pSpellSprite.Create(0, 0, 0, 0);
                         for (SpellBuff &buff : actor->buffs) {
                             buff.Reset();
@@ -2437,7 +2437,7 @@ void CastSpellInfoHelpers::castSpell() {
                         if (actor.aiState != Dead &&
                             actor.aiState != Removed &&
                             actor.aiState != Disabled &&
-                                PID(OBJECT_Character, pCastSpell->uPlayerID) == actor.summonerId) {
+                                Pid::character(pCastSpell->uPlayerID) == actor.summonerId) {
                             ++mon_num;
                         }
                     }
@@ -2491,8 +2491,8 @@ void CastSpellInfoHelpers::castSpell() {
                     Vec3i spell_velocity = Vec3i(0, 0, 0);
                     for (Actor *actor : render->getActorsInViewport(4096)) {
                         pSpellSprite.vPosition = actor->pos - Vec3i(0, 0, actor->height * -0.8);
-                        pSpellSprite.spell_target_pid = PID(OBJECT_Actor, actor->id);
-                        Actor::DamageMonsterFromParty(PID(OBJECT_Item, pSpellSprite.Create(0, 0, 0, 0)), actor->id, &spell_velocity);
+                        pSpellSprite.spell_target_pid = Pid::actor(actor->id);
+                        Actor::DamageMonsterFromParty(Pid::item(pSpellSprite.Create(0, 0, 0, 0)), actor->id, &spell_velocity);
                     }
                     spell_fx_renderer->_4A8BFC_prismatic_light();
                     break;
@@ -2661,7 +2661,7 @@ void CastSpellInfoHelpers::castSpell() {
                     pSpellSprite.uType = SPRITE_SPELL_DARK_REANIMATE_1;
                     initSpellSprite(&pSpellSprite, spell_level, spell_mastery, pCastSpell);
                     pSpellSprite.vPosition = pActors[monster_id].pos - Vec3i(0, 0, pActors[monster_id].height * -0.8);
-                    pSpellSprite.spell_target_pid = PID(OBJECT_Actor, monster_id);
+                    pSpellSprite.spell_target_pid = Pid::actor(monster_id);
                     pSpellSprite.Create(0, 0, 0, 0);
                     if (pActors[monster_id].monsterInfo.uLevel > target_monster_level) {
                         // Spell is still considered casted successfully, only monster level
@@ -2848,8 +2848,8 @@ void CastSpellInfoHelpers::castSpell() {
                     std::vector<Actor*> actorsInViewport = render->getActorsInViewport(pCamera3D->GetMouseInfoDepth());
                     for (Actor *actor : actorsInViewport) {
                         pSpellSprite.vPosition = actor->pos - Vec3i(0, 0, actor->height * -0.8);
-                        pSpellSprite.spell_target_pid = PID(OBJECT_Actor, actor->id);
-                        Actor::DamageMonsterFromParty(PID(OBJECT_Item, pSpellSprite.Create(0, 0, 0, 0)), actor->id, &spell_velocity);
+                        pSpellSprite.spell_target_pid = Pid::actor(actor->id);
+                        Actor::DamageMonsterFromParty(Pid::item(pSpellSprite.Create(0, 0, 0, 0)), actor->id, &spell_velocity);
                     }
                     int drained_health = (actorsInViewport.size() * (7 * spell_level + 25));
                     int active_pl_num = 0;
@@ -2933,6 +2933,8 @@ static size_t pushCastSpellInfo(SPELL_TYPE uSpellID,
                                 CombinedSkillValue skill_level,
                                 SpellCastFlags uFlags,
                                 int spell_sound_id) {
+    assert(uPlayerID >= 0 && uPlayerID <= 3);
+
     for (size_t i = 0; i < pCastSpellInfo.size(); i++) {
         if (pCastSpellInfo[i].uSpellID == SPELL_NONE) {
             pCastSpellInfo[i].uSpellID = uSpellID;
@@ -2941,7 +2943,7 @@ static size_t pushCastSpellInfo(SPELL_TYPE uSpellID,
                 pCastSpellInfo[i].uPlayerID_2 = uPlayerID;
             }
             pCastSpellInfo[i].field_6 = 0;
-            pCastSpellInfo[i].spell_target_pid = 0;
+            pCastSpellInfo[i].spell_target_pid = Pid();
             pCastSpellInfo[i].uFlags = uFlags;
             pCastSpellInfo[i].forced_spell_skill_level = skill_level;
             pCastSpellInfo[i].sound_id = spell_sound_id;
@@ -3183,7 +3185,7 @@ void pushScrollSpell(SPELL_TYPE spell, unsigned int uPlayerID) {
     pushSpellOrRangedAttack(spell, uPlayerID, SCROLL_OR_NPC_SPELL_SKILL_VALUE, ON_CAST_CastViaScroll, 0);
 }
 
-void spellTargetPicked(int pid, int playerTarget) {
+void spellTargetPicked(Pid pid, int playerTarget) {
     assert((pid != PID_INVALID) ^ (playerTarget != -1));
 
     CastSpellInfo *pCastSpell = static_cast<CastSpellInfo *>(pGUIWindow_CastTargetedSpell->wData.ptr);

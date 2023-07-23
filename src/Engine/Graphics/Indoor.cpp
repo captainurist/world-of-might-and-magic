@@ -681,9 +681,9 @@ void BLV_UpdateDoors() {
                 openDistance = door->uMoveLength;
                 door->uState = BLVDoor::Open;
                 if (shouldPlaySound)
-                    pAudioPlayer->playSound((SoundID)((int)eDoorSoundID + 1), PID(OBJECT_Door, i));
+                    pAudioPlayer->playSound((SoundID)((int)eDoorSoundID + 1), Pid::door(i));
             } else if (shouldPlaySound) {
-                pAudioPlayer->playSound(eDoorSoundID, PID(OBJECT_Door, i), 1);
+                pAudioPlayer->playSound(eDoorSoundID, Pid::door(i), 1);
             }
         } else {
             assert(door->uState == BLVDoor::Closing);
@@ -693,11 +693,11 @@ void BLV_UpdateDoors() {
                 openDistance = 0;
                 door->uState = BLVDoor::Closed;
                 if (shouldPlaySound)
-                    pAudioPlayer->playSound((SoundID)((int)eDoorSoundID + 1), PID(OBJECT_Door, i));
+                    pAudioPlayer->playSound((SoundID)((int)eDoorSoundID + 1), Pid::door(i));
             } else {
                 openDistance = door->uMoveLength - closeDistance;
                 if (shouldPlaySound)
-                    pAudioPlayer->playSound(eDoorSoundID, PID(OBJECT_Door, i), 1);
+                    pAudioPlayer->playSound(eDoorSoundID, Pid::door(i), 1);
             }
         }
 
@@ -1256,7 +1256,7 @@ void IndoorLocation::PrepareDecorationsRenderList_BLV(unsigned int uDecorationID
                     pBillboardRenderList[uNumBillboardsToDraw - 1].screen_space_z =
                         view_x;
                     pBillboardRenderList[uNumBillboardsToDraw - 1].object_pid =
-                        PID(OBJECT_Decoration, uDecorationID);
+                        Pid::decoration(uDecorationID);
 
                     pBillboardRenderList[uNumBillboardsToDraw - 1].sTintColor = Color();
                     pBillboardRenderList[uNumBillboardsToDraw - 1].pSpriteFrame = v11;
@@ -1457,21 +1457,14 @@ char DoInteractionWithTopmostZObject(Pid pid) {
 
         case OBJECT_Face:
             if (uCurrentlyLoadedLevelType == LEVEL_OUTDOOR) {
-                int bmodel_id = pid >> 9;
-                int face_id = id & 0x3F;
+                const ODMFace &face = pOutdoor->face(pid);
 
-                if (bmodel_id >= pOutdoor->pBModels.size()) {
-                    return 1;
-                }
-
-                ODMFace &model = pOutdoor->pBModels[bmodel_id].pFaces[face_id];
-
-                if (model.uAttributes & FACE_HAS_EVENT || model.sCogTriggeredID == 0) {
+                if (face.uAttributes & FACE_HAS_EVENT || face.sCogTriggeredID == 0) {
                     return 1;
                 }
 
                 if (pParty->hasActiveCharacter()) {
-                    eventProcessor(pOutdoor->pBModels[bmodel_id].pFaces[face_id].sCogTriggeredID, pid, 1);
+                    eventProcessor(face.sCogTriggeredID, pid, 1);
                 } else {
                     GameUI_SetStatusBar(localization->GetString(LSTR_NOBODY_IS_IN_CONDITION));
                 }

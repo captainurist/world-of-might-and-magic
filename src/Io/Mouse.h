@@ -1,8 +1,10 @@
 #pragma once
+
 #include <memory>
 #include <string>
 
 #include "Engine/Objects/ItemEnums.h"
+#include "Engine/Pid.h"
 
 #include "Utility/Geometry/Point.h"
 
@@ -45,7 +47,7 @@ namespace Io {
 
         void UI_OnMouseLeftClick();
 
-        unsigned int uPointingObjectID = 0;
+        Pid uPointingObjectID = Pid();
         unsigned int bActive = 0;
         int field_8 = 0;
         int field_C = 0;

@@ -1110,7 +1110,7 @@ void Game::processQueuedMessages() {
                 continue;
 
             case UIMSG_OnCastTownPortal:
-                pGUIWindow_CurrentMenu = new GUIWindow_TownPortalBook(uMessageParam);
+                pGUIWindow_CurrentMenu = new GUIWindow_TownPortalBook(Pid::fromPacked(uMessageParam));
                 continue;
 
             case UIMSG_OnCastLloydsBeacon:
@@ -1244,7 +1244,7 @@ void Game::processQueuedMessages() {
 
             case UIMSG_CastSpell_TargetActorBuff:
             case UIMSG_CastSpell_TargetActor: {
-                int pid = _vis->get_picked_object_zbuf_val().object_pid;
+                Pid pid = _vis->get_picked_object_zbuf_val().object_pid;
                 int depth = _vis->get_picked_object_zbuf_val().depth;
                 if (PID_TYPE(pid) == OBJECT_Actor && depth < _engine->config->gameplay.RangedAttackDepth.value()) {
                     spellTargetPicked(pid, -1);
@@ -1786,7 +1786,7 @@ void Game::processQueuedMessages() {
                 GameUI_StatusBar_Set(fmt::format("{}: {}", NameAndTitle(character->name, character->classType),
                                                  localization->GetCharacterConditionName(character->GetMajorConditionIdx())));
 
-                _mouse->uPointingObjectID = PID(OBJECT_Character, (unsigned char)(8 * uMessageParam - 8) | 4);
+                _mouse->uPointingObjectID = Pid::character(uMessageParam - 1);
                 continue;
             }
 

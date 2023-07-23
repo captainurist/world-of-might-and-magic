@@ -195,7 +195,7 @@ void GUIWindow_LloydsBook::installOrRecallBeacon(int beaconId) {
     } else {
         character.SetRecoveryTime(debug_non_combat_recovery_mul * sRecoveryTime * flt_debugrecmod3);
     }
-    pAudioPlayer->playSpellSound(SPELL_WATER_LLOYDS_BEACON, 0);
+    pAudioPlayer->playSpellSound(SPELL_WATER_LLOYDS_BEACON, AudioPlayer::SOUND_PID_UI);
     if (_recallingBeacon) {
         if (toLower(pCurrentMapName) != toLower(pMapStats->pInfos[character.vBeacons[beaconId].mapId].pFilename)) {
             // TODO(Nik-RE-dev): need separate function for teleportation to other maps

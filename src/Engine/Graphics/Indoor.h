@@ -238,6 +238,11 @@ struct IndoorLocation {
     void PrepareDecorationsRenderList_BLV(unsigned int uDecorationID, int uSectorID);
     void PrepareItemsRenderList_BLV();
 
+    const BLVFace &face(Pid pid) {
+        assert(pid.type() == OBJECT_Face);
+        return pFaces[pid.id()];
+    }
+
     std::string filename;
     unsigned int bLoaded = 0;
     std::vector<Vec3s> pVertices;

@@ -2174,7 +2174,8 @@ void OnPaperdollLeftClick() {
             pSpellInfo = static_cast<CastSpellInfo *>(pGUIWindow_CastTargetedSpell->wData.ptr);
             pSpellInfo->uFlags &= ~ON_CAST_TargetedEnchantment;
             pSpellInfo->uPlayerID_2 = pParty->activeCharacterIndex() - 1;
-            pSpellInfo->spell_target_pid = pParty->activeCharacter().pEquipment.pIndices[pos];
+            pSpellInfo->spell_target_pid = Pid();
+            pSpellInfo->item_target_index = pParty->activeCharacter().pEquipment.pIndices[pos];
             pSpellInfo->field_6 = std::to_underlying(pitem->GetItemEquipType());
 
             ptr_50C9A4_ItemToEnchant = pitem;
@@ -2246,7 +2247,8 @@ void OnPaperdollLeftClick() {
                 pSpellInfo = static_cast<CastSpellInfo *>(pGUIWindow_CastTargetedSpell->wData.ptr);
                 pSpellInfo->uFlags &= ~ON_CAST_TargetedEnchantment;
                 pSpellInfo->uPlayerID_2 = pParty->activeCharacterIndex() - 1;
-                pSpellInfo->spell_target_pid = v34 - 1;
+                pSpellInfo->spell_target_pid = Pid();
+                pSpellInfo->item_target_index = v34 - 1;
                 pSpellInfo->field_6 = std::to_underlying(pEquipType);
 
                 ptr_50C9A4_ItemToEnchant =

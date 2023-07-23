@@ -79,7 +79,7 @@ bool Chest::open(int uChestID, Pid objectPid) {
             if (PID_TYPE(objectPid) == OBJECT_Face) {
                 // TODO(pskelton): trap explosion moves depending on what face is clicked
                 if (uCurrentlyLoadedLevelType == LEVEL_OUTDOOR) {
-                    pODMFace = &pOutdoor->pBModels[objectPid >> 9].pFaces[(objectPid >> 3) & 0x3F];
+                    pODMFace = &pOutdoor->face(objectPid);
                     objectPos = pODMFace->pBoundingBox.center();
                 } else {  // Indoor
                     pBLVFace = &pIndoor->pFaces[objId];
@@ -132,7 +132,7 @@ bool Chest::open(int uChestID, Pid objectPid) {
             pSpellObject.uFacing = 0;
             pSpellObject.Create(0, 0, 0, 0);
             // TODO(Nik-RE-dev): chest is originator in this case
-            pAudioPlayer->playSound(SOUND_fireBall, 0);
+            pAudioPlayer->playSound(SOUND_fireBall, Pid());
             pSpellObject.explosionTraps();
             chest->uFlags &= ~CHEST_TRAPPED;
             if (pParty->hasActiveCharacter() && !OpenedTelekinesis) {
@@ -185,7 +185,7 @@ bool Chest::ChestUI_WritePointedObjectStatusString() {
             // normal picking
 
             GameUI_StatusBar_Set(item->GetDisplayName());
-            uLastPointedObjectID = 1;
+            uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
             return 1;
 
             ////////////////////////////////////////////////////

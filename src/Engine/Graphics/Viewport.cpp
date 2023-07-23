@@ -368,8 +368,8 @@ void Engine::onGameViewportClick() {
                 eventId = pIndoor->pFaceExtras[pIndoor->pFaces[PID_ID(pid)].uFaceExtraID].uEventID;
             }
         } else if (uCurrentlyLoadedLevelType == LEVEL_OUTDOOR) {
-            ODMFace &model = pOutdoor->pBModels[(pid) >> 9].pFaces[PID_ID(pid) & 0x3F];
-            if (!model.Clickable()) {
+            const ODMFace &face = pOutdoor->face(pid);
+            if (!face.Clickable()) {
                 if (pParty->pPickedItem.uItemID == ITEM_NULL) {
                     GameUI_StatusBar_NothingHere();
                 } else {
@@ -377,7 +377,7 @@ void Engine::onGameViewportClick() {
                 }
                 return;
             } else {
-                eventId = model.sCogTriggeredID;
+                eventId = face.sCogTriggeredID;
             }
         }
 

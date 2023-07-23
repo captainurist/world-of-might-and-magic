@@ -204,7 +204,7 @@ int UseNPCSkill(NPCProf profession, int id) {
                     .Apply(pParty->GetPlayingTime() + GameTime::FromHours(2), CHARACTER_SKILL_MASTERY_MASTER, 0, 0, 0);
                 // Mark buff as GM because NPC buff does not drain mana
                 pParty->pPartyBuffs[PARTY_BUFF_FLY].isGMBuff = true;
-                pAudioPlayer->playSpellSound(SPELL_AIR_FLY, 0, false);
+                pAudioPlayer->playSpellSound(SPELL_AIR_FLY, AudioPlayer::SOUND_PID_UI, false);
             }
         } break;
 
@@ -213,12 +213,12 @@ int UseNPCSkill(NPCProf profession, int id) {
                 .Apply(pParty->GetPlayingTime() + GameTime::FromHours(3), CHARACTER_SKILL_MASTERY_MASTER, 0, 0, 0);
             // Mark buff as GM because NPC buff does not drain mana
             pParty->pPartyBuffs[PARTY_BUFF_WATER_WALK].isGMBuff = true;
-            pAudioPlayer->playSpellSound(SPELL_WATER_WATER_WALK, 0, false);
+            pAudioPlayer->playSpellSound(SPELL_WATER_WATER_WALK, AudioPlayer::SOUND_PID_UI, false);
         } break;
 
         case GateMaster: {
             engine->_messageQueue->addMessageCurrentFrame(UIMSG_Escape, 0, 0);
-            engine->_messageQueue->addMessageNextFrame(UIMSG_OnCastTownPortal, PID(OBJECT_Character, pParty->pCharacters.size() + id), 0);
+            engine->_messageQueue->addMessageNextFrame(UIMSG_OnCastTownPortal, Pid::character(pParty->pCharacters.size() + id).packed(), 0);
         } break;
 
         case Acolyte:

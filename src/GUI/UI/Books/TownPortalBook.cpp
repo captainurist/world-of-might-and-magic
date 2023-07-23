@@ -55,7 +55,7 @@ static std::array<GraphicsImage *, TOWN_PORTAL_DESTINATION_COUNT> ui_book_townpo
 
 GraphicsImage *ui_book_townportal_background = nullptr;
 
-GUIWindow_TownPortalBook::GUIWindow_TownPortalBook(int casterPid) : GUIWindow_Book() {
+GUIWindow_TownPortalBook::GUIWindow_TownPortalBook(Pid casterPid) : GUIWindow_Book() {
     this->eWindowType = WindowType::WINDOW_TownPortal;
     this->wData.val = WINDOW_TownPortal;
 

@@ -25,6 +25,7 @@ class TextureFrame;
 class SoundInfo;
 class TileDesc;
 class UIAnimation;
+class Pid;
 struct ActorJob;
 struct BLVDoor;
 struct BLVFace;
@@ -71,6 +72,9 @@ MM_DECLARE_MEMCOPY_SERIALIZABLE(Planef)
 MM_DECLARE_MEMCOPY_SERIALIZABLE(BBoxs)
 
 #pragma pack(push, 1)
+
+void snapshot(const Pid &src, uint16_t *dst);
+void reconstruct(const uint16_t &src, Pid *dst);
 
 struct Planei_MM7 {
     Vec3i normal; // Fixpoint normal.
@@ -954,12 +958,12 @@ struct SpriteObject_MM7 {
     int16_t tempLifetime;
     int16_t field_22_glow_radius_multiplier;
     ItemGen_MM7 containing_item;
-    int uSpellID;
-    int spell_level;
+    int32_t uSpellID;
+    int32_t spell_level;
     int32_t spell_skill;
-    int field_54;
-    int spell_caster_pid;
-    int spell_target_pid;
+    int32_t field_54;
+    int32_t spell_caster_pid;
+    int32_t spell_target_pid;
     char field_60_distance_related_prolly_lod;
     char spellCasterAbility;
     uint16_t _pad;

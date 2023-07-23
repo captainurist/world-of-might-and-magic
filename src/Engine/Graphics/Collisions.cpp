@@ -361,7 +361,7 @@ void CollideOutdoorWithDecorations(int grid_x, int grid_y) {
     int list_index = pOutdoor->pOMAP[grid_index];
 
     for(int i = list_index; i < pOutdoor->pFaceIDLIST.size(); i++) {
-        uint16_t pid = pOutdoor->pFaceIDLIST[i];
+        Pid pid = pOutdoor->pFaceIDLIST[i];
         if (!pid)
             break;
 

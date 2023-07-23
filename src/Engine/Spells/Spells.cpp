@@ -821,7 +821,7 @@ void eventCastSpell(SPELL_TYPE uSpellID, CharacterSkillMastery skillMastery, int
             spell_sprites.uSectorID = pIndoor->GetSector(from);
             spell_sprites.field_60_distance_related_prolly_lod = distance_to_target;
             spell_sprites.uSpriteFrameID = 0;
-            spell_sprites.spell_caster_pid = PID(OBJECT_Item, 1000); // 8000 | OBJECT_Item;
+            spell_sprites.spell_caster_pid = Pid::item(1000); // 8000 | OBJECT_Item;
             spell_sprites.uSoundID = 0;
             break;
         default:
@@ -848,18 +848,18 @@ void eventCastSpell(SPELL_TYPE uSpellID, CharacterSkillMastery skillMastery, int
         case SPELL_EARTH_BLADES:
         case SPELL_EARTH_ROCK_BLAST:
             // v20 = yaw;
-            spell_sprites.spell_target_pid = 0;
+            spell_sprites.spell_target_pid = Pid();
             spell_sprites.uFacing = yaw;
             spell_sprites.uSoundID = 0;
             launch_speed = pObjectList->pObjects[(int16_t)spell_sprites.uObjectDescID].uSpeed;
             spriteid = spell_sprites.Create(yaw, pitch, launch_speed, 0);
             //    pAudioPlayer->PlaySound((SoundID)word_4EE088_sound_ids[uSpellID],
             //    0, 0, fromx, fromy, 0, 0, 0);
-            pAudioPlayer->playSpellSound(uSpellID, PID(OBJECT_Item, spriteid));
+            pAudioPlayer->playSpellSound(uSpellID, Pid::item(spriteid));
             break;
         case SPELL_WATER_POISON_SPRAY:
             spell_num_objects = (std::to_underlying(skillMastery) * 2) - 1;
-            spell_sprites.spell_target_pid = 0;
+            spell_sprites.spell_target_pid = Pid();
             spell_sprites.uFacing = yaw;
             if (spell_num_objects == 1) {
                 launch_speed = pObjectList->pObjects[(int16_t)spell_sprites.uObjectDescID].uSpeed;
@@ -874,32 +874,32 @@ void eventCastSpell(SPELL_TYPE uSpellID, CharacterSkillMastery skillMastery, int
             }
             //    pAudioPlayer->PlaySound((SoundID)word_4EE088_sound_ids[uSpellID],
             //    0, 0, fromx, fromy, 0, 0, 0);
-            pAudioPlayer->playSpellSound(uSpellID, PID(OBJECT_Item, spriteid));
+            pAudioPlayer->playSpellSound(uSpellID, Pid::item(spriteid));
             break;
         case SPELL_AIR_SPARKS:
             spell_num_objects = (std::to_underlying(skillMastery) * 2) + 1;
             spell_spray_arc = (signed int)(60 * TrigLUT.uIntegerDoublePi) / 360;
             spell_spray_angles = spell_spray_arc / (spell_num_objects - 1);
-            spell_sprites.spell_target_pid = 4;
+            spell_sprites.spell_target_pid = Pid::character(0);
             for (int i = spell_spray_arc / -2; i <= spell_spray_arc / 2; i += spell_spray_angles) {
                 spell_sprites.uFacing = i + yaw;
                 spriteid = spell_sprites.Create(i + yaw, pitch, pObjectList->pObjects[spell_sprites.uObjectDescID].uSpeed, 0);
             }
             //    pAudioPlayer->PlaySound((SoundID)word_4EE088_sound_ids[uSpellID],
             //    0, 0, fromx, fromy, 0, 0, 0);
-            pAudioPlayer->playSpellSound(uSpellID, PID(OBJECT_Item, spriteid));
+            pAudioPlayer->playSpellSound(uSpellID, Pid::item(spriteid));
             break;
         case SPELL_EARTH_DEATH_BLOSSOM:
             if (uCurrentlyLoadedLevelType == LEVEL_INDOOR) {
                 return;
             }
-            spell_sprites.spell_target_pid = 4;
+            spell_sprites.spell_target_pid = Pid::character(0);
             launch_speed = pObjectList->pObjects[spell_sprites.uObjectDescID].uSpeed;
             launch_angle = TrigLUT.uIntegerHalfPi / 2;
             spriteid = spell_sprites.Create(yaw, launch_angle, launch_speed, 0);
             //    pAudioPlayer->PlaySound((SoundID)word_4EE088_sound_ids[uSpellID],
             //    0, 0, fromx, fromy, 0, 0, 0);
-            pAudioPlayer->playSpellSound(uSpellID, PID(OBJECT_Item, spriteid));
+            pAudioPlayer->playSpellSound(uSpellID, Pid::item(spriteid));
             break;
 
         case SPELL_FIRE_HASTE:

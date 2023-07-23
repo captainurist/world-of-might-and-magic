@@ -3526,7 +3526,7 @@ Pid stru319::FindClosestActor(int pick_depth, int a3 /*Relates to targeting/not 
     int v4;       // edi@1
     stru319 *v5;  // esi@1
     VisSelectFlags select_flags;       // eax@2
-    int v7;       // eax@4
+    Pid v7;       // eax@4
     //  int result; // eax@5
     //  int *v9; // edx@8
     //  signed int v10; // ebx@10

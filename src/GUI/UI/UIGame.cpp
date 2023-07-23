@@ -873,7 +873,7 @@ void GameUI_WritePointedObjectStatusString() {
 
     // int testing;
 
-    mouse->uPointingObjectID = 0;
+    mouse->uPointingObjectID = Pid();
     mouse->GetClickPos(&pX, &pY);
     Sizei renDims = render->GetRenderDimensions();
     if (pX < 0 || pX > renDims.w - 1 || pY < 0 || pY > renDims.h - 1)
@@ -883,11 +883,11 @@ void GameUI_WritePointedObjectStatusString() {
         if (pX <= (renDims.w - 1) * 0.73125 &&
             pY <= (renDims.h - 1) * 0.73125) {
             if (!pViewport->Contains(pX, pY)) {
-                if (uLastPointedObjectID != 0) {
+                if (uLastPointedObjectID) {
                     game_ui_status_bar_string.clear();
                     bForceDrawFooter = 1;
                 }
-                uLastPointedObjectID = 0;
+                uLastPointedObjectID = Pid();
                 return;
             }
 
@@ -899,10 +899,10 @@ void GameUI_WritePointedObjectStatusString() {
             pickedObjectID = (signed)PID_ID(pickedObject.object_pid);
             if (PID_TYPE(pickedObject.object_pid) == OBJECT_Item) {
                 if (pObjectList->pObjects[pSpriteObjects[pickedObjectID].uObjectDescID].uFlags & OBJECT_DESC_UNPICKABLE) {
-                    mouse->uPointingObjectID = 0;
+                    mouse->uPointingObjectID = Pid();
                     game_ui_status_bar_string.clear();
                     bForceDrawFooter = 1;
-                    uLastPointedObjectID = 0;
+                    uLastPointedObjectID = Pid();
                     return;
                 }
                 if (pickedObject.depth >= 0x200u ||
@@ -952,8 +952,8 @@ void GameUI_WritePointedObjectStatusString() {
                     }
                     if (!newString.empty()) {
                         GameUI_StatusBar_Set(newString);
-                        if (mouse->uPointingObjectID == 0 &&
-                            uLastPointedObjectID != 0) {
+                        if (!mouse->uPointingObjectID &&
+                            uLastPointedObjectID) {
                             game_ui_status_bar_string.clear();
                             bForceDrawFooter = 1;
                         }
@@ -961,26 +961,24 @@ void GameUI_WritePointedObjectStatusString() {
                         return;
                     }
                 }
-                mouse->uPointingObjectID = 0;
+                mouse->uPointingObjectID = Pid();
                 game_ui_status_bar_string.clear();
                 bForceDrawFooter = 1;
-                uLastPointedObjectID = 0;
+                uLastPointedObjectID = Pid();
                 return;
             } else if (PID_TYPE(pickedObject.object_pid) == OBJECT_Actor) {
                 if (pickedObject.depth >= 0x2000u) {
-                    mouse->uPointingObjectID = 0;
-                    if (uLastPointedObjectID != 0) {
+                    mouse->uPointingObjectID = Pid();
+                    if (uLastPointedObjectID) {
                         game_ui_status_bar_string.clear();
                         bForceDrawFooter = 1;
                     }
-                    uLastPointedObjectID = 0;
+                    uLastPointedObjectID = Pid();
                     return;
                 }
                 GameUI_StatusBar_Set(GetDisplayName(&pActors[pickedObjectID]));
-            } else if (mouse->uPointingObjectID == 0xFFFF) {
-                mouse->uPointingObjectID = 0;
             }
-            if (mouse->uPointingObjectID == 0 && uLastPointedObjectID != 0) {
+            if (!mouse->uPointingObjectID && uLastPointedObjectID) {
                 game_ui_status_bar_string.clear();
                 bForceDrawFooter = 1;
             }
@@ -992,11 +990,11 @@ void GameUI_WritePointedObjectStatusString() {
             pY <= (renDims.h - 1) * 0.73125) {  // if in chest area
             if (Chest::ChestUI_WritePointedObjectStatusString()) {
                 return;
-            } else if (uLastPointedObjectID != 0) {  // not found so reset
+            } else if (uLastPointedObjectID) {  // not found so reset
                 game_ui_status_bar_string.clear();
                 bForceDrawFooter = 1;
             }
-            uLastPointedObjectID = 0;
+            uLastPointedObjectID = Pid();
             return;
         }
     } else {
@@ -1035,16 +1033,16 @@ void GameUI_WritePointedObjectStatusString() {
                     if (pickedObjectID == 0 || pickedObjectID == -65536 ||
                         pickedObjectID >= 5000) {
                         // if (pMouse->uPointingObjectID == 0) {
-                        if (uLastPointedObjectID != 0) {
+                        if (uLastPointedObjectID) {
                             game_ui_status_bar_string.clear();
                             bForceDrawFooter = 1;
                         }
                         //}
-                        uLastPointedObjectID = 0;
+                        uLastPointedObjectID = Pid();
                         // return;
                     } else {
                         GameUI_StatusBar_Set(pItemGen->GetDisplayName());
-                        uLastPointedObjectID = 1;
+                        uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
                         return;
                     }
                 }
@@ -1065,7 +1063,7 @@ void GameUI_WritePointedObjectStatusString() {
                                     engine->_messageQueue->addMessageCurrentFrame(
                                         pMessageType1, pButton->msg_param, 0);
                                 GameUI_StatusBar_Set(pButton->sLabel);
-                                uLastPointedObjectID = 1;
+                                uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
                                 return;
                             }
                             break;
@@ -1090,7 +1088,7 @@ void GameUI_WritePointedObjectStatusString() {
                                             0);
                                     GameUI_StatusBar_Set(
                                         pButton->sLabel);  // for character name
-                                    uLastPointedObjectID = 1;
+                                    uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
                                     return;
                                 }
                             }
@@ -1108,7 +1106,7 @@ void GameUI_WritePointedObjectStatusString() {
                                 else
                                     GameUI_StatusBar_Set(localization->FormatString(LSTR_FMT_CLICKING_WILL_SPEND_POINTS, requiredSkillpoints));
 
-                                uLastPointedObjectID = 1;
+                                uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
                                 return;
                             }
                             break;
@@ -1117,11 +1115,11 @@ void GameUI_WritePointedObjectStatusString() {
             }
 
             // ?? if we get here nothing is curos over??
-            if (uLastPointedObjectID != 0) {  // not found so reset
+            if (uLastPointedObjectID) {  // not found so reset
                 game_ui_status_bar_string.clear();
                 bForceDrawFooter = 1;
             }
-            uLastPointedObjectID = 0;
+            uLastPointedObjectID = Pid();
 
             if (pWindow->uFrameHeight == 480) {
                 // DebugBreak(); //Why is this condition here (in the original
@@ -1182,7 +1180,7 @@ void GameUI_WritePointedObjectStatusString() {
                                 engine->_messageQueue->addMessageCurrentFrame(
                                     pMessageType3, pButton->msg_param, 0);
                             }
-                            uLastPointedObjectID = 1;
+                            uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
                             return;
                         }
                         break;
@@ -1205,7 +1203,7 @@ void GameUI_WritePointedObjectStatusString() {
                                         pMessageType2, pButton->msg_param, 0);
                                 GameUI_StatusBar_Set(
                                     pButton->sLabel);  // for character name
-                                uLastPointedObjectID = 1;
+                                uLastPointedObjectID = Pid(); // Was uLastPointedObjectID = 1.
                                 return;
                             }
                         }
@@ -1241,11 +1239,11 @@ void GameUI_WritePointedObjectStatusString() {
     }
 
     // pMouse->uPointingObjectID = sub_46A99B(); //for software
-    if (uLastPointedObjectID != 0) {
+    if (uLastPointedObjectID) {
         game_ui_status_bar_string.clear();
         bForceDrawFooter = 1;
     }
-    uLastPointedObjectID = 0;
+    uLastPointedObjectID = Pid();
     return;
 }
 

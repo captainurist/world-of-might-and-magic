@@ -3,6 +3,7 @@
 #include <cstdint>
 
 #include "Engine/Objects/CombinedSkillValue.h"
+#include "Engine/Pid.h"
 
 #include "Utility/Flags.h"
 
@@ -62,12 +63,13 @@ struct CastSpellInfo {
     GUIWindow *GetCastSpellInInventoryWindow();
 
     SPELL_TYPE uSpellID;
-    uint16_t uPlayerID;
+    uint16_t uPlayerID; // 0-4, 0 means no character (?)
     uint16_t uPlayerID_2;
     int16_t field_6; // ITEM_EQUIP_TYPE when enchanting.
     SpellCastFlags uFlags;
     CombinedSkillValue forced_spell_skill_level;
-    int spell_target_pid;
+    Pid spell_target_pid;
+    int item_target_index = -1; // Index into Character::pInventoryItemList when enchanting.
     int sound_id;
 };
 
@@ -126,4 +128,4 @@ void pushScrollSpell(SPELL_TYPE spell, unsigned int uPlayerID);
  * @param pid            PID of target
  * @param playerTarget   Target player index
  */
-void spellTargetPicked(int pid, int playerTarget);
+void spellTargetPicked(Pid pid, int playerTarget);
