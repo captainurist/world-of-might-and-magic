@@ -18,8 +18,6 @@
 
 #include "OpenEnrothOptions.h"
 
-#include <ranges>
-
 int runRetrace(OpenEnrothOptions options) {
     GameStarter starter(options);
     starter.config()->resetForTest();
@@ -51,10 +49,6 @@ int runRetrace(OpenEnrothOptions options) {
 }
 
 int runOpenEnroth(OpenEnrothOptions options) {
-    const std::vector<int> v = {1, 2, 3};
-    for (int i : v | std::views::reverse)
-        fmt::println("{}", i);
-
     setErrorHandler([](const std::string &title, const std::string &message) {
         if (platform)
             platform->showMessageBox(title, message);

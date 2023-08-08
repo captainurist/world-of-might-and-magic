@@ -2,8 +2,10 @@
 
 #include <vector>
 #include <set>
+#include <ranges>
 
 #include "FileSystem.h"
+#include "Format.h"
 
 static std::filesystem::path globalDataPath;
 static const std::vector<std::vector<std::string_view>> globalValidateList = {
@@ -67,6 +69,10 @@ bool validateDataPath(const std::string &data_path) {
             break;
         }
     }
+
+    const std::vector<int> v = {1, 2, 3};
+    for (int i : v | std::views::reverse)
+        fmt::println("{}", i);
 
     return isGood;
 }
