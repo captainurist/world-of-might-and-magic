@@ -59,7 +59,7 @@ jobs:
         run: >
           cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=${{
           matrix.configuration }} -DENABLE_TESTS=On
-          -DCMAKE_PREFIX_PATH="/usr/local/opt/ffmpeg@4"       
+          -DCMAKE_PREFIX_PATH="/usr/local/opt/ffmpeg@4" -DCMAKE_OSX_SYSROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk       
                   
       - name: Build
         working-directory: build
