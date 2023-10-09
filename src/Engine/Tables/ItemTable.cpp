@@ -10,6 +10,7 @@
 #include "Engine/Party.h"
 #include "Engine/EngineIocContainer.h"
 #include "Engine/GameResourceManager.h"
+#include "Engine/Objects/CharacterFunctions.h"
 
 #include "GUI/UI/UIHouses.h"
 

@@ -14,6 +14,7 @@
 #include "Engine/Objects/ObjectList.h"
 #include "Engine/Objects/SpriteObject.h"
 #include "Engine/Objects/NPC.h"
+#include "Engine/Objects/CharacterFunctions.h"
 #include "Engine/Tables/ItemTable.h"
 #include "Engine/Tables/IconFrameTable.h"
 #include "Engine/Tables/CharacterFrameTable.h"
@@ -24,7 +25,6 @@
 #include "Engine/MapInfo.h"
 
 #include "GUI/GUIWindow.h"
-#include "GUI/GUIMessageQueue.h"
 #include "GUI/UI/UIStatusBar.h"
 #include "GUI/UI/UIRest.h"
 

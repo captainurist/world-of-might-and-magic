@@ -16,6 +16,7 @@
 #include "Engine/Objects/ObjectList.h"
 #include "Engine/Objects/SpriteObject.h"
 #include "Engine/Objects/NPC.h"
+#include "Engine/Objects/CharacterFunctions.h"
 #include "Engine/Tables/ItemTable.h"
 #include "Engine/Tables/CharacterFrameTable.h"
 #include "Engine/Spells/Spells.h"
@@ -26,8 +27,6 @@
 #include "Io/Mouse.h"
 
 #include "GUI/GUIButton.h"
-#include "GUI/GUIFont.h"
-#include "GUI/GUIMessageQueue.h"
 #include "GUI/UI/Books/MapBook.h"
 #include "GUI/UI/UICharacter.h"
 #include "GUI/UI/UIPopup.h"
@@ -1056,7 +1055,7 @@ std::string CharacterUI_GetSkillDescText(unsigned int uPlayerID, CharacterSkillT
     if (localization->GetSkillDescriptionNormal(uPlayerSkillType)) {
         Description = fmt::format("{}\n\n", Description);
 
-        for (CharacterSkillMastery mastery : SkillMasteries()) {
+        for (CharacterSkillMastery mastery : allSkillMasteries()) {
             Description += fmt::format(
                 "{::}{}\t{:03}:\t{:03}{}\t000\n",
                 GetSkillColor(pParty->pCharacters[uPlayerID].classType, uPlayerSkillType, mastery).tag(),

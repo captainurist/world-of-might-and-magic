@@ -13,6 +13,7 @@
 #include "Engine/Objects/SpriteObject.h"
 #include "Engine/Objects/NPC.h"
 #include "Engine/Objects/Actor.h"
+#include "Engine/Objects/CharacterFunctions.h"
 #include "Engine/SaveLoad.h"
 #include "Engine/Graphics/Indoor.h"
 #include "Engine/Graphics/Image.h"

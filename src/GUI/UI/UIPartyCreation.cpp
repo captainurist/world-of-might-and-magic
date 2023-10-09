@@ -4,6 +4,7 @@
 #include "Engine/AssetsManager.h"
 #include "Engine/Engine.h"
 #include "Engine/EngineGlobals.h"
+#include "Engine/Objects/CharacterFunctions.h"
 #include "Engine/Graphics/IRender.h"
 #include "Engine/Graphics/Viewport.h"
 #include "Engine/Graphics/Image.h"

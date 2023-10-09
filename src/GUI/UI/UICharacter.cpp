@@ -19,10 +19,10 @@
 #include "Engine/Tables/ItemTable.h"
 #include "Engine/Tables/AwardTable.h"
 #include "Engine/Spells/Spells.h"
+#include "Engine/Objects/CharacterFunctions.h"
 
 #include "GUI/GUIWindow.h"
 #include "GUI/GUIButton.h"
-#include "GUI/GUIFont.h"
 #include "GUI/GUIMessageQueue.h"
 #include "GUI/UI/ItemGrid.h"
 #include "GUI/UI/UIInventory.h"

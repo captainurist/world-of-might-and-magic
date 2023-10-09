@@ -48,6 +48,8 @@
 #include "Utility/Math/FixPoint.h"
 #include "Utility/IndexedArray.h"
 
+#include "CharacterFunctions.h"
+
 static DecalBuilder *decal_builder = EngineIocContainer::ResolveDecalBuilder();
 static SpellFxRenderer *spell_fx_renderer = EngineIocContainer::ResolveSpellFxRenderer();
 
