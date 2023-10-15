@@ -31,8 +31,8 @@ var searchData=
   ['intelligencebonus_28',['intelligenceBonus',['../structPlayer__MM7.html#ab81ff50a0c5a90f3ac332e2b06cc6155',1,'Player_MM7']]],
   ['interval_29',['interval',['../structMapTimer.html#ab2b567477aaac77aee58ef7c6b64c8e0',1,'MapTimer']]],
   ['intheshopflag0_30',['inTheShopFlag0',['../structParty__MM7.html#aef4ba6845268011fde1b09a611717bfc',1,'Party_MM7']]],
-  ['intheshopflags_31',['inTheShopFlags',['../structParty__MM7.html#a51e524019cc28378e776d7ccc51e007e',1,'Party_MM7']]],
-  ['intheshopflags_32',['InTheShopFlags',['../structParty.html#afc2ef3c803e980b0a27d7f4a67a18f76',1,'Party']]],
+  ['intheshopflags_31',['InTheShopFlags',['../structParty.html#afc2ef3c803e980b0a27d7f4a67a18f76',1,'Party']]],
+  ['intheshopflags_32',['inTheShopFlags',['../structParty__MM7.html#a51e524019cc28378e776d7ccc51e007e',1,'Party_MM7']]],
   ['ints012_33',['ints012',['../Snapshots__ut_8cpp.html#aa4b11bde9aa5ba93ab288dd99d58c3c6',1,'Snapshots_ut.cpp']]],
   ['ints012345_34',['ints012345',['../Snapshots__ut_8cpp.html#a64d17920553fbe857d36fde47ab17d25',1,'Snapshots_ut.cpp']]],
   ['ints345_35',['ints345',['../Snapshots__ut_8cpp.html#a02828a9cae313ad8ad23bf5896032a95',1,'Snapshots_ut.cpp']]],
@@ -75,6 +75,6 @@ var searchData=
   ['itemid_72',['itemID',['../structItemGen__MM7.html#abeca2de5e9cfc76dec327a4baf9f65f9',1,'ItemGen_MM7']]],
   ['items_73',['items',['../classActor.html#a6a64ad0653320d4e0d03fbcad280297d',1,'Actor']]],
   ['itemtextureidbyitemid_74',['itemTextureIdByItemId',['../Items_8cpp.html#a119fceb33c76e0232e193eb0c2836da5',1,'Items.cpp']]],
-  ['itreasurelevel_75',['iTreasureLevel',['../structItemSpecialEnchantment.html#a22bf7d65df3d20738fdf7019411462e3',1,'ItemSpecialEnchantment']]],
-  ['ivalue_76',['iValue',['../structItemSpecialEnchantment.html#a05f8d0012274d6807e5402e3680b9f33',1,'ItemSpecialEnchantment']]]
+  ['itreasurelevel_75',['iTreasureLevel',['../structItemSpecialEnchantmentTable.html#a68f1cdd9689a88dc2101ac5db7a18482',1,'ItemSpecialEnchantmentTable']]],
+  ['ivalue_76',['iValue',['../structItemSpecialEnchantmentTable.html#a1e6e723c6d7e31d82abc358241821c2d',1,'ItemSpecialEnchantmentTable']]]
 ];
