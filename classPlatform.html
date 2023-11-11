@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;ba457aa</span>
+   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;e55c565</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,6 @@ Inheritance diagram for Platform:</div>
 <area href="classNullPlatform.html" alt="NullPlatform" shape="rect" coords="294,56,480,80"/>
 <area href="classSdlPlatform.html" alt="SdlPlatform" shape="rect" coords="490,56,676,80"/>
 <area href="classProxyPlatform.html" alt="ProxyPlatform" shape="rect" coords="98,112,284,136"/>
-<area href="classWinPlatform.html" alt="WinPlatform" shape="rect" coords="490,112,676,136"/>
 <area href="classApplicationProxy.html" alt="ApplicationProxy" shape="rect" coords="0,168,186,192"/>
 <area href="classEngineDeterministicComponent.html" alt="EngineDeterministicComponent" shape="rect" coords="196,168,382,192"/>
   </map>
@@ -114,15 +113,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae58aa82a21e9c175726d344d2251306e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a398f5ca2b40ec44f63652dfa2cb1d1a0"><td class="memItemLeft" align="right" valign="top">virtual int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlatform.html#a398f5ca2b40ec44f63652dfa2cb1d1a0">tickCount</a> () const =0</td></tr>
 <tr class="separator:a398f5ca2b40ec44f63652dfa2cb1d1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdfbc0c9e3d47458f994a82b6b32be15"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlatform.html#acdfbc0c9e3d47458f994a82b6b32be15">winQueryRegistry</a> (const std::wstring &amp;path) const =0</td></tr>
-<tr class="separator:acdfbc0c9e3d47458f994a82b6b32be15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2eb07022d567b49ea2cdca3bede8353"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlatform.html#ab2eb07022d567b49ea2cdca3bede8353">storagePath</a> (const <a class="el" href="PlatformEnums_8h.html#ad1a37be21e3488f1aa41a63528e65960">PlatformStorage</a> type) const =0</td></tr>
-<tr class="separator:ab2eb07022d567b49ea2cdca3bede8353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d717a2134ddee8cd84d37d40afd4711"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classPlatform.html">Platform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlatform.html#a0d717a2134ddee8cd84d37d40afd4711">createStandardPlatform</a> (<a class="el" href="classPlatformLogger.html">PlatformLogger</a> *<a class="el" href="EngineIocContainer_8cpp.html#a0009c186c3629201f6c24eded36605f4">logger</a>)</td></tr>
-<tr class="separator:a0d717a2134ddee8cd84d37d40afd4711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37da49e3b57d296cda0edcb1291ed5ea"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classPlatform.html">Platform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlatform.html#a37da49e3b57d296cda0edcb1291ed5ea">createStandardPlatform</a> (<a class="el" href="classLogger.html">Logger</a> *<a class="el" href="Logger_8cpp.html#a0009c186c3629201f6c24eded36605f4">logger</a>)</td></tr>
+<tr class="separator:a37da49e3b57d296cda0edcb1291ed5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="classPlatform.html">Platform</a> abstraction layer.</p>
@@ -153,8 +148,9 @@ Static Public Member Functions</h2></td></tr>
 <li>The points above mean that platform API handles shouldn't expose non-virtual methods.</li>
 <li><a class="el" href="classPlatform.html">Platform</a> API should be getter/setter symmetric as long as the underlying OS API is symmetric. E.g. in the example above there is no <code>SetFrameMargins</code> method because this is not how window frames work.</li>
 <li><a class="el" href="classPlatform.html">Platform</a> API handles shouldn't hold state. Don't expose APIs that take ownership of user-allocated data, and don't cache values returned by the OS (if needed, caching should be implemented at the next abstraction layer). Again, you can think about this in terms of information content, "platform API handle doesn't expose any bits of state
-  through its API that cannot be accessed through the underlying OS API". </li>
+  through its API that cannot be accessed through the underlying OS API".</li>
 </ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="CodeGen_8cpp.html#ac514b18d4266e4a2f5a39f9d19a88f77">platformMain</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9150653d3b9bc34117ba383972184ce" name="aa9150653d3b9bc34117ba383972184ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9150653d3b9bc34117ba383972184ce">&#9670;&#160;</a></span>~Platform()</h2>
@@ -211,8 +207,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0d717a2134ddee8cd84d37d40afd4711" name="a0d717a2134ddee8cd84d37d40afd4711"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d717a2134ddee8cd84d37d40afd4711">&#9670;&#160;</a></span>createStandardPlatform()</h2>
+<a id="a37da49e3b57d296cda0edcb1291ed5ea" name="a37da49e3b57d296cda0edcb1291ed5ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37da49e3b57d296cda0edcb1291ed5ea">&#9670;&#160;</a></span>createStandardPlatform()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +219,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classPlatform.html">Platform</a> &gt; Platform::createStandardPlatform </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPlatformLogger.html">PlatformLogger</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classLogger.html">Logger</a> *&#160;</td>
           <td class="paramname"><em>logger</em></td><td>)</td>
           <td></td>
         </tr>
@@ -237,7 +233,7 @@ Static Public Member Functions</h2></td></tr>
 <p >Creates a standard platform.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">logger</td><td><a class="el" href="classLogger.html">Logger</a> to use. Must not be null. </td></tr>
+    <tr><td class="paramname">logger</td><td><a class="el" href="classLogger.html">Logger</a> to use. Must not be null. Note that <code><a class="el" href="classLogger.html">Logger</a></code> is a singleton, so we don't really need to pass it in. But we want to be explicit in stating that the <code><a class="el" href="classPlatform.html">Platform</a></code> will use a <code><a class="el" href="classLogger.html">Logger</a></code> instance, and thus the instance should exist. </td></tr>
   </table>
   </dd>
 </dl>
@@ -441,41 +437,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab2eb07022d567b49ea2cdca3bede8353" name="ab2eb07022d567b49ea2cdca3bede8353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2eb07022d567b49ea2cdca3bede8353">&#9670;&#160;</a></span>storagePath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string Platform::storagePath </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="PlatformEnums_8h.html#ad1a37be21e3488f1aa41a63528e65960">PlatformStorage</a>&#160;</td>
-          <td class="paramname"><em>type</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Get various application filesystem paths.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">type</td><td>Storage type. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classNullPlatform.html#afd3e0a31282562ad7b7fab2b3963b719">NullPlatform</a>, <a class="el" href="classProxyPlatform.html#a28e2844d959bd51c13640edf27858037">ProxyPlatform</a>, and <a class="el" href="classSdlPlatform.html#afe92e1090619b6c66ad4f79ad7f77efd">SdlPlatform</a>.</p>
-
-</div>
-</div>
 <a id="a398f5ca2b40ec44f63652dfa2cb1d1a0" name="a398f5ca2b40ec44f63652dfa2cb1d1a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a398f5ca2b40ec44f63652dfa2cb1d1a0">&#9670;&#160;</a></span>tickCount()</h2>
 
@@ -504,46 +465,9 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acdfbc0c9e3d47458f994a82b6b32be15" name="acdfbc0c9e3d47458f994a82b6b32be15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdfbc0c9e3d47458f994a82b6b32be15">&#9670;&#160;</a></span>winQueryRegistry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string Platform::winQueryRegistry </td>
-          <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Windows-only function for querying the registry. Always returns an empty string on non-Windows systems.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Registry path to query. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Value at the given path, or an empty string in case of an error. </dd></dl>
-
-<p>Implemented in <a class="el" href="classNullPlatform.html#a509836301865b000bff2fbad9129f7f5">NullPlatform</a>, <a class="el" href="classProxyPlatform.html#ae61f25f602b5e8e4143cd7d3ea1d803d">ProxyPlatform</a>, <a class="el" href="classSdlPlatform.html#a10934ab7426ceae5f5bfeb77e3a94071">SdlPlatform</a>, and <a class="el" href="classWinPlatform.html#abcb3860ccf83067d3f1abc69c7a67fac">WinPlatform</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Platform/<a class="el" href="Platform_8h.html">Platform.h</a></li>
-<li>src/Platform/Posix/<a class="el" href="PosixPlatform_8cpp.html">PosixPlatform.cpp</a></li>
-<li>src/Platform/Win/<a class="el" href="WinPlatform_8cpp.html">WinPlatform.cpp</a></li>
+<li>src/Library/Platform/Interface/<a class="el" href="Platform_8h.html">Platform.h</a></li>
+<li>src/Library/Platform/Sdl/<a class="el" href="SdlPlatform_8cpp.html">SdlPlatform.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

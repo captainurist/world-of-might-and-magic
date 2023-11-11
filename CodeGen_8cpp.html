@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;ba457aa</span>
+   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;e55c565</span>
    </div>
   </td>
  </tr>
@@ -101,6 +101,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="DataPath_8h.html">Utility/DataPath.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Exception_8h.html">Utility/Exception.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="String_8h.html">Utility/String.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="UnicodeCrt_8h.html">Utility/UnicodeCrt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CodeGenEnums_8h.html">CodeGenEnums.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CodeGenMap_8h.html">CodeGenMap.h</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -264,6 +265,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Entrypoint for the program that uses the platform lib. Function definition should be provided in user code.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Total number of arguments passed. </td></tr>
+    <tr><td class="paramname">argv</td><td>UTF8-encoded program arguments. Note that you're getting UTF8 on ALL platforms, including Windows. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Program return code. </dd></dl>
 
 </div>
 </div>
