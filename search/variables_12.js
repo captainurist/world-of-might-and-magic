@@ -32,7 +32,7 @@ var searchData=
   ['reloadshaders_29',['ReloadShaders',['../classGameConfig_1_1Gamepad.html#afc8601c0ff812feefebe81ad56a86ba1',1,'GameConfig::Gamepad::ReloadShaders()'],['../classGameConfig_1_1Keybindings.html#a35384b2e922e937a0fdfd52dd274c9ed',1,'GameConfig::Keybindings::ReloadShaders()']]],
   ['reloadtex_30',['ReloadTex',['../classGameConfig_1_1Window.html#ad93e22040af9052d344ffb8c715362c5',1,'GameConfig::Window']]],
   ['remaining_5fsparks_5fto_5finit_31',['remaining_sparks_to_init',['../structexplosion__effect__struct.html#a1b6e88ee42fdd4f30fef4c4c581c3082',1,'explosion_effect_struct']]],
-  ['remainingresttime_32',['remainingRestTime',['../UIRest_8h.html#aa84d4b1450f4ed811984e662fca790de',1,'remainingRestTime():&#160;UIRest.cpp'],['../UIRest_8cpp.html#aa84d4b1450f4ed811984e662fca790de',1,'remainingRestTime():&#160;UIRest.cpp']]],
+  ['remainingresttime_32',['remainingRestTime',['../UIRest_8h.html#a1e94907e52d1a533391b8146f4117db2',1,'remainingRestTime():&#160;UIRest.cpp'],['../UIRest_8cpp.html#a1e94907e52d1a533391b8146f4117db2',1,'remainingRestTime():&#160;UIRest.cpp']]],
   ['render_33',['render',['../Renderer_8h.html#adac4dfb7e1eca66d386f6e7f29ea7706',1,'render():&#160;Renderer.cpp'],['../Renderer_8cpp.html#adac4dfb7e1eca66d386f6e7f29ea7706',1,'render():&#160;Renderer.cpp']]],
   ['renderer_34',['Renderer',['../classGameConfig_1_1Graphics.html#a54b902e7eeefa6bee690a30f89b889b1',1,'GameConfig::Graphics']]],
   ['renderfilter_35',['RenderFilter',['../classGameConfig_1_1Graphics.html#a8fd4932c716f89f005f8a78ea9acdb6d',1,'GameConfig::Graphics']]],
