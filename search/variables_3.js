@@ -43,7 +43,7 @@ var searchData=
   ['chancesbyitemtype_40',['chancesByItemType',['../structItemEnchantmentTable.html#a8f845c902f991bfae00d5211f4b0217e',1,'ItemEnchantmentTable']]],
   ['character_5fbuff_5fnames_41',['character_buff_names',['../classLocalization.html#a246686de5427e8d7e15a7b962bdf16ed',1,'Localization']]],
   ['character_5fcondition_5fdescription_42',['character_condition_description',['../classLocalization.html#ad56e8b06677de6fabacbd8fb3e9efae4',1,'Localization']]],
-  ['character_5fconditions_43',['character_conditions',['../classLocalization.html#a27570e6681bbb0560f4409a2cb60b4bf',1,'Localization']]],
+  ['character_5fconditions_43',['character_conditions',['../classLocalization.html#a3e7d7194f2a71429b79713cc0e1b85ac',1,'Localization']]],
   ['charcycle_44',['CharCycle',['../classGameConfig_1_1Keybindings.html#ab401fffc3cf70a76aae3d7382da4c80d',1,'GameConfig::Keybindings::CharCycle()'],['../classGameConfig_1_1Gamepad.html#a8db3d9825817ec4c416b8646f80c4200',1,'GameConfig::Gamepad::CharCycle()']]],
   ['check_5fexit_45',['check_exit',['../structArcomageGame.html#ad1b5fc2de9edaa306ef76b44263395cb',1,'ArcomageGame']]],
   ['check_5fhi_46',['check_hi',['../structCollisionState.html#aa5491e02b7a180941df18a813c6e9cfa',1,'CollisionState']]],

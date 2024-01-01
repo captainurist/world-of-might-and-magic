@@ -83,7 +83,7 @@ var searchData=
   ['times_80',['times',['../structCharacterConditions__MM7.html#a648dbc2afcc802ea9f5b9499bbef4abc',1,'CharacterConditions_MM7']]],
   ['timesincecreated_81',['timeSinceCreated',['../structSpriteObject.html#a08a6692b0a8f38bb78033b2ad74f7e2b',1,'SpriteObject']]],
   ['timetolive_82',['timeToLive',['../structParticle__sw.html#a0b6e4f69b31d4af65158db04868e2d99',1,'Particle_sw::timeToLive()'],['../structParticle.html#afb3842ca42482b61f1814c1a6a0aa909',1,'Particle::timeToLive()']]],
-  ['timetorecovery_83',['timeToRecovery',['../classCharacter.html#a4c7077c959428f374a73a82e0df8e874',1,'Character::timeToRecovery()'],['../structPlayer__MM7.html#aca475e70dc53838edce25b615f2e072b',1,'Player_MM7::timeToRecovery()']]],
+  ['timetorecovery_83',['timeToRecovery',['../classCharacter.html#a4c7077c959428f374a73a82e0df8e874',1,'Character::timeToRecovery()'],['../structPlayer__MM7.html#a3b5b729de3edc37ed572b43dcd46cb6d',1,'Player_MM7::timeToRecovery()']]],
   ['tintcolor_84',['tintColor',['../structMonsterDesc__MM7.html#a76dabc1302b5a271c3a1543000a42458',1,'MonsterDesc_MM7::tintColor()'],['../structMonsterDesc.html#a3ad1f0b843f4a59ec0bfa0a295a1f790',1,'MonsterDesc::tintColor()']]],
   ['tinting_85',['Tinting',['../classGameConfig_1_1Graphics.html#a26e17a6fcebc882c8dd48b5936a11fb7',1,'GameConfig::Graphics']]],
   ['title_86',['Title',['../classGameConfig_1_1Window.html#a1304ba4e4ba497a88a8cabcb8faea317',1,'GameConfig::Window']]],
