@@ -12,28 +12,29 @@ TracingRandomEngine::TracingRandomEngine(Platform *platform, RandomEngine *base)
     assert(base);
 }
 
-float TracingRandomEngine::randomFloat() {
-    float result = _base->randomFloat();
-    printTrace("randomFloat", result);
-    return result;
-}
-
-int TracingRandomEngine::random(int hi) {
-    int result = _base->random(hi);
+uint32_t TracingRandomEngine::random() {
+    uint32_t result = _base->random();
     printTrace("random", result);
     return result;
 }
 
-int TracingRandomEngine::peek(int hi) const {
-    return _base->peek(hi);
-}
-
-void TracingRandomEngine::seed(int seed) {
+void TracingRandomEngine::seed(uint32_t seed) {
     _base->seed(seed);
 }
 
-template<class T>
-void TracingRandomEngine::printTrace(const char *function, const T &value) const {
+uint32_t TracingRandomEngine::peek() const {
+    return _base->peek();
+}
+
+int TracingRandomEngine::mapUniform(uint32_t entropy, int hi) const {
+    return _base->mapUniform(entropy, hi);
+}
+
+float TracingRandomEngine::mapUniformFloat(uint32_t entropy) const {
+    return _base->mapUniformFloat(entropy);
+}
+
+void TracingRandomEngine::printTrace(const char *function, uint32_t value) const {
     fmt::println(stderr, "TracingRandomEngine::{} called at {}ms, returning {}, stacktrace:",
                  function, _platform->tickCount(), value);
     printStackTrace(stderr);

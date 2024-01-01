@@ -6,26 +6,27 @@
 
 class SequentialRandomEngine : public RandomEngine {
  public:
-    virtual float randomFloat() override {
-        return random(256) / 256.0f;
+    virtual uint32_t random() override {
+        return ++_state;
     }
 
-    virtual int random(int hi) override {
-        assert(hi > 0);
-
-        return ++_state % hi;
-    }
-
-    virtual int peek(int hi) const override {
-        assert(hi > 0);
-
-        return (_state + 1) % hi;
-    }
-
-    virtual void seed(int seed) override {
+    virtual void seed(uint32_t seed) override {
         _state = seed;
     }
 
+    virtual uint32_t peek() const override {
+        return _state + 1;
+    }
+
+    virtual int mapUniform(uint32_t entropy, int hi) const override {
+        assert(hi > 0);
+        return entropy % hi;
+    }
+
+    virtual float mapUniformFloat(uint32_t entropy) const override {
+        return (entropy % 256) / 256.0f;
+    }
+
  private:
-    unsigned _state = 0; // Using unsigned here so that it wraps around safely.
+    uint32_t _state = 0; // Using unsigned here so that it wraps around safely.
 };

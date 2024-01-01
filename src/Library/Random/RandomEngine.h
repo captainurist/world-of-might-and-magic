@@ -9,38 +9,68 @@
 /**
  * Random number generator interface.
  *
+ * Entropy source and random distribution functions are tied into a single interface for historical reasons.
+ *
  * Note that the methods of this class are NOT thread-safe, unlike their libc counterparts.
  */
 class RandomEngine {
  public:
     virtual ~RandomEngine() = default;
 
+    //
+    // Entropy source interface.
+    //
+
     /**
-     * @return                          Random floating point number in range `[0, 1)`.
+     * @return                          Uniformly distributed random number in `[0, 2^32-1]`.
      */
-    virtual float randomFloat() = 0;
+    virtual uint32_t random() = 0;
+
+    /**
+     * Reinitializes this random engine with the provided seed value. Passing `0` is equivalent to calling
+     * an in-place destructor and then reconstructing the object.
+     *
+     * @param seed                      Random seed.
+     */
+    virtual void seed(uint32_t seed) = 0;
+
+    // TODO(captainurist): drop!
+    virtual uint32_t peek() const = 0;
+
+    //
+    // Random distribution interface.
+    //
+
+    /**
+     * @param entropy                   Result of a call to `random()`.
+     * @param hi                        Upper bound for the result. Must be greater than zero.
+     * @return                          `entropy` value remapped to `[0, hi)`.
+     */
+    virtual int mapUniform(uint32_t entropy, int hi) const = 0;
+
+    /**
+     * @param entropy                   Result of a call to `random()`.
+     * @return                          `entropy` value remapped to `[0, 1)`.
+     */
+    virtual float mapUniformFloat(uint32_t entropy) const = 0;
+
+    //
+    // User-facing convenience methods.
+    //
 
     /**
      * @param hi                        Upper bound for the result. Must be greater than zero.
      * @return                          Random number in range `[0, hi)`.
      */
-    virtual int random(int hi) = 0;
+    int random(int hi);
+
+    // TODO(captainurist): drop!
+    int peek(int hi) const;
 
     /**
-     * Note that this method is mainly for debugging, implementation is not required to be efficient.
-     *
-     * @param hi                        Upper bound for the result. Must be greater than zero.
-     * @return                          Random number that the next call to `random(hi)` will return.
+     * @return                          Random floating point number in range `[0, 1)`.
      */
-    virtual int peek(int hi) const = 0;
-
-    /**
-     * Reinitializes this random engine with the provided seed value. Passing `0` should be equivalent to calling
-     * an in-place destructor and then reconstructing the object.
-     *
-     * @param seed                      Random seed.
-     */
-    virtual void seed(int seed) = 0;
+    float randomFloat();
 
     /**
      * @param min                       Minimal result value.

@@ -2,6 +2,18 @@
 
 #include <cassert>
 
+int RandomEngine::random(int hi) {
+    return mapUniform(random(), hi);
+}
+
+int RandomEngine::peek(int hi) const {
+    return mapUniform(peek(), hi);
+}
+
+float RandomEngine::randomFloat() {
+    return mapUniformFloat(random());
+}
+
 int RandomEngine::randomInSegment(int min, int max) {
     assert(max >= min);
 

@@ -10,14 +10,14 @@ class TracingRandomEngine : public RandomEngine {
  public:
     explicit TracingRandomEngine(Platform *platform, RandomEngine *base);
 
-    virtual float randomFloat() override;
-    virtual int random(int hi) override;
-    virtual int peek(int hi) const override;
-    virtual void seed(int seed) override;
+    virtual uint32_t random() override;
+    virtual void seed(uint32_t seed) override;
+    virtual uint32_t peek() const override;
+    virtual int mapUniform(uint32_t entropy, int hi) const override;
+    virtual float mapUniformFloat(uint32_t entropy) const override;
 
  private:
-    template<class T>
-    void printTrace(const char *function, const T &value) const;
+    void printTrace(const char *function, uint32_t value) const;
 
  private:
     Platform *_platform = nullptr;
