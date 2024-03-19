@@ -79,9 +79,9 @@ var searchData=
   ['hostilitytype_76',['hostilityType',['../structMonsterInfo__MM7.html#a68f3b5f4db95f81c32b1992027c254f4',1,'MonsterInfo_MM7::hostilityType()'],['../structMonsterInfo.html#a1fc1e0147290b5c84e5ed231f039496c',1,'MonsterInfo::hostilityType()']]],
   ['hotkey_77',['hotkey',['../structhotkey.html',1,'']]],
   ['hotkeys_78',['hotkeys',['../Nuklear_8cpp.html#a47d7359ae2b6b4e1cef094ac9838bb5e',1,'Nuklear.cpp']]],
-  ['hour_79',['hour',['../structActorJob__MM7.html#a64e8f92f8f20413234a9655df21c2f6d',1,'ActorJob_MM7::hour()'],['../structCivilTime.html#a9baf5c52224785c629fb888eb73f05ee',1,'CivilTime::hour()']]],
+  ['hour_79',['hour',['../structCivilTime.html#a9baf5c52224785c629fb888eb73f05ee',1,'CivilTime::hour()'],['../structActorJob__MM7.html#a64e8f92f8f20413234a9655df21c2f6d',1,'ActorJob_MM7::hour()']]],
   ['hourglasslooptimer_80',['hourglassLoopTimer',['../classGUIWindow__Rest.html#abce9d624d4c436d400874678e217b3ee',1,'GUIWindow_Rest']]],
-  ['hours_81',['hours',['../structCivilDuration.html#a27b0878dfa2f96d20499671fc41874a7',1,'CivilDuration::hours()'],['../structLongCivilDuration.html#a9f27c68f4269ebae960d60c1ae004772',1,'LongCivilDuration::hours()']]],
+  ['hours_81',['hours',['../structLongCivilDuration.html#a9f27c68f4269ebae960d60c1ae004772',1,'LongCivilDuration::hours()'],['../structCivilDuration.html#a27b0878dfa2f96d20499671fc41874a7',1,'CivilDuration::hours()']]],
   ['house_82',['house',['../classCommonTapeRecorder.html#a02ba4bf43a1dc36307b95e005e98e8d3',1,'CommonTapeRecorder']]],
   ['house_5f100_83',['HOUSE_100',['../UIHouseEnums_8h.html#a5ea2a2987049a04401b3ec8a45cbf17caea69f731af0495b8cfd0b52bbfe6bff5',1,'UIHouseEnums.h']]],
   ['house_5f101_84',['HOUSE_101',['../UIHouseEnums_8h.html#a5ea2a2987049a04401b3ec8a45cbf17caab76c4229432bcfc37fcf9e19b6b5149',1,'UIHouseEnums.h']]],
@@ -685,8 +685,9 @@ var searchData=
   ['hsvcolorf_682',['HsvColorf',['../structHsvColorf.html#a89f12afa1ef62a294cc003a1d9132700',1,'HsvColorf::HsvColorf()'],['../structHsvColorf.html',1,'HsvColorf']]],
   ['hsvcolorf_2ecpp_683',['HsvColorf.cpp',['../HsvColorf_8cpp.html',1,'']]],
   ['hsvcolorf_2eh_684',['HsvColorf.h',['../HsvColorf_8h.html',1,'']]],
-  ['hunter_685',['Hunter',['../NPCEnums_8h.html#a060d039dd31dff6f434558155fbb35aea5e409e09f43d85c6e61301149e4f803b',1,'NPCEnums.h']]],
-  ['hw_5fsprites_686',['hw_sprites',['../classSpriteFrame.html#a97ed373b263df04fcad7c933c104dfeb',1,'SpriteFrame']]],
-  ['hwsprite_687',['hwsprite',['../structRenderBillboard.html#a0a19983757101fd9c21b5859f972b901',1,'RenderBillboard']]],
-  ['hwspriteids_688',['hwSpriteIds',['../structSpriteFrame__MM6.html#ae7dd515fd0dc0b6d61ecc92b28698a47',1,'SpriteFrame_MM6']]]
+  ['hudtextures_685',['hudTextures',['../classCommonTapeRecorder.html#aa0209876cfc2843536cb91e62f223101',1,'CommonTapeRecorder']]],
+  ['hunter_686',['Hunter',['../NPCEnums_8h.html#a060d039dd31dff6f434558155fbb35aea5e409e09f43d85c6e61301149e4f803b',1,'NPCEnums.h']]],
+  ['hw_5fsprites_687',['hw_sprites',['../classSpriteFrame.html#a97ed373b263df04fcad7c933c104dfeb',1,'SpriteFrame']]],
+  ['hwsprite_688',['hwsprite',['../structRenderBillboard.html#a0a19983757101fd9c21b5859f972b901',1,'RenderBillboard']]],
+  ['hwspriteids_689',['hwSpriteIds',['../structSpriteFrame__MM6.html#ae7dd515fd0dc0b6d61ecc92b28698a47',1,'SpriteFrame_MM6']]]
 ];
