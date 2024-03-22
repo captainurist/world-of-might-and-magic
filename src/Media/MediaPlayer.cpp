@@ -127,10 +127,14 @@ class AVAudioStream : public AVStreamWrapper {
             return false;
         }
 
-        converter = swr_alloc_set_opts(
-            converter, AV_CH_LAYOUT_STEREO, AV_SAMPLE_FMT_S16,
-            dec_ctx->sample_rate, dec_ctx->channel_layout, dec_ctx->sample_fmt,
-            dec_ctx->sample_rate, 0, nullptr);
+        if (swr_alloc_set_opts2(
+            &converter,
+            &dec_ctx->ch_layout, AV_SAMPLE_FMT_S16, dec_ctx->sample_rate,
+            &dec_ctx->ch_layout, dec_ctx->sample_fmt, dec_ctx->sample_rate, 0, nullptr) < 0) {
+            converter = nullptr;
+            return false;
+        }
+
         if (swr_init(converter) < 0) {
             logger->warning("ffmpeg: swr_init failed");
             swr_free(&converter);

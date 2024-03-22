@@ -57,26 +57,17 @@ bool AudioBaseDataSource::Open() {
         return false;
     }
 
-    if (!pCodecContext->channel_layout) {
-        switch (pCodecContext->channels) {
-            case(1):
-                pCodecContext->channel_layout = AV_CH_LAYOUT_MONO;
-                break;
-            case(2):
-                pCodecContext->channel_layout = AV_CH_LAYOUT_STEREO;
-                break;
-            default:
-                assert(false);
-                break;
-        }
+    if (!av_channel_layout_check(&pCodecContext->ch_layout))
+        av_channel_layout_default(&pCodecContext->ch_layout, pCodecContext->ch_layout.nb_channels);
+
+    if (swr_alloc_set_opts2(
+        &pConverter,
+        &pCodecContext->ch_layout, AV_SAMPLE_FMT_S16, pCodecContext->sample_rate,
+        &pCodecContext->ch_layout, pCodecContext->sample_fmt, pCodecContext->sample_rate, 0, nullptr) < 0) {
+        Close();
+        return false;
     }
 
-    pConverter = swr_alloc_set_opts(
-        pConverter,
-        pCodecContext->channel_layout,
-        AV_SAMPLE_FMT_S16, pCodecContext->sample_rate,
-        pCodecContext->channel_layout,
-        pCodecContext->sample_fmt, pCodecContext->sample_rate, 0, nullptr);
     if (swr_init(pConverter) < 0) {
         Close();
         logger->warning("ffmpeg: Failed to create converter");
@@ -123,7 +114,7 @@ size_t AudioBaseDataSource::GetChannelCount() {
         return 0;
     }
 
-    return pCodecContext->channels;
+    return pCodecContext->ch_layout.nb_channels;
 }
 
 std::shared_ptr<Blob> AudioBaseDataSource::GetNextBuffer() {
@@ -149,7 +140,7 @@ std::shared_ptr<Blob> AudioBaseDataSource::GetNextBuffer() {
                 if (res < 0) {
                     return buffer;
                 }
-                size_t tmp_size = frame->nb_samples * pCodecContext->channels * 2;
+                size_t tmp_size = frame->nb_samples * pCodecContext->ch_layout.nb_channels * 2;
                 std::unique_ptr<void, FreeDeleter> tmp_buf(malloc(tmp_size));
                 uint8_t *dst_channels[8] = { static_cast<uint8_t *>(tmp_buf.get()) };
                 int got_samples = swr_convert(
