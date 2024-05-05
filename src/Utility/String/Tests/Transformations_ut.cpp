@@ -33,7 +33,8 @@ UNIT_TEST(StringTransformations, split) {
     EXPECT_EQ(v, r2);
 
     splitString("", ';', &v);
-    EXPECT_TRUE(v.empty());
+    std::vector<std::string_view> r3 = {""};
+    EXPECT_EQ(v, r3);
 }
 
 UNIT_TEST(StringTransformations, join) {
