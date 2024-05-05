@@ -21,7 +21,7 @@ var searchData=
   ['left_18',['left',['../structMargins.html#a2350effe4c24e93d9f9cec4b8387c8ef',1,'Margins']]],
   ['left_19',['Left',['../classGameConfig_1_1Gamepad.html#a53b3a2c81b768bed02b10275f3a06eba',1,'GameConfig::Gamepad::Left()'],['../classGameConfig_1_1Keybindings.html#ae6d7863985abee2aa378cbb93979e1f7',1,'GameConfig::Keybindings::Left()']]],
   ['level_20',['level',['../structMonsterInfo__MM7.html#ac4aa8249aa1db97b196705dd43ebc5c2',1,'MonsterInfo_MM7::level()'],['../structBufferLogSink_1_1LogMessage.html#a86d81aa16aea1d2fc532b39cdd96f48c',1,'BufferLogSink::LogMessage::level()'],['../structPlayer__MM7.html#aff44dd65f9d8903d1e1ea46019c6aa2f',1,'Player_MM7::level()'],['../classEventIR.html#a0cddc19600c6de31d3d57dfd193dfdf6',1,'EventIR::level()'],['../structMonsterInfo.html#aee1b53320c8e13f268a1262ddb99d1a8',1,'MonsterInfo::level()']]],
-  ['level_5fdescription_21',['level_description',['../classLocalization.html#acd540576ce0c1fee15149bcf5f534661',1,'Localization']]],
+  ['level_5fdescription_21',['level_description',['../classLocalization.html#a51f5f753f0ca6933471b5db08550c4b8',1,'Localization']]],
   ['level_5ffilename_22',['level_filename',['../structOutdoorLocation.html#a5bbe10e6dab5e6755262800c932ea04a',1,'OutdoorLocation']]],
   ['levelmodifier_23',['levelModifier',['../structPlayer__MM7.html#a875b7a57a4216a03e2f38964326110aa',1,'Player_MM7']]],
   ['light_5fdescr_24',['light_descr',['../classEventIR.html#a2567a2ff700a5a2755aa76ccc71b6654',1,'EventIR']]],
@@ -43,7 +43,7 @@ var searchData=
   ['loc_5ftime_40',['loc_time',['../structOutdoorLocation.html#a91bce837704480d6412b409096d8bea5',1,'OutdoorLocation']]],
   ['localization_41',['localization',['../Localization_8h.html#acce22610cffe19ad6cc8f577cd611b8b',1,'localization():&#160;Localization.cpp'],['../Localization_8cpp.html#acce22610cffe19ad6cc8f577cd611b8b',1,'localization():&#160;Localization.cpp']]],
   ['localization_5fraw_42',['localization_raw',['../classLocalization.html#affad899cbacc16fdd0fcae13b97b68a3',1,'Localization']]],
-  ['localization_5fstrings_43',['localization_strings',['../classLocalization.html#aa3b02d26f7c5d8e811d2dc512afdc481',1,'Localization']]],
+  ['localization_5fstrings_43',['localization_strings',['../classLocalization.html#ab6b3d6d6edcc41a470abf7701b8c1bb9',1,'Localization']]],
   ['location2d_44',['location2d',['../structNPCData__MM7.html#aee53060c3df409618fc2a3a18ba7b2d9',1,'NPCData_MM7']]],
   ['location2d_45',['Location2D',['../structNPCData.html#ac47df05161d15a3228421ecfb1377522',1,'NPCData']]],
   ['location_5ffile_5fdescription_46',['location_file_description',['../structOutdoorLocation.html#aa6e2db54629c256934e756cbc261ce84',1,'OutdoorLocation']]],
@@ -63,9 +63,7 @@ var searchData=
   ['lookdown_60',['LookDown',['../classGameConfig_1_1Keybindings.html#ab7dbb802c1707e55d0b234568735cbd7',1,'GameConfig::Keybindings::LookDown()'],['../classGameConfig_1_1Gamepad.html#aeb89f9886bf7e0cf5ed1a4a926c9db11',1,'GameConfig::Gamepad::LookDown()']]],
   ['lookup_61',['LookUp',['../classGameConfig_1_1Keybindings.html#a1bad450852fa7c7a37c1c58551b61087',1,'GameConfig::Keybindings::LookUp()'],['../classGameConfig_1_1Gamepad.html#a93f16c188361599586cbc508329d9f2e',1,'GameConfig::Gamepad::LookUp()']]],
   ['looping_62',['looping',['../classMovie.html#a21205753ca24cc7089b27c57254f053d',1,'Movie']]],
-  ['lua_63',['lua',['../Nuklear_8cpp.html#ab44819023af4734d6f559d7f4e3d18bb',1,'Nuklear.cpp']]],
-  ['lua_5fnk_5fstyles_64',['lua_nk_styles',['../Nuklear_8cpp.html#aba640bab8a361262101e379321bb3fb1',1,'Nuklear.cpp']]],
-  ['luck_65',['luck',['../structPlayer__MM7.html#a6efb049f1788e948fbb549f8c1acb964',1,'Player_MM7']]],
-  ['luckbonus_66',['luckBonus',['../structPlayer__MM7.html#a786129c8a7dae2d33d5d22a59b9852ed',1,'Player_MM7']]],
-  ['lwindowlist_67',['lWindowList',['../GUIWindow_8cpp.html#aa00d8b3e2304a6143a2e364ccfeb696c',1,'lWindowList():&#160;GUIWindow.cpp'],['../GUIWindow_8h.html#aa00d8b3e2304a6143a2e364ccfeb696c',1,'lWindowList():&#160;GUIWindow.cpp']]]
+  ['luck_63',['luck',['../structPlayer__MM7.html#a6efb049f1788e948fbb549f8c1acb964',1,'Player_MM7']]],
+  ['luckbonus_64',['luckBonus',['../structPlayer__MM7.html#a786129c8a7dae2d33d5d22a59b9852ed',1,'Player_MM7']]],
+  ['lwindowlist_65',['lWindowList',['../GUIWindow_8cpp.html#aa00d8b3e2304a6143a2e364ccfeb696c',1,'lWindowList():&#160;GUIWindow.cpp'],['../GUIWindow_8h.html#aa00d8b3e2304a6143a2e364ccfeb696c',1,'lWindowList():&#160;GUIWindow.cpp']]]
 ];

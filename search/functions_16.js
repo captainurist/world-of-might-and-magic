@@ -2,7 +2,7 @@ var searchData=
 [
   ['validateaoedistance_0',['ValidateAoeDistance',['../classGameConfig_1_1Gameplay.html#a1a577fec5df711a61f463d3b344cf7fa',1,'GameConfig::Gameplay']]],
   ['validateartifactlimit_1',['ValidateArtifactLimit',['../classGameConfig_1_1Gameplay.html#a03a7b525a140ada800253c533b8a7bd7',1,'GameConfig::Gameplay']]],
-  ['validatedatapath_2',['validateDataPath',['../DataPath_8cpp.html#a5a56c329bf194aea65e80b2a002703e5',1,'validateDataPath(const std::string &amp;data_path, std::string *missing_file):&#160;DataPath.cpp'],['../DataPath_8h.html#a5a56c329bf194aea65e80b2a002703e5',1,'validateDataPath(const std::string &amp;data_path, std::string *missing_file):&#160;DataPath.cpp']]],
+  ['validatedatapath_2',['validateDataPath',['../DataPath_8cpp.html#a208c3965a2a6ee566031a4a94b6cee73',1,'validateDataPath(std::string_view data_path, std::string *missing_file):&#160;DataPath.cpp'],['../DataPath_8h.html#a208c3965a2a6ee566031a4a94b6cee73',1,'validateDataPath(std::string_view data_path, std::string *missing_file):&#160;DataPath.cpp']]],
   ['validatefloorcheckseps_3',['ValidateFloorChecksEps',['../classGameConfig_1_1Gameplay.html#ae0a1e1c85f3a59f7ee7fad990bb6a34c',1,'GameConfig::Gameplay']]],
   ['validateframetime_4',['ValidateFrameTime',['../classGameConfig_1_1Debug.html#a0e0b0eebbddc004958689cfe6980dc6c',1,'GameConfig::Debug']]],
   ['validategamma_5',['ValidateGamma',['../classGameConfig_1_1Graphics.html#ab0ceeff3de48a2d35e3df0ecb3a9e4bd',1,'GameConfig::Graphics']]],
@@ -38,7 +38,7 @@ var searchData=
   ['viewingparams_35',['ViewingParams',['../structViewingParams.html#a3e14ff3b831e0e7a77d6113cd0090465',1,'ViewingParams']]],
   ['viewport_36',['Viewport',['../structViewport.html#a9fde8f966d9802dd42254acf0ed05386',1,'Viewport']]],
   ['viewproject_5ftrueifstillvisible_5fblv_37',['ViewProject_TrueIfStillVisible_BLV',['../classParticleEngine.html#ad63c7069319085019cf0c086e38cce06',1,'ParticleEngine']]],
-  ['viewtransform_38',['ViewTransform',['../structCamera3D.html#a396badc1e3335dc188a2c88d61f8a7f6',1,'Camera3D::ViewTransform(struct RenderVertexSoft *a1a, unsigned int uNumVertices)'],['../structCamera3D.html#a525586eca7cf9a04905be7702dae1625',1,'Camera3D::ViewTransform(int x, int y, int z, int *transformed_x, int *transformed_y, int *transformed_z)']]],
+  ['viewtransform_38',['ViewTransform',['../structCamera3D.html#ab3c08c9e2fe1391ce8a21fb5ae8ae504',1,'Camera3D::ViewTransform(RenderVertexSoft *a1a, unsigned int uNumVertices)'],['../structCamera3D.html#a525586eca7cf9a04905be7702dae1625',1,'Camera3D::ViewTransform(int x, int y, int z, int *transformed_x, int *transformed_y, int *transformed_z)']]],
   ['visible_39',['Visible',['../structODMFace.html#a8113cb0afb1f45cc292fd22959459daa',1,'ODMFace::Visible()'],['../structBLVFace.html#ab0f27bf592ba9ca357dde5deef3459b4',1,'BLVFace::Visible()']]],
   ['visit_40',['visit',['../classPlatformIntrospection.html#a83040febef70b51af271589ae4c1f532',1,'PlatformIntrospection']]],
   ['visitinternal_41',['visitInternal',['../classPlatformIntrospection.html#a1a984691e737325e8abf75d978b6b574',1,'PlatformIntrospection']]]
