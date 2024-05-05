@@ -8,12 +8,12 @@
 
 #include <GUI/GUIWindow.h>
 
-VideoState::VideoState(std::string_view videoFileName) : _videoFileName(videoFileName) {
+VideoState::VideoState(Type type, std::string_view videoFileName) : _videoFileName(videoFileName), _type(type) {
 }
 
 FSMAction VideoState::enter() {
     _skipVideo = false;
-    if (engine->config->debug.NoVideo.value()) {
+    if (shouldSkip()) {
         return FSMActionTransition("videoEnd");
     }
 
@@ -70,4 +70,11 @@ bool VideoState::keyPressEvent(const PlatformKeyEvent *event) {
         return true;
     }
     return false;
+}
+
+bool VideoState::shouldSkip() const {
+    return
+        engine->config->debug.NoVideo.value() ||
+        (engine->config->debug.NoLogo.value() && _type == VIDEO_LOGO) ||
+        (engine->config->debug.NoIntro.value() && _type == VIDEO_INTRO);
 }

@@ -7,35 +7,27 @@
 #include <memory>
 
 #include "VideoState.h"
-#include "StartState.h"
 
 std::unique_ptr<FSM> GameFSMBuilder::buildFSM() {
     FSMBuilder fsmBuilder;
     _buildIntroVideoSequence(fsmBuilder);
 
     auto fsm = fsmBuilder.build();
-    fsm->jumpToState("Start");
+    fsm->jumpToState("3DOVideo");
     return fsm;
 }
 
 void GameFSMBuilder::_buildIntroVideoSequence(FSMBuilder &builder) {
     builder
-    .state<StartState>("Start")
-        .on("skipVideo").jumpTo(FSM::exitState)
-        .on("skipLogo").jumpTo("IntroVideo")
-        .on("noSkip").jumpTo("3DOVideo")
-
-    .state<VideoState>("3DOVideo", "3dologo")
+    .state<VideoState>("3DOVideo", VideoState::VIDEO_LOGO, "3dologo")
         .on("videoEnd").jumpTo("NWCVideo")
 
-    .state<VideoState>("NWCVideo", "new world logo")
+    .state<VideoState>("NWCVideo", VideoState::VIDEO_LOGO,"new world logo")
         .on("videoEnd").jumpTo("JVCVideo")
 
-    .state<VideoState>("JVCVideo", "jvc")
-        .on("videoEnd")
-            .jumpTo([]() { return !engine->config->debug.NoIntro.value(); }, "IntroVideo")
-            .jumpTo(FSM::exitState)
+    .state<VideoState>("JVCVideo", VideoState::VIDEO_LOGO,"jvc")
+        .on("videoEnd").jumpTo("IntroVideo")
 
-    .state<VideoState>("IntroVideo", "Intro")
+    .state<VideoState>("IntroVideo", VideoState::VIDEO_INTRO,"Intro")
         .on("videoEnd").jumpTo(FSM::exitState);
 }
