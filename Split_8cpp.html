@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OpenEnroth: src/Media/AudioFileDataSource.cpp File Reference</title>
+<title>OpenEnroth: src/Utility/String/Split.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;5adfaca</span>
+   <div id="projectname">OpenEnroth<span id="projectnumber">&#160;406c8c8</span>
    </div>
   </td>
  </tr>
@@ -69,40 +69,83 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_863df3df8e14086a38c0e28f6c571e1d.html">Media</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9761b53e3d9349800c0cb59b71c8cd3d.html">Utility</a></li><li class="navelem"><a class="el" href="dir_3e758474f82dd18a66ab1239e566c7da.html">String</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">AudioFileDataSource.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">Split.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="AudioFileDataSource_8h.html">AudioFileDataSource.h</a>&quot;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;libavcodec/avcodec.h&gt;</code><br />
-<code>#include &lt;libavformat/avformat.h&gt;</code><br />
-<code>#include &lt;libswresample/swresample.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="Logger_8h.html">Library/Logger/Logger.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Split_8h.html">Split.h</a>&quot;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7da35e858a8faf6faf1dc22cb81fbfa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AudioDataSource_8h.html#a4986454aae254076ad2f53d528dde29d">PAudioDataSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AudioFileDataSource_8cpp.html#a7da35e858a8faf6faf1dc22cb81fbfa9">CreateAudioFileDataSource</a> (std::string_view file_name)</td></tr>
-<tr class="separator:a7da35e858a8faf6faf1dc22cb81fbfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26543b6f1052f150560045f6a091e4fe"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Split_8cpp.html#a26543b6f1052f150560045f6a091e4fe">tokenize</a> (char *input, const char separator)</td></tr>
+<tr class="separator:a26543b6f1052f150560045f6a091e4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3810690177cb57539130f0de5c96f8ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Split_8cpp.html#a3810690177cb57539130f0de5c96f8ac">split</a> (std::string_view <a class="el" href="Json__ut_8cpp.html#a3691308f2a4c2f6983f2880d32e29c84">s</a>, char sep, std::vector&lt; std::string_view &gt; *result)</td></tr>
+<tr class="separator:a3810690177cb57539130f0de5c96f8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7da35e858a8faf6faf1dc22cb81fbfa9" name="a7da35e858a8faf6faf1dc22cb81fbfa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7da35e858a8faf6faf1dc22cb81fbfa9">&#9670;&#160;</a></span>CreateAudioFileDataSource()</h2>
+<a id="a3810690177cb57539130f0de5c96f8ac" name="a3810690177cb57539130f0de5c96f8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3810690177cb57539130f0de5c96f8ac">&#9670;&#160;</a></span>split()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AudioDataSource_8h.html#a4986454aae254076ad2f53d528dde29d">PAudioDataSource</a> CreateAudioFileDataSource </td>
+          <td class="memname">void split </td>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
-          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string_view &gt; *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26543b6f1052f150560045f6a091e4fe" name="a26543b6f1052f150560045f6a091e4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26543b6f1052f150560045f6a091e4fe">&#9670;&#160;</a></span>tokenize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; char * &gt; tokenize </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>separator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
