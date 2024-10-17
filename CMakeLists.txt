@@ -73,6 +73,17 @@ check_linker_flag(CXX "-fuse-ld=mold" COMPILER_RT_HAS_FUSE_LD_MOLD_FLAG)
 check_linker_flag(CXX "-fuse-ld=lld" COMPILER_RT_HAS_FUSE_LD_LLD_FLAG)
 check_linker_flag(CXX "-fuse-ld=gold" COMPILER_RT_HAS_FUSE_LD_GOLD_FLAG)
 
+# Enable assertions in release builds.
+if(OE_BUILD_COMPILER STREQUAL "msvc")
+    set(NDEBUG_FLAG "/DNDEBUG")
+else()
+    set(NDEBUG_FLAG "-DNDEBUG")
+endif()
+foreach(BUILD_TYPE RELEASE RELWITHDEBINFO MINSIZEREL)
+    string(REPLACE "${NDEBUG_FLAG}" "" CMAKE_CXX_FLAGS_${BUILD_TYPE} "${CMAKE_CXX_FLAGS_${BUILD_TYPE}}")
+    string(REPLACE "${NDEBUG_FLAG}" "" CMAKE_C_FLAGS_${BUILD_TYPE} "${CMAKE_C_FLAGS_${BUILD_TYPE}}")
+endforeach()
+
 # Set up warnings-as-errors for all compilers.
 if (OE_BUILD_COMPILER STREQUAL "gcc" OR OE_BUILD_COMPILER STREQUAL "clang")
     add_compile_options(-Werror=return-type) # Control reaches the end of non-void function. This is an error on MSVC.
